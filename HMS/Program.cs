@@ -12,7 +12,7 @@ namespace HMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fNurse());
+            Application.Run(new fLogin());
         }
     }
 }

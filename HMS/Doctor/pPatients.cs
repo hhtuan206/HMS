@@ -1,18 +1,19 @@
 ﻿using HMS.DAO;
-using HMS.Doctor;
 using System;
+using System.Data;
 using System.Windows.Forms;
 namespace HMS
 {
     public partial class pPatients : UserControl
     {
 
-        public BindingSource patient = new BindingSource();
+        private int id_staff;
+
+        public int Id_staff { get => id_staff; set => id_staff = value; }
         public pPatients()
         {
             InitializeComponent();
-            loadAcpPatient();
-            loadWaitPatient();
+            
         }
 
         private static pPatients instance;
@@ -25,39 +26,69 @@ namespace HMS
             }
         }
 
-
-
-        public void loadAcpPatient()
+        public void getAllPatient(int id)
         {
-            dtgAcpPatient.DataSource = patient;
-            patient.DataSource = PatientDAO.Instance.getAcpPatient();
+            DataTable data = PatientDAO.Instance.getListPatient(id);
+            dtgAmitPatient.DataSource = data;
         }
 
-        public void loadWaitPatient()
+        private void dtgAmitPatient_SelectionChanged(object sender, EventArgs e)
         {
-            dtgWaitPatient.DataSource = PatientDAO.Instance.getWaitPatient();
-        }
 
-        private void btnAcp_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(dtgWaitPatient.SelectedRows[0].Cells["Id"].Value.ToString());
-            PatientDAO.Instance.changeStatusPatient(id, 1);
-            int id_bill = BillDAO.Instance.createBill();
-
-            DetailPatientDAO.Instance.createDetailPatient(id, id_bill);
-            loadAcpPatient();
-            loadWaitPatient();
+            foreach (DataGridViewRow item in dtgAmitPatient.SelectedRows)
+            {
+                txtID.Text = item.Cells["ID"].Value.ToString();
+                txtFname.Text = item.Cells["fName"].Value.ToString();
+                txtPathological.Text = item.Cells["po"].Value.ToString();
+            }
 
         }
 
-        private void btnDetail_Click(object sender, EventArgs e)
+        private void txtID_TextChanged(object sender, EventArgs e)
         {
-            int id = int.Parse(dtgAcpPatient.SelectedRows[0].Cells["Id"].Value.ToString());
+            loadService(int.Parse(txtID.Text));
+        }
 
-            fMedical fMedical = new fMedical(id);
-            this.Hide();
-            fMedical.ShowDialog();
-            this.Show();
+        void loadService(int id)
+        {
+            dtgService.Rows.Clear();
+            string dt = BillDAO.Instance.getDetailBillByIdPatient(id);
+            string[] services = dt.Split(';');
+            for (int i = 0; i < services.Length - 1; i++)
+            {
+                string[] service = services[i].Split(':');
+                string[] row = { service[0].ToString(), service[1].ToString() };
+                dtgService.Rows.Add(row);
+            }
+        }
+
+
+        private void btnAdd_Click_1(object sender, EventArgs e)
+        {
+            string[] row = { txtSname.Text, txtCost.Text };
+            dtgService.Rows.Add(row);
+        }
+
+        private void btnDel_Click_1(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in this.dtgService.SelectedRows)
+            {
+                dtgService.Rows.RemoveAt(item.Index);
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
+            string text = "";
+            foreach (DataGridViewRow row in dtgService.Rows)
+            {
+
+                text += row.Cells[0].Value + ":" + row.Cells[1].Value + ";";
+
+            }
+            BillDAO.Instance.updateServiceList(text, int.Parse(txtID.Text));
+            MessageBox.Show("Thành công");
         }
     }
 }

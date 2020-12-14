@@ -1,5 +1,6 @@
 ﻿using HMS.DAO;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HMS
@@ -8,11 +9,12 @@ namespace HMS
     {
         public pPatient()
         {
+
             InitializeComponent();
-            fillCbWard();
             initData();
             initDoc();
-            
+
+
 
         }
 
@@ -28,8 +30,7 @@ namespace HMS
 
         void initData()
         {
-            dtgPatient.DataSource = PatientDAO.Instance.getListPatient();
-
+            dtgPatient.DataSource = PatientDAO.Instance.getListPatient(1);
         }
 
         void initDoc()
@@ -41,19 +42,12 @@ namespace HMS
 
         void fillCbWard()
         {
-
-            cbWard.DataSource = WardDAO.Instance.getAllWard();
+            DataTable dt = WardDAO.Instance.getAllWard();
+            cbWard.DataSource = dt;
             cbWard.DisplayMember = "name_ward";
             cbWard.ValueMember = "id";
-        }
 
-        void fillCbBed(int id_ward)
-        {
-            cbBed.DataSource = BedDAO.Instance.getAllBedInWardByWardID(id_ward);
-            cbBed.DisplayMember = "number_bed";
-            cbBed.ValueMember = "id";
         }
-
 
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -64,22 +58,49 @@ namespace HMS
             DateTime birthday = dtBirth.Value;
             string sex = cbSex.SelectedItem.ToString();
             string hin = txtHIN.Text;
-            PatientDAO.Instance.insertPatient(fname, birthday, address, phoneno, sex, hin);
+            int id_bed = int.Parse(cbBed.SelectedValue.ToString());
+            int id_staff = int.Parse(cbDoc.SelectedValue.ToString());
+            int id_patient = PatientDAO.Instance.createPatient(fname, birthday, address, phoneno, sex, hin);
+            int id_bill = BillDAO.Instance.createBill();
+            BedDAO.Instance.changeStatusBed(id_bed);
+            DetailPatientDAO.Instance.createDetailPatient(id_patient, id_bill, id_staff, id_bed);
             MessageBox.Show("Thành công");
             initData();
         }
 
+
+        void fillCbBed(int id_ward)
+        {
+            cbBed.DataSource = BedDAO.Instance.getAllBedInWardByWardID(id_ward);
+            cbBed.DisplayMember = "number_bed";
+            cbBed.ValueMember = "id";
+
+        }
+
+
+
         private void cbWard_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbWard.SelectedItem == null)
-                return;
-            /*int id = combo.SelectedIndex;
-            */
-            //fillCbBed(id);
-            MessageBox.Show(cbWard.SelectedValue.ToString());
 
+            string i = cbWard.SelectedValue.ToString();
+            if (!i.Equals("System.Data.DataRowView"))
+            {
+                fillCbBed(int.Parse(i));
+            }
 
 
         }
+
+        private void btnLoadWard_Click(object sender, EventArgs e)
+        {
+            cbWard.Enabled = true;
+            fillCbWard();
+        }
+    }
+
+    public class foo
+    {
+        public int id { get; set; }
+        private string name_ward { get; set; }
     }
 }

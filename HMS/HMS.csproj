@@ -53,12 +53,6 @@
     <Compile Include="DAO\PatientDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\WardDAO.cs" />
-    <Compile Include="Doctor\fMedical.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Doctor\fMedical.Designer.cs">
-      <DependentUpon>fMedical.cs</DependentUpon>
-    </Compile>
     <Compile Include="Doctor\fDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +76,6 @@
     </Compile>
     <Compile Include="Nurse\fNurse.Designer.cs">
       <DependentUpon>fNurse.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Doctor\pDoctor.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Doctor\pDoctor.Designer.cs">
-      <DependentUpon>pDoctor.cs</DependentUpon>
     </Compile>
     <Compile Include="Nurse\pPatient.cs">
       <SubType>UserControl</SubType>
@@ -124,9 +112,6 @@
     <EmbeddedResource Include="Doctor\fDoctor.resx">
       <DependentUpon>fDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\fMedical.resx">
-      <DependentUpon>fMedical.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,9 +120,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse\fNurse.resx">
       <DependentUpon>fNurse.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Doctor\pDoctor.resx">
-      <DependentUpon>pDoctor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse\pPatient.resx">
       <DependentUpon>pPatient.cs</DependentUpon>

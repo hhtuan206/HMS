@@ -55,7 +55,6 @@ namespace HMS.DAO
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();

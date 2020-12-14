@@ -23,16 +23,17 @@ namespace HMS.DAO
             return data;
         }
 
-        public string getServiceList(int id)
+        public string getDetailBillByIdPatient(int id_patient)
         {
-            string service = null;
-            string query = "SELECT dbo.bill.service_list FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE dbo.detail_patient.id_patient =" + id + "";
+            string service = "";
+            string query = "SELECT bill.service_list FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE id_patient = " + id_patient + "";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
                 service = item["service_list"].ToString();
             }
             return service;
+
         }
 
         public void updateServiceList(string service, int id)

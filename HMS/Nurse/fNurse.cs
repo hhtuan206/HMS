@@ -8,6 +8,17 @@ namespace HMS
         public fNurse()
         {
             InitializeComponent();
+            if (!pNurse.Controls.Contains(pPatient.Instance))
+            {
+
+                pNurse.Controls.Add(pPatient.Instance);
+                pPatient.Instance.Dock = DockStyle.Fill;
+                pPatient.Instance.BringToFront();
+            }
+            else
+            {
+                pPatient.Instance.BringToFront();
+            }
         }
 
         private void thêmBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)

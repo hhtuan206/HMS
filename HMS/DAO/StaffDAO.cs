@@ -15,13 +15,17 @@ namespace HMS.DAO
 
 
 
-        public bool Login(string userName, string passWord)
+        public string Login(string userName, string passWord)
         {
+            string role = "";
             string query = "SELECT * FROM dbo.Staff WHERE Email = N'" + userName + "' AND Password = N'" + passWord + "' ";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
-
-            return result.Rows.Count > 0;
+            foreach (DataRow item in result.Rows)
+            {
+                role = item["department"].ToString();
+            }
+            return role;
         }
 
         public void InsertStaff(string email, string pwd, string fname, string address, int phoneno, DateTime birthday, string timeforwork, string department, string sex)
@@ -36,6 +40,18 @@ namespace HMS.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             return data;
+        }
+
+        public int getIdByUsername(string username)
+        {
+            int id = 0;
+            string query = "SELECT id FROM dbo.Staff WHERE Email = N'" + username + "'";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in result.Rows)
+            {
+                id = int.Parse(item["id"].ToString());
+            }
+            return id;
         }
     }
 }

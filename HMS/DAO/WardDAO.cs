@@ -16,7 +16,7 @@ namespace HMS.DAO
         private WardDAO() { }
         public DataTable getAllWard()
         {
-            string query = "select id, name_ward from ward";
+            string query = "select * from ward";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             return data;

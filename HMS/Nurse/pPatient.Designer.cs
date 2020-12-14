@@ -36,6 +36,7 @@
             this.cbDoc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.btnLoadWard = new System.Windows.Forms.Button();
             this.cbBed = new System.Windows.Forms.ComboBox();
             this.cbWard = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -125,6 +126,9 @@
             // 
             // cbDoc
             // 
+            this.cbDoc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbDoc.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDoc.FormattingEnabled = true;
             this.cbDoc.Location = new System.Drawing.Point(184, 17);
             this.cbDoc.Name = "cbDoc";
@@ -142,6 +146,7 @@
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.btnLoadWard);
             this.panel10.Controls.Add(this.cbBed);
             this.panel10.Controls.Add(this.cbWard);
             this.panel10.Controls.Add(this.label7);
@@ -149,6 +154,16 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(500, 55);
             this.panel10.TabIndex = 7;
+            // 
+            // btnLoadWard
+            // 
+            this.btnLoadWard.Location = new System.Drawing.Point(422, 18);
+            this.btnLoadWard.Name = "btnLoadWard";
+            this.btnLoadWard.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadWard.TabIndex = 11;
+            this.btnLoadWard.Text = "Check";
+            this.btnLoadWard.UseVisualStyleBackColor = true;
+            this.btnLoadWard.Click += new System.EventHandler(this.btnLoadWard_Click);
             // 
             // cbBed
             // 
@@ -160,11 +175,10 @@
             // 
             // cbWard
             // 
-            this.cbWard.FormattingEnabled = true;
             this.cbWard.Location = new System.Drawing.Point(115, 17);
             this.cbWard.Name = "cbWard";
             this.cbWard.Size = new System.Drawing.Size(121, 24);
-            this.cbWard.TabIndex = 1;
+            this.cbWard.TabIndex = 10;
             this.cbWard.SelectedIndexChanged += new System.EventHandler(this.cbWard_SelectedIndexChanged);
             // 
             // label7
@@ -430,5 +444,6 @@
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.ComboBox cbDoc;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnLoadWard;
     }
 }

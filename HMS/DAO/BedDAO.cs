@@ -4,6 +4,8 @@ namespace HMS.DAO
 {
     class BedDAO
     {
+
+
         private static BedDAO instance;
 
         public static BedDAO Instance
@@ -12,8 +14,6 @@ namespace HMS.DAO
             private set { BedDAO.instance = value; }
         }
 
-        public static int TableWidth = 90;
-        public static int TableHeight = 90;
 
         private BedDAO() { }
 
@@ -26,9 +26,15 @@ namespace HMS.DAO
 
         public DataTable getAllBedInWardByWardID(int id)
         {
-            string query = "select * from bed where id_ward = " + id + "";
+            string query = "select * from bed where id_ward = " + id + " and status = 0";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
+        }
+
+        public void changeStatusBed(int id_bed)
+        {
+            string query = "UPDATE dbo.bed SET status = 0 WHERE id = " + id_bed + "";
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
     }
 }

@@ -13,35 +13,29 @@ namespace HMS.DAO
             private set { PatientDAO.instance = value; }
         }
 
-        public void insertPatient(string fname, DateTime birthday, string address, int phoneno, string sex, string hin)
+        public int createPatient(string fname, DateTime birthday, string address, int phoneno, string sex, string hin)
         {
-            DataProvider.Instance.ExecuteNonQuery("USP_InsertPatient @fname , @birthday , @address , @phoneno  , @sex , @hin", new object[] { fname, birthday, address, phoneno, sex, hin });
-
+            int id = 0;
+            DataTable data = DataProvider.Instance.ExecuteQuery("USP_CreatePatient @fname , @birthday , @address , @phoneno  , @sex , @hin", new object[] { fname, birthday, address, phoneno, sex, hin });
+            foreach (DataRow item in data.Rows)
+            {
+                id = int.Parse(item["id"].ToString());
+            }
+            return id;
         }
 
-        public DataTable getListPatient()
+        public DataTable getListPatient(int id_staff)
         {
 
-            string query = "select * from patient";
+            string query = "SELECT dbo.patient.id, dbo.patient.full_name, dbo.patient.pathological FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.detail_patient.id_staff = " + id_staff + "";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
 
         }
 
-        public DataTable getAcpPatient()
-        {
-            string query = "select * from patient where status = 1";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            return data;
 
-        }
 
-        public DataTable getWaitPatient()
-        {
-            string query = "select * from patient where status = 0";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            return data;
-        }
+
 
         public void changeStatusPatient(int id, int status)
         {

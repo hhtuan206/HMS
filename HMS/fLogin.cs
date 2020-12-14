@@ -15,11 +15,27 @@ namespace HMS
         {
             string userName = txtUsername.Text;
             string passWord = txtPassword.Text;
-            if (Login(userName, passWord))
+            string role = StaffDAO.Instance.Login(userName, passWord);
+            int id = StaffDAO.Instance.getIdByUsername(userName);
+            if (role.Equals("Quản lý"))
             {
-                fManager f = new fManager();
+                fManager manager = new fManager();
                 this.Hide();
-                f.ShowDialog();
+                manager.ShowDialog();
+                this.Show();
+            }
+            else if (role.Equals("Bác sĩ"))
+            {
+                fDoctor doctor = new fDoctor(id);
+                this.Hide();
+                doctor.ShowDialog();
+                this.Show();
+            }
+            else if (role.Equals("Y tá"))
+            {
+                fNurse nurse = new fNurse();
+                this.Hide();
+                nurse.ShowDialog();
                 this.Show();
             }
             else
@@ -29,10 +45,7 @@ namespace HMS
 
 
         }
-        bool Login(string userName, string passWord)
-        {
-            return StaffDAO.Instance.Login(userName, passWord);
-        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Application.Exit();

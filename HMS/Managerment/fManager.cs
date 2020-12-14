@@ -49,17 +49,7 @@ namespace HMS
 
         private void khuVựcToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!pManager.Controls.Contains(pDoctor.Instance))
-            {
 
-                pManager.Controls.Add(pDoctor.Instance);
-                pDoctor.Instance.Dock = DockStyle.Fill;
-                pDoctor.Instance.BringToFront();
-            }
-            else
-            {
-                pDoctor.Instance.BringToFront();
-            }
         }
     }
 }
