@@ -8,31 +8,31 @@ namespace HMS
         public fNurse()
         {
             InitializeComponent();
-            if (!pNurse.Controls.Contains(pPatient.Instance))
+            if (!pNurse.Controls.Contains(pAdmitPatient.Instance))
             {
 
-                pNurse.Controls.Add(pPatient.Instance);
-                pPatient.Instance.Dock = DockStyle.Fill;
-                pPatient.Instance.BringToFront();
+                pNurse.Controls.Add(pAdmitPatient.Instance);
+                pAdmitPatient.Instance.Dock = DockStyle.Fill;
+                pAdmitPatient.Instance.BringToFront();
             }
             else
             {
-                pPatient.Instance.BringToFront();
+                pAdmitPatient.Instance.BringToFront();
             }
         }
 
         private void thêmBệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!pNurse.Controls.Contains(pPatient.Instance))
+            if (!pNurse.Controls.Contains(pAdmitPatient.Instance))
             {
 
-                pNurse.Controls.Add(pPatient.Instance);
-                pPatient.Instance.Dock = DockStyle.Fill;
-                pPatient.Instance.BringToFront();
+                pNurse.Controls.Add(pAdmitPatient.Instance);
+                pAdmitPatient.Instance.Dock = DockStyle.Fill;
+                pAdmitPatient.Instance.BringToFront();
             }
             else
             {
-                pPatient.Instance.BringToFront();
+                pAdmitPatient.Instance.BringToFront();
             }
         }
     }

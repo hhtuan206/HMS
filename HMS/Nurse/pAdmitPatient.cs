@@ -5,9 +5,9 @@ using System.Windows.Forms;
 
 namespace HMS
 {
-    public partial class pPatient : UserControl
+    public partial class pAdmitPatient : UserControl
     {
-        public pPatient()
+        public pAdmitPatient()
         {
 
             InitializeComponent();
@@ -18,12 +18,12 @@ namespace HMS
 
         }
 
-        private static pPatient instance;
-        public static pPatient Instance
+        private static pAdmitPatient instance;
+        public static pAdmitPatient Instance
         {
             get
             {
-                if (instance == null) instance = new pPatient();
+                if (instance == null) instance = new pAdmitPatient();
                 return instance;
             }
         }

@@ -28,17 +28,15 @@ namespace HMS.DAO
             return role;
         }
 
-        public void InsertStaff(string email, string pwd, string fname, string address, int phoneno, DateTime birthday, string timeforwork, string department, string sex)
+        public void createStaff(string email, string pwd, string fname, string address, int phoneno, DateTime birthday, string timeforwork, string department, string sex)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_InsertStaff @email , @pwd , @fname , @address , @phoneno , @birthday , @timeforwork , @department , @sex", new object[] { email, pwd, fname, address, phoneno, birthday, timeforwork, department, sex });
         }
 
         public DataTable getDoctorID()
         {
-
             string query = "SELECT dbo.staff.id, dbo.staff.full_name FROM dbo.staff WHERE dbo.staff.department =N'bác sĩ'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
             return data;
         }
 
@@ -52,6 +50,18 @@ namespace HMS.DAO
                 id = int.Parse(item["id"].ToString());
             }
             return id;
+        }
+
+        public void updateStaff(int id, string email,string full_name, string password, DateTime birth, string address, string sex, int phone_no, string time_for_work,string department)
+        {
+            string query = "UPDATE dbo.staff SET email = N'"+email+"', full_name = N'"+full_name+"', password = N'"+password+"', birthday = '"+birth+"', address = N'"+address+"', sex = '"+sex+"',phone_number = "+phone_no+",time_for_work =N'"+time_for_work+"', department = N'"+department+"' WHERE id = "+id+"";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void deleteStaff(int id) 
+        {
+            string query = "DELETE dbo.staff WHERE id = ="+id+"";
+            DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }

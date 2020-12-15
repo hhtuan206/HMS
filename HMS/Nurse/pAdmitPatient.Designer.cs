@@ -1,6 +1,6 @@
 ﻿namespace HMS
 {
-    partial class pPatient
+    partial class pAdmitPatient
     {
         /// <summary> 
         /// Required designer variable.

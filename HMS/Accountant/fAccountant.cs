@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.Accountant
@@ -15,6 +8,21 @@ namespace HMS.Accountant
         public fAccountant()
         {
             InitializeComponent();
+        }
+
+        private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pAccountant.Controls.Contains(pPatient.Instance))
+            {
+
+                pAccountant.Controls.Add(pPatient.Instance);
+                pPatient.Instance.Dock = DockStyle.Fill;
+                pPatient.Instance.BringToFront();
+            }
+            else
+            {
+                pPatient.Instance.BringToFront();
+            }
         }
     }
 }

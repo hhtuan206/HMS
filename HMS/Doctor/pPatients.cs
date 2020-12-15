@@ -13,7 +13,7 @@ namespace HMS
         public pPatients()
         {
             InitializeComponent();
-            
+
         }
 
         private static pPatients instance;
@@ -88,6 +88,7 @@ namespace HMS
 
             }
             BillDAO.Instance.updateServiceList(text, int.Parse(txtID.Text));
+            PatientDAO.Instance.changeStatusPatient(int.Parse(txtID.Text), 0);
             MessageBox.Show("Thành công");
         }
     }

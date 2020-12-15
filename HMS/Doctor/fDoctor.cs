@@ -8,6 +8,7 @@ namespace HMS
         public fDoctor(int id)
         {
             InitializeComponent();
+            pPatients.Instance.Id_staff = id;
             pPatients.Instance.getAllPatient(id);
         }
 

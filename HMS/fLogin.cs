@@ -1,4 +1,5 @@
-﻿using HMS.DAO;
+﻿using HMS.Accountant;
+using HMS.DAO;
 using System;
 using System.Windows.Forms;
 
@@ -36,6 +37,13 @@ namespace HMS
                 fNurse nurse = new fNurse();
                 this.Hide();
                 nurse.ShowDialog();
+                this.Show();
+            }
+            else if (role.Equals("Kế toán"))
+            {
+                fAccountant accountant = new fAccountant();
+                this.Hide();
+                accountant.ShowDialog();
                 this.Show();
             }
             else

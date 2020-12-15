@@ -27,19 +27,22 @@ namespace HMS.DAO
         public DataTable getListPatient(int id_staff)
         {
 
-            string query = "SELECT dbo.patient.id, dbo.patient.full_name, dbo.patient.pathological FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.detail_patient.id_staff = " + id_staff + "";
+            string query = "SELECT dbo.patient.id, dbo.patient.full_name, dbo.patient.pathological FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.detail_patient.id_staff = " + id_staff + " AND dbo.patient.status = 1";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
 
         }
 
-
-
-
-
         public void changeStatusPatient(int id, int status)
         {
             DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.patient SET status = " + status + " Where id = " + id + "");
+        }
+
+        public DataTable getPatientCheckIn()
+        {
+            string query = "SELECT dbo.patient.id, dbo.patient.full_name,dbo.patient.phone_number,dbo.patient.address FROM dbo.patient WHERE status = 1";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
         }
     }
 }

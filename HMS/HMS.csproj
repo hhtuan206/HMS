@@ -33,6 +33,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1427.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +64,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Accountant\fAccountant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accountant\fAccountant.Designer.cs">
+      <DependentUpon>fAccountant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accountant\pPatient.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accountant\pPatient.Designer.cs">
+      <DependentUpon>pPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\BedDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
@@ -77,11 +107,11 @@
     <Compile Include="Nurse\fNurse.Designer.cs">
       <DependentUpon>fNurse.cs</DependentUpon>
     </Compile>
-    <Compile Include="Nurse\pPatient.cs">
+    <Compile Include="Nurse\pAdmitPatient.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Nurse\pPatient.Designer.cs">
-      <DependentUpon>pPatient.cs</DependentUpon>
+    <Compile Include="Nurse\pAdmitPatient.Designer.cs">
+      <DependentUpon>pAdmitPatient.cs</DependentUpon>
     </Compile>
     <Compile Include="Doctor\pPatients.cs">
       <SubType>UserControl</SubType>
@@ -109,6 +139,12 @@
     <Compile Include="Managerment\pWard.Designer.cs">
       <DependentUpon>pWard.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accountant\fAccountant.resx">
+      <DependentUpon>fAccountant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accountant\pPatient.resx">
+      <DependentUpon>pPatient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\fDoctor.resx">
       <DependentUpon>fDoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,8 +157,8 @@
     <EmbeddedResource Include="Nurse\fNurse.resx">
       <DependentUpon>fNurse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Nurse\pPatient.resx">
-      <DependentUpon>pPatient.cs</DependentUpon>
+    <EmbeddedResource Include="Nurse\pAdmitPatient.resx">
+      <DependentUpon>pAdmitPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Doctor\pPatients.resx">
       <DependentUpon>pPatients.cs</DependentUpon>
@@ -135,6 +171,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Managerment\pStaff.resx">
       <DependentUpon>pStaff.cs</DependentUpon>
@@ -145,6 +182,7 @@
     <EmbeddedResource Include="Managerment\pWard.resx">
       <DependentUpon>pWard.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -158,6 +196,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\130920995_742064956439546_7414517176641460971_n.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
