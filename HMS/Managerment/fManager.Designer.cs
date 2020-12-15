@@ -84,6 +84,7 @@
             this.giườngBệnhToolStripMenuItem.Name = "giườngBệnhToolStripMenuItem";
             this.giườngBệnhToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.giườngBệnhToolStripMenuItem.Text = "Giường bệnh";
+            this.giườngBệnhToolStripMenuItem.Click += new System.EventHandler(this.giườngBệnhToolStripMenuItem_Click);
             // 
             // bệnhNhânToolStripMenuItem
             // 

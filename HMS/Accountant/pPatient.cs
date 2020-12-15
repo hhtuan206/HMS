@@ -2,6 +2,7 @@
 using HMS.Properties;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace HMS.Accountant
@@ -42,9 +43,9 @@ namespace HMS.Accountant
                 total_money += float.Parse(service[1].ToString());
                 dtgBill.Rows.Add(row);
             }
-            txtTotal_money.Text = total_money.ToString();
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotal_money.Text = total_money.ToString("c", culture);
         }
-
 
 
         private void txtID_TextChanged(object sender, EventArgs e)

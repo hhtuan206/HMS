@@ -101,6 +101,12 @@
     <Compile Include="Managerment\fManager.Designer.cs">
       <DependentUpon>fManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managerment\pBed.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Managerment\pBed.Designer.cs">
+      <DependentUpon>pBed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Nurse\fNurse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,12 +133,6 @@
     <Compile Include="Managerment\pStaff.Designer.cs">
       <DependentUpon>pStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Managerment\pPatient.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Managerment\pPatient.Designer.cs">
-      <DependentUpon>pPatient.cs</DependentUpon>
-    </Compile>
     <Compile Include="Managerment\pWard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Managerment\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\pBed.resx">
+      <DependentUpon>pBed.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse\fNurse.resx">
       <DependentUpon>fNurse.cs</DependentUpon>
@@ -175,9 +178,6 @@
     </Compile>
     <EmbeddedResource Include="Managerment\pStaff.resx">
       <DependentUpon>pStaff.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Managerment\pPatient.resx">
-      <DependentUpon>pPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Managerment\pWard.resx">
       <DependentUpon>pWard.cs</DependentUpon>

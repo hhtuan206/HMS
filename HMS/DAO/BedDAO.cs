@@ -36,6 +36,24 @@ namespace HMS.DAO
             string query = "UPDATE dbo.bed SET status = 0 WHERE id = " + id_bed + "";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+
+        public void createBed(int id_ward, int number_bed)
+        {
+            string query = "INSERT INTO dbo.bed(id_ward,number_bed,status,create_at,update_at) VALUES(" + id_ward + "," + number_bed + ",0,GETDATE(),GETDATE() )";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void updateBed(int id,int id_ward, int number_bed)
+        {
+            string query = "UPDATE dbo.bed SET id_ward = " + id_ward + ", number_bed = "+number_bed+", update_at = getdate() WHERE id = " + id + "";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public void deleteBed(int id)
+        {
+            string query = "DELETE dbo.bed WHERE id = " + id + "";
+            DataProvider.Instance.ExecuteQuery(query);
+        }
     }
 }
 

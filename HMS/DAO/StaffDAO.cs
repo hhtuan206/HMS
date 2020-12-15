@@ -52,16 +52,30 @@ namespace HMS.DAO
             return id;
         }
 
-        public void updateStaff(int id, string email,string full_name, string password, DateTime birth, string address, string sex, int phone_no, string time_for_work,string department)
+        public void updateStaff(int id, string email, string full_name, string password, DateTime birth, string address, string sex, int phone_no, string time_for_work, string department)
         {
-            string query = "UPDATE dbo.staff SET email = N'"+email+"', full_name = N'"+full_name+"', password = N'"+password+"', birthday = '"+birth+"', address = N'"+address+"', sex = '"+sex+"',phone_number = "+phone_no+",time_for_work =N'"+time_for_work+"', department = N'"+department+"' WHERE id = "+id+"";
+            string query = "UPDATE dbo.staff SET email = N'" + email + "', full_name = N'" + full_name + "', password = N'" + password + "', birthday = '" + birth + "', address = N'" + address + "', sex = '" + sex + "',phone_number = " + phone_no + ",time_for_work =N'" + time_for_work + "', department = N'" + department + "', update_at = getDate() WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void deleteStaff(int id) 
+        public void deleteStaff(int id)
         {
-            string query = "DELETE dbo.staff WHERE id = ="+id+"";
+            string query = "DELETE dbo.staff WHERE id = =" + id + "";
             DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable getAllStaff()
+        {
+            string query = "SELECT * FROM dbo.staff";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
+        public DataTable searchStaff(string email, string full_name, string address)
+        {
+            string query = "SELECT* FROM dbo.staff WHERE email LIKE N'%" + email + "%' OR address LIKE N'%" + address + "%' OR full_name LIKE N'%" + full_name + "%' ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
         }
     }
 }

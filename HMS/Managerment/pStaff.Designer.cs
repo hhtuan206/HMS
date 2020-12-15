@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgStaff = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Panel();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,10 +57,10 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgStaff)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.btnDel.SuspendLayout();
@@ -68,31 +68,31 @@
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.dataGridView2);
+            this.panel8.Controls.Add(this.dtgStaff);
             this.panel8.Location = new System.Drawing.Point(5, 92);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(707, 537);
             this.panel8.TabIndex = 10;
             // 
-            // dataGridView2
+            // dtgStaff
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 13);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(701, 521);
-            this.dataGridView2.TabIndex = 0;
+            this.dtgStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgStaff.Location = new System.Drawing.Point(6, 13);
+            this.dtgStaff.Name = "dtgStaff";
+            this.dtgStaff.RowHeadersWidth = 51;
+            this.dtgStaff.RowTemplate.Height = 24;
+            this.dtgStaff.Size = new System.Drawing.Size(701, 521);
+            this.dtgStaff.TabIndex = 0;
             // 
             // panel5
             // 
             this.panel5.Controls.Add(this.button6);
-            this.panel5.Controls.Add(this.button7);
+            this.panel5.Controls.Add(this.btnDelete);
             this.panel5.Controls.Add(this.btnEdit);
             this.panel5.Controls.Add(this.btnAdd);
             this.panel5.Location = new System.Drawing.Point(0, 11);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(707, 75);
+            this.panel5.Size = new System.Drawing.Size(713, 75);
             this.panel5.TabIndex = 9;
             // 
             // button6
@@ -104,14 +104,15 @@
             this.button6.Text = "Xem";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnDelete
             // 
-            this.button7.Location = new System.Drawing.Point(368, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(137, 69);
-            this.button7.TabIndex = 2;
-            this.button7.Text = "Xoá";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(368, 0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(137, 69);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Xoá";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -121,6 +122,7 @@
             this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -135,7 +137,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.button10);
-            this.panel6.Controls.Add(this.textBox8);
+            this.panel6.Controls.Add(this.txtSearch);
             this.panel6.Location = new System.Drawing.Point(719, 11);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(519, 75);
@@ -150,13 +152,14 @@
             this.button10.Text = "Xem";
             this.button10.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // txtSearch
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(3, 23);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(370, 28);
-            this.textBox8.TabIndex = 0;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(3, 23);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(370, 28);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // btnDel
             // 
@@ -178,7 +181,7 @@
             this.btnDel.Controls.Add(this.label12);
             this.btnDel.Controls.Add(this.txtEmail);
             this.btnDel.Controls.Add(this.label13);
-            this.btnDel.Controls.Add(this.textBox14);
+            this.btnDel.Controls.Add(this.txtID);
             this.btnDel.Controls.Add(this.label14);
             this.btnDel.Location = new System.Drawing.Point(718, 92);
             this.btnDel.Name = "btnDel";
@@ -187,6 +190,9 @@
             // 
             // cbDepartment
             // 
+            this.cbDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepartment.FormattingEnabled = true;
             this.cbDepartment.Items.AddRange(new object[] {
             "Bác sĩ",
@@ -209,6 +215,9 @@
             // 
             // cbSex
             // 
+            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSex.FormattingEnabled = true;
             this.cbSex.Items.AddRange(new object[] {
             "Nam",
@@ -309,7 +318,6 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(359, 84);
             this.txtAddress.TabIndex = 7;
-            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label11
             // 
@@ -320,7 +328,6 @@
             this.label11.Size = new System.Drawing.Size(61, 20);
             this.label11.TabIndex = 6;
             this.label11.Text = "Địa chỉ";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // txtFname
             // 
@@ -358,13 +365,13 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "Email";
             // 
-            // textBox14
+            // txtID
             // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(141, 5);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(358, 28);
-            this.textBox14.TabIndex = 1;
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(141, 5);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(358, 28);
+            this.txtID.TabIndex = 1;
             // 
             // label14
             // 
@@ -387,7 +394,7 @@
             this.Name = "pStaff";
             this.Size = new System.Drawing.Size(1238, 630);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgStaff)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -400,15 +407,15 @@
         #endregion
 
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgStaff;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel btnDel;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Label label15;
@@ -424,7 +431,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cbDepartment;
         private System.Windows.Forms.Label label2;

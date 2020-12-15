@@ -24,19 +24,19 @@ namespace HMS.DAO
 
         public void createWard(string name_ward)
         {
-            string query = "INSERT INTO dbo.ward( name_ward, update_at,create_at) VALUES(   N'"+name_ward+"',  GETDATE(),GETDATE() )";
+            string query = "INSERT INTO dbo.ward( name_ward, update_at,create_at) VALUES(   N'" + name_ward + "',  GETDATE(),GETDATE() )";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
         public void updateWard(int id, string name_ward)
         {
-            string query = "UPDATE dbo.ward SET name_ward = N'"+name_ward+"', update_at = GETDATE() WHERE id ="+id+"";
+            string query = "UPDATE dbo.ward SET name_ward = N'" + name_ward + "', update_at = GETDATE() WHERE id =" + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
         public void deleteWard(int id)
         {
-            string query = "DELETE dbo.ward WHERE id = "+id+"";
+            string query = "DELETE dbo.ward WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
     }
