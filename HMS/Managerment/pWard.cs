@@ -6,11 +6,13 @@ namespace HMS
 {
     public partial class pWard : UserControl
     {
+        BindingSource bindingSource = new BindingSource();
         private static pWard instance;
         public pWard()
         {
             InitializeComponent();
             loadWard();
+            Bind();
         }
 
 
@@ -23,16 +25,24 @@ namespace HMS
             }
         }
 
-        public void loadWard()
+        void loadWard()
         {
-            dtgWard.DataSource = WardDAO.Instance.getAllWard();
+            bindingSource.DataSource = WardDAO.Instance.getAllWard();
+            dtgWard.DataSource = bindingSource;
+        }
+
+        void Bind()
+        {
+            txtID.DataBindings.Add(new Binding("Text", dtgWard.DataSource, "id"));
+            txtNameWard.DataBindings.Add(new Binding("Text", dtgWard.DataSource, "name_ward"));
         }
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            string nameWard = txtNameWard.Text;
+           
             try
             {
+                string nameWard = txtNameWard.Text;
                 WardDAO.Instance.createWard(nameWard);
                 MessageBox.Show("Thành công");
             }
@@ -45,10 +55,11 @@ namespace HMS
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(txtID.Text);
-            string nameWard = txtNameWard.Text;
+            
             try
             {
+                int id = int.Parse(txtID.Text);
+                string nameWard = txtNameWard.Text;
                 WardDAO.Instance.updateWard(id, nameWard);
                 MessageBox.Show("Thành công");
             }
@@ -60,10 +71,10 @@ namespace HMS
         }
 
         private void btnDel_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(txtID.Text);
+        {    
             try
             {
+                int id = int.Parse(txtID.Text);
                 WardDAO.Instance.deleteWard(id);
                 MessageBox.Show("Thành công");
             }

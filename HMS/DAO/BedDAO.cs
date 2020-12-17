@@ -43,9 +43,9 @@ namespace HMS.DAO
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void updateBed(int id,int id_ward, int number_bed)
+        public void updateBed(int id, int id_ward, int number_bed)
         {
-            string query = "UPDATE dbo.bed SET id_ward = " + id_ward + ", number_bed = "+number_bed+", update_at = getdate() WHERE id = " + id + "";
+            string query = "UPDATE dbo.bed SET id_ward = " + id_ward + ", number_bed = " + number_bed + ", update_at = getdate() WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
 

@@ -6,15 +6,17 @@ namespace HMS.Managerment
 {
     public partial class pBed : UserControl
     {
+        BindingSource bindingSource = new BindingSource();
+        private static pBed instance;
         public pBed()
         {
             InitializeComponent();
+            fillCbWard();
             loadBed();
+            Bind();
         }
 
-        private static pBed instance;
-
-
+        #region methods
         public static pBed Instance
         {
             get
@@ -23,6 +25,27 @@ namespace HMS.Managerment
                 return instance;
             }
         }
+
+        public void loadBed()
+        {
+            bindingSource.DataSource = BedDAO.Instance.LoadBedList();
+            dtgBed.DataSource = bindingSource;
+        }
+
+        void fillCbWard()
+        {
+            cbWard.DataSource = WardDAO.Instance.getAllWard();
+            cbWard.DisplayMember = "name_ward";
+            cbWard.ValueMember = "id";
+        }
+        void Bind()
+        {
+            txtID.DataBindings.Add(new Binding("Text", dtgBed.DataSource, "id"));
+            txtNumber_Bed.DataBindings.Add(new Binding("Text", dtgBed.DataSource, "number_bed"));
+            
+        }
+        #endregion
+        #region event
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
             int number_bed = int.Parse(txtNumber_Bed.Text);
@@ -39,10 +62,7 @@ namespace HMS.Managerment
             loadBed();
         }
 
-        public void loadBed()
-        {
-            dtgBed.DataSource = BedDAO.Instance.LoadBedList();
-        }
+        
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -75,5 +95,6 @@ namespace HMS.Managerment
             }
             loadBed();
         }
+        #endregion
     }
 }

@@ -30,43 +30,45 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgAmitPatient = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Po = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.txtPathological = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dtgService = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCost = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnDeleteMedicine = new System.Windows.Forms.Button();
+            this.btnAddMedicine = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSname = new System.Windows.Forms.TextBox();
+            this.dtgTest = new System.Windows.Forms.DataGridView();
+            this.id_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dtgMedicine = new System.Windows.Forms.DataGridView();
+            this.id_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.time_of_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFname = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Po = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAmitPatient)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgService)).BeginInit();
-            this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTest)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicine)).BeginInit();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.SuspendLayout();
@@ -92,12 +94,42 @@
             this.dtgAmitPatient.Dock = System.Windows.Forms.DockStyle.Left;
             this.dtgAmitPatient.Location = new System.Drawing.Point(0, 0);
             this.dtgAmitPatient.Name = "dtgAmitPatient";
+            this.dtgAmitPatient.RowHeadersVisible = false;
             this.dtgAmitPatient.RowHeadersWidth = 51;
             this.dtgAmitPatient.RowTemplate.Height = 24;
             this.dtgAmitPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgAmitPatient.Size = new System.Drawing.Size(499, 637);
             this.dtgAmitPatient.TabIndex = 0;
             this.dtgAmitPatient.SelectionChanged += new System.EventHandler(this.dtgAmitPatient_SelectionChanged);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            // 
+            // fName
+            // 
+            this.fName.DataPropertyName = "full_name";
+            this.fName.HeaderText = "Họ Tên";
+            this.fName.MinimumWidth = 6;
+            this.fName.Name = "fName";
+            // 
+            // Po
+            // 
+            this.Po.DataPropertyName = "pathological";
+            this.Po.HeaderText = "Triệu chứng";
+            this.Po.MinimumWidth = 6;
+            this.Po.Name = "Po";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "id_bill";
+            this.Column6.HeaderText = "Hoá đơn";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
             // 
             // panel2
             // 
@@ -139,9 +171,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(6, 546);
+            this.btnSave.Location = new System.Drawing.Point(587, 553);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(635, 81);
+            this.btnSave.Size = new System.Drawing.Size(134, 81);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -149,125 +181,146 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnDel);
-            this.panel4.Controls.Add(this.btnAdd);
-            this.panel4.Controls.Add(this.panel3);
-            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.btnDeleteMedicine);
+            this.panel4.Controls.Add(this.btnAddMedicine);
             this.panel4.Controls.Add(this.panel5);
+            this.panel4.Controls.Add(this.panel3);
             this.panel4.Location = new System.Drawing.Point(6, 210);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(635, 333);
+            this.panel4.Size = new System.Drawing.Size(712, 333);
             this.panel4.TabIndex = 11;
             // 
-            // btnDel
+            // button3
             // 
-            this.btnDel.Location = new System.Drawing.Point(511, 230);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 81);
-            this.btnDel.TabIndex = 6;
-            this.btnDel.Text = "Xoá";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click_1);
+            this.button3.Location = new System.Drawing.Point(552, 9);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 81);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Xoá";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnAdd
+            // button4
             // 
-            this.btnAdd.Location = new System.Drawing.Point(511, 112);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 81);
-            this.btnAdd.TabIndex = 5;
-            this.btnAdd.Text = "Thêm";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
+            this.button4.Location = new System.Drawing.Point(431, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 81);
+            this.button4.TabIndex = 14;
+            this.button4.Text = "Thêm";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // panel3
+            // btnDeleteMedicine
             // 
-            this.panel3.Controls.Add(this.dtgService);
-            this.panel3.Location = new System.Drawing.Point(3, 90);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(494, 240);
-            this.panel3.TabIndex = 10;
+            this.btnDeleteMedicine.Location = new System.Drawing.Point(174, 3);
+            this.btnDeleteMedicine.Name = "btnDeleteMedicine";
+            this.btnDeleteMedicine.Size = new System.Drawing.Size(75, 81);
+            this.btnDeleteMedicine.TabIndex = 13;
+            this.btnDeleteMedicine.Text = "Xoá";
+            this.btnDeleteMedicine.UseVisualStyleBackColor = true;
+            this.btnDeleteMedicine.Click += new System.EventHandler(this.btnDeleteMedicine_Click);
             // 
-            // dtgService
+            // btnAddMedicine
             // 
-            this.dtgService.AllowUserToAddRows = false;
-            this.dtgService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgService.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dtgService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgService.Location = new System.Drawing.Point(0, 0);
-            this.dtgService.Name = "dtgService";
-            this.dtgService.RowHeadersWidth = 51;
-            this.dtgService.RowTemplate.Height = 24;
-            this.dtgService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgService.Size = new System.Drawing.Size(494, 240);
-            this.dtgService.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "a";
-            this.Column1.HeaderText = "Tên dịch vụ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "b";
-            this.Column2.HeaderText = "Giá cả";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.txtCost);
-            this.panel6.Location = new System.Drawing.Point(324, 3);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(306, 81);
-            this.panel6.TabIndex = 4;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 17);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Đơn giá";
-            // 
-            // txtCost
-            // 
-            this.txtCost.Location = new System.Drawing.Point(100, 26);
-            this.txtCost.Name = "txtCost";
-            this.txtCost.Size = new System.Drawing.Size(189, 22);
-            this.txtCost.TabIndex = 1;
+            this.btnAddMedicine.Location = new System.Drawing.Point(51, 0);
+            this.btnAddMedicine.Name = "btnAddMedicine";
+            this.btnAddMedicine.Size = new System.Drawing.Size(75, 81);
+            this.btnAddMedicine.TabIndex = 12;
+            this.btnAddMedicine.Text = "Thêm";
+            this.btnAddMedicine.UseVisualStyleBackColor = true;
+            this.btnAddMedicine.Click += new System.EventHandler(this.btnAddMedicine_Click);
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.label3);
-            this.panel5.Controls.Add(this.txtSname);
-            this.panel5.Location = new System.Drawing.Point(7, 3);
+            this.panel5.Controls.Add(this.dtgTest);
+            this.panel5.Location = new System.Drawing.Point(369, 90);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(311, 81);
-            this.panel5.TabIndex = 3;
+            this.panel5.Size = new System.Drawing.Size(340, 240);
+            this.panel5.TabIndex = 11;
             // 
-            // label3
+            // dtgTest
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 17);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tên dịch vụ";
+            this.dtgTest.AllowUserToAddRows = false;
+            this.dtgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_test,
+            this.test});
+            this.dtgTest.Location = new System.Drawing.Point(3, 3);
+            this.dtgTest.Name = "dtgTest";
+            this.dtgTest.RowHeadersVisible = false;
+            this.dtgTest.RowHeadersWidth = 51;
+            this.dtgTest.RowTemplate.Height = 24;
+            this.dtgTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgTest.Size = new System.Drawing.Size(334, 234);
+            this.dtgTest.TabIndex = 0;
             // 
-            // txtSname
+            // id_test
             // 
-            this.txtSname.Location = new System.Drawing.Point(100, 26);
-            this.txtSname.Name = "txtSname";
-            this.txtSname.Size = new System.Drawing.Size(189, 22);
-            this.txtSname.TabIndex = 1;
+            this.id_test.HeaderText = "Mã Xét Nghiệm";
+            this.id_test.MinimumWidth = 6;
+            this.id_test.Name = "id_test";
+            this.id_test.Visible = false;
+            // 
+            // test
+            // 
+            this.test.HeaderText = "Tên xét nghiệm";
+            this.test.MinimumWidth = 6;
+            this.test.Name = "test";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.dtgMedicine);
+            this.panel3.Location = new System.Drawing.Point(3, 90);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(360, 240);
+            this.panel3.TabIndex = 10;
+            // 
+            // dtgMedicine
+            // 
+            this.dtgMedicine.AllowUserToAddRows = false;
+            this.dtgMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMedicine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_medicine,
+            this.medicine,
+            this.quantity,
+            this.time_of_day});
+            this.dtgMedicine.Location = new System.Drawing.Point(3, 3);
+            this.dtgMedicine.Name = "dtgMedicine";
+            this.dtgMedicine.RowHeadersVisible = false;
+            this.dtgMedicine.RowHeadersWidth = 51;
+            this.dtgMedicine.RowTemplate.Height = 24;
+            this.dtgMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgMedicine.Size = new System.Drawing.Size(354, 234);
+            this.dtgMedicine.TabIndex = 0;
+            // 
+            // id_medicine
+            // 
+            this.id_medicine.HeaderText = "ID thuốc";
+            this.id_medicine.MinimumWidth = 6;
+            this.id_medicine.Name = "id_medicine";
+            this.id_medicine.Visible = false;
+            // 
+            // medicine
+            // 
+            this.medicine.HeaderText = "Tên thuốc";
+            this.medicine.MinimumWidth = 6;
+            this.medicine.Name = "medicine";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            // 
+            // time_of_day
+            // 
+            this.time_of_day.HeaderText = "Thờii gian sử dụng";
+            this.time_of_day.MinimumWidth = 6;
+            this.time_of_day.Name = "time_of_day";
             // 
             // panel7
             // 
@@ -320,35 +373,6 @@
             this.txtFname.Size = new System.Drawing.Size(189, 22);
             this.txtFname.TabIndex = 1;
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            // 
-            // fName
-            // 
-            this.fName.DataPropertyName = "full_name";
-            this.fName.HeaderText = "Họ Tên";
-            this.fName.MinimumWidth = 6;
-            this.fName.Name = "fName";
-            // 
-            // Po
-            // 
-            this.Po.DataPropertyName = "pathological";
-            this.Po.HeaderText = "Triệu chứng";
-            this.Po.MinimumWidth = 6;
-            this.Po.Name = "Po";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "id_bill";
-            this.Column6.HeaderText = "Hoá đơn";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
-            // 
             // pPatients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -363,12 +387,10 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgService)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTest)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicine)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -387,18 +409,7 @@
         private System.Windows.Forms.TextBox txtPathological;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dtgService;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtCost;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtSname;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtID;
@@ -409,5 +420,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Po;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnDeleteMedicine;
+        private System.Windows.Forms.Button btnAddMedicine;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.DataGridView dtgTest;
+        private System.Windows.Forms.DataGridView dtgMedicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_medicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn time_of_day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
     }
 }

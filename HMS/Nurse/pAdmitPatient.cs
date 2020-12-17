@@ -9,13 +9,9 @@ namespace HMS
     {
         public pAdmitPatient()
         {
-
             InitializeComponent();
             initData();
             initDoc();
-
-
-
         }
 
         private static pAdmitPatient instance;
@@ -74,7 +70,6 @@ namespace HMS
             cbBed.DataSource = BedDAO.Instance.getAllBedInWardByWardID(id_ward);
             cbBed.DisplayMember = "number_bed";
             cbBed.ValueMember = "id";
-
         }
 
 

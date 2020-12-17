@@ -76,11 +76,14 @@
             // 
             // dtgStaff
             // 
+            this.dtgStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgStaff.Location = new System.Drawing.Point(6, 13);
             this.dtgStaff.Name = "dtgStaff";
+            this.dtgStaff.RowHeadersVisible = false;
             this.dtgStaff.RowHeadersWidth = 51;
             this.dtgStaff.RowTemplate.Height = 24;
+            this.dtgStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgStaff.Size = new System.Drawing.Size(701, 521);
             this.dtgStaff.TabIndex = 0;
             // 

@@ -23,5 +23,7 @@ namespace HMS.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
+
+
     }
 }

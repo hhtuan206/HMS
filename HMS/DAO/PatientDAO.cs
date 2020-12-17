@@ -27,7 +27,7 @@ namespace HMS.DAO
         public DataTable getListPatient(int id_staff)
         {
 
-            string query = "SELECT dbo.patient.id, dbo.patient.full_name, dbo.patient.pathological FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.detail_patient.id_staff = " + id_staff + " AND dbo.patient.status = 1";
+            string query = "SELECT dbo.detail_patient.id, dbo.patient.full_name, dbo.patient.pathological FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.detail_patient.id_staff = " + id_staff + " AND dbo.patient.status = 1";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
 
@@ -35,12 +35,20 @@ namespace HMS.DAO
 
         public void changeStatusPatient(int id, int status)
         {
-            DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.patient SET status = " + status + " Where id = " + id + "");
+            string query = "UPDATE dbo.patient SET status = " + status + " FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.detail_patient.id = " + id + "";
+            DataProvider.Instance.ExecuteNonQuery(query);
         }
 
         public DataTable getPatientCheckIn()
         {
-            string query = "SELECT dbo.patient.id, dbo.patient.full_name,dbo.patient.phone_number,dbo.patient.address FROM dbo.patient WHERE status = 1";
+            string query = "SELECT dbo.detail_patient.id, dbo.patient.full_name,dbo.patient.phone_number,dbo.patient.address FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id WHERE dbo.patient.status = 0";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
+        public DataTable searchPatientCheckInByName(string name)
+        {
+            string query = "SELECT dbo.detail_patient.id, dbo.patient.full_name,dbo.patient.phone_number,dbo.patient.address FROM dbo.patient INNER JOIN dbo.detail_patient ON detail_patient.id_patient = patient.id AND dbo.patient.status = 0 WHERE dbo.patient.full_name LIKE N'%"+name+"%'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }

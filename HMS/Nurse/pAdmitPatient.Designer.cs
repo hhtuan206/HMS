@@ -61,6 +61,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dtgPatient = new System.Windows.Forms.DataGridView();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -73,6 +76,7 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -110,9 +114,9 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(0, 3);
+            this.panel2.Location = new System.Drawing.Point(729, 132);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(506, 496);
+            this.panel2.Size = new System.Drawing.Size(506, 505);
             this.panel2.TabIndex = 3;
             // 
             // panel11
@@ -326,14 +330,14 @@
             this.panel8.Controls.Add(this.btnDel);
             this.panel8.Controls.Add(this.btnEdit);
             this.panel8.Controls.Add(this.btnAdd);
-            this.panel8.Location = new System.Drawing.Point(3, 529);
+            this.panel8.Location = new System.Drawing.Point(6, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(500, 111);
+            this.panel8.Size = new System.Drawing.Size(639, 111);
             this.panel8.TabIndex = 4;
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(352, 25);
+            this.btnDel.Location = new System.Drawing.Point(428, 25);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 55);
             this.btnDel.TabIndex = 2;
@@ -342,7 +346,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(197, 25);
+            this.btnEdit.Location = new System.Drawing.Point(273, 25);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 55);
             this.btnEdit.TabIndex = 1;
@@ -351,7 +355,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(46, 25);
+            this.btnAdd.Location = new System.Drawing.Point(122, 25);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 55);
             this.btnAdd.TabIndex = 0;
@@ -362,29 +366,59 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.dtgPatient);
-            this.panel9.Location = new System.Drawing.Point(512, 6);
+            this.panel9.Location = new System.Drawing.Point(6, 129);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(723, 483);
+            this.panel9.Size = new System.Drawing.Size(723, 511);
             this.panel9.TabIndex = 5;
             // 
             // dtgPatient
             // 
+            this.dtgPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPatient.Location = new System.Drawing.Point(3, -3);
+            this.dtgPatient.Location = new System.Drawing.Point(3, 3);
             this.dtgPatient.Name = "dtgPatient";
+            this.dtgPatient.RowHeadersVisible = false;
             this.dtgPatient.RowHeadersWidth = 51;
             this.dtgPatient.RowTemplate.Height = 24;
-            this.dtgPatient.Size = new System.Drawing.Size(717, 469);
+            this.dtgPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgPatient.Size = new System.Drawing.Size(717, 505);
             this.dtgPatient.TabIndex = 0;
             // 
-            // pPatient
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label9);
+            this.panel12.Controls.Add(this.txtSearch);
+            this.panel12.Location = new System.Drawing.Point(651, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(557, 111);
+            this.panel12.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(57, 53);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(118, 17);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Ưhat do you want";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(248, 41);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(292, 39);
+            this.txtSearch.TabIndex = 2;
+            // 
+            // pAdmitPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel2);
-            this.Name = "pPatient";
+            this.Name = "pAdmitPatient";
             this.Size = new System.Drawing.Size(1238, 643);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -406,6 +440,8 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).EndInit();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -445,5 +481,8 @@
         private System.Windows.Forms.ComboBox cbDoc;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnLoadWard;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtSearch;
     }
 }

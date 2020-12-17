@@ -25,5 +25,10 @@ namespace HMS
                 pPatients.Instance.BringToFront();
             }
         }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

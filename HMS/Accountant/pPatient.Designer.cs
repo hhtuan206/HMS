@@ -31,13 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pPatient));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgPatient = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCheckBill = new System.Windows.Forms.Button();
             this.btnPrintBill = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dtgBill = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgTest = new System.Windows.Forms.DataGridView();
+            this.id_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_money_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtgMedicine = new System.Windows.Forms.DataGridView();
+            this.id_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_money_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,51 +68,86 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtPhoneno = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicine)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgPatient);
-            this.panel1.Location = new System.Drawing.Point(3, 7);
+            this.panel1.Location = new System.Drawing.Point(3, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 617);
+            this.panel1.Size = new System.Drawing.Size(474, 563);
             this.panel1.TabIndex = 0;
             // 
             // dtgPatient
             // 
-            this.dtgPatient.AllowUserToAddRows = false;
+            this.dtgPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.fName,
             this.phoneno,
             this.address});
-            this.dtgPatient.Location = new System.Drawing.Point(3, 3);
+            this.dtgPatient.Location = new System.Drawing.Point(6, 3);
             this.dtgPatient.Name = "dtgPatient";
             this.dtgPatient.ReadOnly = true;
+            this.dtgPatient.RowHeadersVisible = false;
             this.dtgPatient.RowHeadersWidth = 51;
             this.dtgPatient.RowTemplate.Height = 24;
-            this.dtgPatient.Size = new System.Drawing.Size(468, 611);
+            this.dtgPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgPatient.Size = new System.Drawing.Size(468, 557);
             this.dtgPatient.TabIndex = 0;
-            this.dtgPatient.SelectionChanged += new System.EventHandler(this.dtgPatient_SelectionChanged);
+            this.dtgPatient.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgPatient_DataError);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id";
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // fName
+            // 
+            this.fName.DataPropertyName = "full_name";
+            this.fName.HeaderText = "Họ Tên";
+            this.fName.MinimumWidth = 6;
+            this.fName.Name = "fName";
+            this.fName.ReadOnly = true;
+            // 
+            // phoneno
+            // 
+            this.phoneno.DataPropertyName = "phone_number";
+            this.phoneno.HeaderText = "Số điện thoại";
+            this.phoneno.MinimumWidth = 6;
+            this.phoneno.Name = "phoneno";
+            this.phoneno.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Địa chỉ";
+            this.address.MinimumWidth = 6;
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
             // 
             // btnCheckBill
             // 
-            this.btnCheckBill.Location = new System.Drawing.Point(87, 34);
+            this.btnCheckBill.Location = new System.Drawing.Point(63, 33);
             this.btnCheckBill.Name = "btnCheckBill";
             this.btnCheckBill.Size = new System.Drawing.Size(117, 75);
             this.btnCheckBill.TabIndex = 1;
@@ -109,7 +156,7 @@
             // 
             // btnPrintBill
             // 
-            this.btnPrintBill.Location = new System.Drawing.Point(87, 280);
+            this.btnPrintBill.Location = new System.Drawing.Point(63, 279);
             this.btnPrintBill.Name = "btnPrintBill";
             this.btnPrintBill.Size = new System.Drawing.Size(117, 75);
             this.btnPrintBill.TabIndex = 2;
@@ -119,7 +166,7 @@
             // 
             // btnPay
             // 
-            this.btnPay.Location = new System.Drawing.Point(87, 155);
+            this.btnPay.Location = new System.Drawing.Point(63, 154);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(117, 75);
             this.btnPay.TabIndex = 3;
@@ -128,48 +175,118 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.dtgBill);
+            this.panel2.Controls.Add(this.dtgTest);
+            this.panel2.Controls.Add(this.dtgMedicine);
             this.panel2.Location = new System.Drawing.Point(483, 147);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(450, 401);
+            this.panel2.Size = new System.Drawing.Size(542, 401);
             this.panel2.TabIndex = 4;
             // 
-            // dtgBill
+            // dtgTest
             // 
-            this.dtgBill.AllowUserToAddRows = false;
-            this.dtgBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dtgBill.Location = new System.Drawing.Point(3, 6);
-            this.dtgBill.Name = "dtgBill";
-            this.dtgBill.RowHeadersWidth = 51;
-            this.dtgBill.RowTemplate.Height = 24;
-            this.dtgBill.Size = new System.Drawing.Size(444, 392);
-            this.dtgBill.TabIndex = 0;
+            this.dtgTest.AllowUserToAddRows = false;
+            this.dtgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_test,
+            this.test,
+            this.cost_test,
+            this.total_money_test});
+            this.dtgTest.Location = new System.Drawing.Point(3, 233);
+            this.dtgTest.Name = "dtgTest";
+            this.dtgTest.RowHeadersVisible = false;
+            this.dtgTest.RowHeadersWidth = 51;
+            this.dtgTest.RowTemplate.Height = 24;
+            this.dtgTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgTest.Size = new System.Drawing.Size(536, 155);
+            this.dtgTest.TabIndex = 3;
+            this.dtgTest.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgTest_DataError);
             // 
-            // Column1
+            // id_test
             // 
-            this.Column1.HeaderText = "Tên dịch vụ";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.id_test.HeaderText = "Mã Xét Nghiệm";
+            this.id_test.MinimumWidth = 6;
+            this.id_test.Name = "id_test";
+            this.id_test.Visible = false;
             // 
-            // Column2
+            // test
             // 
-            this.Column2.HeaderText = "Giá tiền";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.test.HeaderText = "Tên xét nghiệm";
+            this.test.MinimumWidth = 6;
+            this.test.Name = "test";
+            // 
+            // cost_test
+            // 
+            this.cost_test.HeaderText = "Giá tiền";
+            this.cost_test.MinimumWidth = 6;
+            this.cost_test.Name = "cost_test";
+            // 
+            // total_money_test
+            // 
+            this.total_money_test.HeaderText = "Thành tiền";
+            this.total_money_test.MinimumWidth = 6;
+            this.total_money_test.Name = "total_money_test";
+            // 
+            // dtgMedicine
+            // 
+            this.dtgMedicine.AllowUserToAddRows = false;
+            this.dtgMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMedicine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_medicine,
+            this.medicine,
+            this.quantity,
+            this.cost_medicine,
+            this.total_money_medicine});
+            this.dtgMedicine.Location = new System.Drawing.Point(3, 6);
+            this.dtgMedicine.Name = "dtgMedicine";
+            this.dtgMedicine.RowHeadersVisible = false;
+            this.dtgMedicine.RowHeadersWidth = 51;
+            this.dtgMedicine.RowTemplate.Height = 24;
+            this.dtgMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgMedicine.Size = new System.Drawing.Size(536, 189);
+            this.dtgMedicine.TabIndex = 2;
+            this.dtgMedicine.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgMedicine_DataError);
+            // 
+            // id_medicine
+            // 
+            this.id_medicine.HeaderText = "ID thuốc";
+            this.id_medicine.MinimumWidth = 6;
+            this.id_medicine.Name = "id_medicine";
+            this.id_medicine.Visible = false;
+            // 
+            // medicine
+            // 
+            this.medicine.HeaderText = "Tên thuốc";
+            this.medicine.MinimumWidth = 6;
+            this.medicine.Name = "medicine";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            // 
+            // cost_medicine
+            // 
+            this.cost_medicine.HeaderText = "Giá tiền";
+            this.cost_medicine.MinimumWidth = 6;
+            this.cost_medicine.Name = "cost_medicine";
+            // 
+            // total_money_medicine
+            // 
+            this.total_money_medicine.HeaderText = "Thành tiền";
+            this.total_money_medicine.MinimumWidth = 6;
+            this.total_money_medicine.Name = "total_money_medicine";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnPrintBill);
             this.panel3.Controls.Add(this.btnCheckBill);
             this.panel3.Controls.Add(this.btnPay);
-            this.panel3.Location = new System.Drawing.Point(939, 153);
+            this.panel3.Location = new System.Drawing.Point(1034, 147);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(296, 392);
+            this.panel3.Size = new System.Drawing.Size(204, 398);
             this.panel3.TabIndex = 5;
             // 
             // txtID
@@ -229,12 +346,12 @@
             this.panel6.Controls.Add(this.label3);
             this.panel6.Location = new System.Drawing.Point(486, 560);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(444, 64);
+            this.panel6.Size = new System.Drawing.Size(444, 77);
             this.panel6.TabIndex = 10;
             // 
             // txtTotal_money
             // 
-            this.txtTotal_money.Location = new System.Drawing.Point(149, 19);
+            this.txtTotal_money.Location = new System.Drawing.Point(146, 14);
             this.txtTotal_money.Name = "txtTotal_money";
             this.txtTotal_money.Size = new System.Drawing.Size(267, 22);
             this.txtTotal_money.TabIndex = 6;
@@ -242,7 +359,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 23);
+            this.label3.Location = new System.Drawing.Point(43, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 17);
             this.label3.TabIndex = 7;
@@ -311,48 +428,38 @@
             this.label5.Size = new System.Drawing.Size(91, 17);
             this.label5.TabIndex = 7;
             this.label5.Text = "Số điện thoại";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // ID
+            // panel9
             // 
-            this.ID.DataPropertyName = "id";
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 125;
+            this.panel9.Controls.Add(this.txtSearch);
+            this.panel9.Controls.Add(this.label6);
+            this.panel9.Location = new System.Drawing.Point(3, 7);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(474, 64);
+            this.panel9.TabIndex = 13;
             // 
-            // fName
+            // txtSearch
             // 
-            this.fName.DataPropertyName = "full_name";
-            this.fName.HeaderText = "Họ Tên";
-            this.fName.MinimumWidth = 6;
-            this.fName.Name = "fName";
-            this.fName.ReadOnly = true;
-            this.fName.Width = 125;
+            this.txtSearch.Location = new System.Drawing.Point(149, 19);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(191, 22);
+            this.txtSearch.TabIndex = 6;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // phoneno
+            // label6
             // 
-            this.phoneno.DataPropertyName = "phone_number";
-            this.phoneno.HeaderText = "Số điện thoại";
-            this.phoneno.MinimumWidth = 6;
-            this.phoneno.Name = "phoneno";
-            this.phoneno.ReadOnly = true;
-            this.phoneno.Width = 125;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Địa chỉ";
-            this.address.MinimumWidth = 6;
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            this.address.Width = 125;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(46, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(64, 17);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "TÌm kiếm";
             // 
             // pPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
@@ -366,7 +473,8 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgTest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgMedicine)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -378,6 +486,8 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -390,7 +500,6 @@
         private System.Windows.Forms.Button btnPrintBill;
         private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dtgBill;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label1;
@@ -401,8 +510,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox txtTotal_money;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Panel panel7;
@@ -415,5 +522,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fName;
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneno;
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
+        private System.Windows.Forms.DataGridView dtgMedicine;
+        private System.Windows.Forms.DataGridView dtgTest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost_test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_money_test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_medicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost_medicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_money_medicine;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label6;
     }
 }

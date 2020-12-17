@@ -34,6 +34,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dtgBed = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbSearch = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -43,8 +45,6 @@
             this.txtNumber_Bed = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.cbSearch = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgBed)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,11 +93,14 @@
             // 
             // dtgBed
             // 
+            this.dtgBed.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgBed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgBed.Location = new System.Drawing.Point(3, 3);
             this.dtgBed.Name = "dtgBed";
+            this.dtgBed.RowHeadersVisible = false;
             this.dtgBed.RowHeadersWidth = 51;
             this.dtgBed.RowTemplate.Height = 24;
+            this.dtgBed.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgBed.Size = new System.Drawing.Size(720, 541);
             this.dtgBed.TabIndex = 0;
             // 
@@ -109,6 +112,23 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(500, 87);
             this.panel3.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(65, 33);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Phòng";
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.FormattingEnabled = true;
+            this.cbSearch.Location = new System.Drawing.Point(189, 33);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.Size = new System.Drawing.Size(238, 24);
+            this.cbSearch.TabIndex = 7;
             // 
             // panel2
             // 
@@ -190,23 +210,6 @@
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(238, 22);
             this.txtID.TabIndex = 0;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.FormattingEnabled = true;
-            this.cbSearch.Location = new System.Drawing.Point(189, 33);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.Size = new System.Drawing.Size(238, 24);
-            this.cbSearch.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 33);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Phòng";
             // 
             // pBed
             // 

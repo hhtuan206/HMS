@@ -63,9 +63,9 @@ namespace HMS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _130920995_742064956439546_7414517176641460971_n {
+        internal static System.Drawing.Bitmap download {
             get {
-                object obj = ResourceManager.GetObject("_130920995_742064956439546_7414517176641460971_n", resourceCulture);
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

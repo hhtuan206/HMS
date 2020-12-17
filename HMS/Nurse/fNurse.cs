@@ -35,5 +35,10 @@ namespace HMS
                 pAdmitPatient.Instance.BringToFront();
             }
         }
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

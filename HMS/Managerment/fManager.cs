@@ -13,7 +13,7 @@ namespace HMS
 
         }
 
-
+        #region events
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -62,6 +62,42 @@ namespace HMS
             {
                 pBed.Instance.BringToFront();
             }
+        }
+
+        private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pManager.Controls.Contains(pMedicine.Instance))
+            {
+
+                pManager.Controls.Add(pMedicine.Instance);
+                pMedicine.Instance.Dock = DockStyle.Fill;
+                pMedicine.Instance.BringToFront();
+            }
+            else
+            {
+                pMedicine.Instance.BringToFront();
+            }
+        }
+
+        private void xétNghiệmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pManager.Controls.Contains(pTest.Instance))
+            {
+
+                pManager.Controls.Add(pTest.Instance);
+                pTest.Instance.Dock = DockStyle.Fill;
+                pTest.Instance.BringToFront();
+            }
+            else
+            {
+                pTest.Instance.BringToFront();
+            }
+        }
+        #endregion
+
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

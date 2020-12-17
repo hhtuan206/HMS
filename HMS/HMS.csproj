@@ -80,9 +80,23 @@
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\DetailPatientDAO.cs" />
+    <Compile Include="DAO\MedicineDAO.cs" />
     <Compile Include="DAO\PatientDAO.cs" />
     <Compile Include="DAO\StaffDAO.cs" />
+    <Compile Include="DAO\TestDAO.cs" />
     <Compile Include="DAO\WardDAO.cs" />
+    <Compile Include="Doctor\fAddMedicine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\fAddMedicine.Designer.cs">
+      <DependentUpon>fAddMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doctor\fAddTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doctor\fAddTest.Designer.cs">
+      <DependentUpon>fAddTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Doctor\fDoctor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +120,18 @@
     </Compile>
     <Compile Include="Managerment\pBed.Designer.cs">
       <DependentUpon>pBed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managerment\pMedicine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Managerment\pMedicine.Designer.cs">
+      <DependentUpon>pMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managerment\pTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Managerment\pTest.Designer.cs">
+      <DependentUpon>pTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Nurse\fNurse.cs">
       <SubType>Form</SubType>
@@ -145,6 +171,12 @@
     <EmbeddedResource Include="Accountant\pPatient.resx">
       <DependentUpon>pPatient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\fAddMedicine.resx">
+      <DependentUpon>fAddMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doctor\fAddTest.resx">
+      <DependentUpon>fAddTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Doctor\fDoctor.resx">
       <DependentUpon>fDoctor.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +188,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Managerment\pBed.resx">
       <DependentUpon>pBed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\pMedicine.resx">
+      <DependentUpon>pMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\pTest.resx">
+      <DependentUpon>pTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Nurse\fNurse.resx">
       <DependentUpon>fNurse.cs</DependentUpon>
@@ -196,8 +234,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="Resources\130920995_742064956439546_7414517176641460971_n.png" />
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
