@@ -50,16 +50,16 @@
             this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtgMedicine = new System.Windows.Forms.DataGridView();
-            this.id_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.time_of_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFname = new System.Windows.Forms.TextBox();
+            this.time_of_day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgAmitPatient)).BeginInit();
             this.panel2.SuspendLayout();
@@ -297,31 +297,6 @@
             this.dtgMedicine.Size = new System.Drawing.Size(354, 234);
             this.dtgMedicine.TabIndex = 0;
             // 
-            // id_medicine
-            // 
-            this.id_medicine.HeaderText = "ID thuốc";
-            this.id_medicine.MinimumWidth = 6;
-            this.id_medicine.Name = "id_medicine";
-            this.id_medicine.Visible = false;
-            // 
-            // medicine
-            // 
-            this.medicine.HeaderText = "Tên thuốc";
-            this.medicine.MinimumWidth = 6;
-            this.medicine.Name = "medicine";
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            // 
-            // time_of_day
-            // 
-            this.time_of_day.HeaderText = "Thờii gian sử dụng";
-            this.time_of_day.MinimumWidth = 6;
-            this.time_of_day.Name = "time_of_day";
-            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.label2);
@@ -372,6 +347,31 @@
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(189, 22);
             this.txtFname.TabIndex = 1;
+            // 
+            // time_of_day
+            // 
+            this.time_of_day.HeaderText = "Thờii gian sử dụng";
+            this.time_of_day.MinimumWidth = 6;
+            this.time_of_day.Name = "time_of_day";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            // 
+            // medicine
+            // 
+            this.medicine.HeaderText = "Tên thuốc";
+            this.medicine.MinimumWidth = 6;
+            this.medicine.Name = "medicine";
+            // 
+            // id_medicine
+            // 
+            this.id_medicine.HeaderText = "ID thuốc";
+            this.id_medicine.MinimumWidth = 6;
+            this.id_medicine.Name = "id_medicine";
+            this.id_medicine.Visible = false;
             // 
             // pPatients
             // 
@@ -427,11 +427,11 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DataGridView dtgTest;
         private System.Windows.Forms.DataGridView dtgMedicine;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn time_of_day;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn test;
     }
 }

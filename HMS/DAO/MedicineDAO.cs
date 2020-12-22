@@ -44,20 +44,29 @@ namespace HMS.DAO
 
         public void createMedicineProduct(string name, float cost)
         {
-            string query = "INSERT INTO dbo.medicine_product(medicine_name,cost,create_at,update_at) VALUES(N'"+name+"',"+cost+",GETDATE(), GETDATE())";
+            string query = "INSERT INTO dbo.medicine_product(medicine_name,cost,create_at,update_at) VALUES(N'" + name + "'," + cost + ",GETDATE(), GETDATE())";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public void updateMedicineProduct(string id,string name, float cost)
+        public void updateMedicineProduct(string id, string name, float cost)
         {
-            string query = " UPDATE dbo.medicine_product SET medicine_name = N'"+name+"', cost = "+cost+", update_at = GETDATE() WHERE id = "+id+"";
+            string query = " UPDATE dbo.medicine_product SET medicine_name = N'" + name + "', cost = " + cost + ", update_at = GETDATE() WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
         public void deleteMedicineProduct(string id)
         {
-            string query = "DELETE dbo.medicine_product WHERE id = "+id+"";
+            string query = "DELETE dbo.medicine_product WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
+
+        public DataTable getMe(string id)
+        {
+            string query = "SELECT dbo.medicine_product.medicine_name, dbo.medicine.quantity,dbo.medicine_product.cost FROM dbo.medicine INNER JOIN dbo.medicine_product ON medicine_product.id = medicine.id_medicine WHERE id_detail_patient = "+id+"";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+        
+
     }
 }

@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HMS.DAO;
+using System;
 using System.Windows.Forms;
-using HMS.DAO;
 
 namespace HMS.Managerment
 {
@@ -23,7 +16,7 @@ namespace HMS.Managerment
             Bind();
         }
         #region methods
-        
+
         public static pTest Instance
         {
             get
@@ -48,7 +41,7 @@ namespace HMS.Managerment
 
         #endregion
         #region events
-        
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
@@ -59,7 +52,7 @@ namespace HMS.Managerment
                 MessageBox.Show("Thêm thành công");
                 loadTest();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -72,7 +65,7 @@ namespace HMS.Managerment
                 string id = txtID.Text;
                 string name = txtNameTest.Text;
                 float cost = float.Parse(txtCost.Text);
-                TestDAO.Instance.updateTestProduct(id,name, cost);
+                TestDAO.Instance.updateTestProduct(id, name, cost);
                 MessageBox.Show("Sửa thành công");
                 loadTest();
             }

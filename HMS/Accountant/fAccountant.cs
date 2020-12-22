@@ -24,5 +24,25 @@ namespace HMS.Accountant
                 pPatient.Instance.BringToFront();
             }
         }
+
+        private void tàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lịchSửThanhToánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pAccountant.Controls.Contains(pHistoryPatientBill.Instance))
+            {
+
+                pAccountant.Controls.Add(pHistoryPatientBill.Instance);
+                pHistoryPatientBill.Instance.Dock = DockStyle.Fill;
+                pHistoryPatientBill.Instance.BringToFront();
+            }
+            else
+            {
+                pHistoryPatientBill.Instance.BringToFront();
+            }
+        }
     }
 }

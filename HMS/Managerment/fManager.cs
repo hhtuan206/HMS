@@ -99,5 +99,35 @@ namespace HMS
         {
 
         }
+
+        private void bệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pManager.Controls.Contains(pPatientReport.Instance))
+            {
+
+                pManager.Controls.Add(pPatientReport.Instance);
+                pPatientReport.Instance.Dock = DockStyle.Fill;
+                pPatientReport.Instance.BringToFront();
+            }
+            else
+            {
+                pPatientReport.Instance.BringToFront();
+            }
+        }
+
+        private void TàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pManager.Controls.Contains(pManagementInfo.Instance))
+            {
+
+                pManager.Controls.Add(pManagementInfo.Instance);
+                pManagementInfo.Instance.Dock = DockStyle.Fill;
+                pManagementInfo.Instance.BringToFront();
+            }
+            else
+            {
+                pManagementInfo.Instance.BringToFront();
+            }
+        }
     }
 }

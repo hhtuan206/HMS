@@ -44,7 +44,7 @@ namespace HMS.DAO
         public int createBill()
         {
             int id = 0;
-            DataTable data = DataProvider.Instance.ExecuteQuery("INSERT INTO dbo.bill(service_list,total_money,create_at,update_at,status) OUTPUT Inserted.id VALUES(N'', 0, GETDATE(), GETDATE(), 0)");
+            DataTable data = DataProvider.Instance.ExecuteQuery("INSERT INTO dbo.bill(total_money,create_at,update_at,status) OUTPUT Inserted.id VALUES( 0, GETDATE(), GETDATE(), 0)");
             foreach (DataRow item in data.Rows)
             {
                 id = int.Parse(item["id"].ToString());
@@ -53,7 +53,11 @@ namespace HMS.DAO
         }
 
 
-
+        public void changePatientBill(string id, string status)
+        {
+            string query = "UPDATE dbo.bill SET status = " + status + " FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE dbo.detail_patient.id = " + id + "";
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
 
     }
 }

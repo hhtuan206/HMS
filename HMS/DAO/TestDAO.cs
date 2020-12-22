@@ -56,5 +56,12 @@ namespace HMS.DAO
             string query = "DELETE dbo.test_product WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
+
+        public DataTable getTe(string id)
+        {
+            string query = "SELECT dbo.test_product.test_name,dbo.test_product.cost FROM dbo.test INNER JOIN dbo.test_product ON test_product.id = test.id_test WHERE id_detail_patient = " + id + "";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
     }
 }

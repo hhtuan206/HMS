@@ -26,7 +26,7 @@ namespace HMS
             }
         }
 
-        private void thôngTinTàiKhoảnToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void TàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

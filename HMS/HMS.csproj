@@ -70,6 +70,12 @@
     <Compile Include="Accountant\fAccountant.Designer.cs">
       <DependentUpon>fAccountant.cs</DependentUpon>
     </Compile>
+    <Compile Include="Accountant\pHistoryPatientBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Accountant\pHistoryPatientBill.Designer.cs">
+      <DependentUpon>pHistoryPatientBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Accountant\pPatient.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,11 +127,23 @@
     <Compile Include="Managerment\pBed.Designer.cs">
       <DependentUpon>pBed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managerment\pManagementInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Managerment\pManagementInfo.Designer.cs">
+      <DependentUpon>pManagementInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managerment\pMedicine.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Managerment\pMedicine.Designer.cs">
       <DependentUpon>pMedicine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managerment\pPatientReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Managerment\pPatientReport.Designer.cs">
+      <DependentUpon>pPatientReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Managerment\pTest.cs">
       <SubType>UserControl</SubType>
@@ -168,6 +186,9 @@
     <EmbeddedResource Include="Accountant\fAccountant.resx">
       <DependentUpon>fAccountant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accountant\pHistoryPatientBill.resx">
+      <DependentUpon>pHistoryPatientBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accountant\pPatient.resx">
       <DependentUpon>pPatient.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,8 +210,14 @@
     <EmbeddedResource Include="Managerment\pBed.resx">
       <DependentUpon>pBed.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\pManagementInfo.resx">
+      <DependentUpon>pManagementInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Managerment\pMedicine.resx">
       <DependentUpon>pMedicine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\pPatientReport.resx">
+      <DependentUpon>pPatientReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Managerment\pTest.resx">
       <DependentUpon>pTest.cs</DependentUpon>
@@ -235,9 +262,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <None Include="Resources\Image1.bmp" />
-  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\download.png" />
   </ItemGroup>

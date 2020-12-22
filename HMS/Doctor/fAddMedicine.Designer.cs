@@ -85,6 +85,7 @@
             this.cbTime_Of_Day.Name = "cbTime_Of_Day";
             this.cbTime_Of_Day.Size = new System.Drawing.Size(121, 24);
             this.cbTime_Of_Day.TabIndex = 7;
+            this.cbTime_Of_Day.SelectedIndexChanged += new System.EventHandler(this.cbTime_Of_Day_SelectedIndexChanged);
             // 
             // label4
             // 

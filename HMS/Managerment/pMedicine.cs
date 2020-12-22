@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HMS.DAO;
+using System;
 using System.Windows.Forms;
-using HMS.DAO;
 
 namespace HMS.Managerment
 {
@@ -39,14 +32,14 @@ namespace HMS.Managerment
 
         void Bind()
         {
-            txtID.DataBindings.Add(new Binding("Text",dtgMedicine.DataSource,"id"));
+            txtID.DataBindings.Add(new Binding("Text", dtgMedicine.DataSource, "id"));
             txtNameTest.DataBindings.Add(new Binding("Text", dtgMedicine.DataSource, "medicine_name"));
             txtCost.DataBindings.Add(new Binding("Text", dtgMedicine.DataSource, "cost"));
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
                 string name = txtNameTest.Text;
@@ -62,13 +55,13 @@ namespace HMS.Managerment
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 string id = txtID.Text;
                 string name = txtNameTest.Text;
                 float cost = float.Parse(txtCost.Text);
-                MedicineDAO.Instance.updateMedicineProduct(id,name, cost);
+                MedicineDAO.Instance.updateMedicineProduct(id, name, cost);
             }
             catch (Exception ex)
             {

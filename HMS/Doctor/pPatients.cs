@@ -81,7 +81,6 @@ namespace HMS
                     string id_medicine = row.Cells["id_medicine"].Value.ToString();
                     string quantity = row.Cells["quantity"].Value.ToString();
                     string time_of_day = row.Cells["time_of_day"].Value.ToString();
-
                     MedicineDAO.Instance.createMedicine(id_detail_patient, id_medicine, quantity, time_of_day);
                 }
 

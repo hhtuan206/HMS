@@ -39,7 +39,7 @@ namespace HMS
 
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-           
+
             try
             {
                 string nameWard = txtNameWard.Text;
@@ -55,7 +55,7 @@ namespace HMS
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 int id = int.Parse(txtID.Text);
@@ -71,7 +71,7 @@ namespace HMS
         }
 
         private void btnDel_Click(object sender, EventArgs e)
-        {    
+        {
             try
             {
                 int id = int.Parse(txtID.Text);

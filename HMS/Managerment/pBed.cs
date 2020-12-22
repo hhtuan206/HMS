@@ -42,7 +42,7 @@ namespace HMS.Managerment
         {
             txtID.DataBindings.Add(new Binding("Text", dtgBed.DataSource, "id"));
             txtNumber_Bed.DataBindings.Add(new Binding("Text", dtgBed.DataSource, "number_bed"));
-            
+
         }
         #endregion
         #region event
@@ -62,7 +62,7 @@ namespace HMS.Managerment
             loadBed();
         }
 
-        
+
 
         private void btnEdit_Click(object sender, EventArgs e)
         {

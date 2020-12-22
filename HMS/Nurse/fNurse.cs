@@ -36,7 +36,9 @@ namespace HMS
             }
         }
 
-        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+        private void TàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

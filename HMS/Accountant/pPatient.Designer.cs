@@ -35,9 +35,7 @@
             this.fName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnCheckBill = new System.Windows.Forms.Button();
             this.btnPrintBill = new System.Windows.Forms.Button();
-            this.btnPay = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgTest = new System.Windows.Forms.DataGridView();
             this.id_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +67,7 @@
             this.txtPhoneno = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
@@ -95,6 +93,7 @@
             // 
             // dtgPatient
             // 
+            this.dtgPatient.AllowUserToAddRows = false;
             this.dtgPatient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPatient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgPatient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -145,33 +144,15 @@
             this.address.Name = "address";
             this.address.ReadOnly = true;
             // 
-            // btnCheckBill
-            // 
-            this.btnCheckBill.Location = new System.Drawing.Point(63, 33);
-            this.btnCheckBill.Name = "btnCheckBill";
-            this.btnCheckBill.Size = new System.Drawing.Size(117, 75);
-            this.btnCheckBill.TabIndex = 1;
-            this.btnCheckBill.Text = "Kiểm tra hoá đơn";
-            this.btnCheckBill.UseVisualStyleBackColor = true;
-            // 
             // btnPrintBill
             // 
-            this.btnPrintBill.Location = new System.Drawing.Point(63, 279);
+            this.btnPrintBill.Location = new System.Drawing.Point(60, 144);
             this.btnPrintBill.Name = "btnPrintBill";
             this.btnPrintBill.Size = new System.Drawing.Size(117, 75);
             this.btnPrintBill.TabIndex = 2;
-            this.btnPrintBill.Text = "Xuất hoá đơn";
+            this.btnPrintBill.Text = "Thanh toán";
             this.btnPrintBill.UseVisualStyleBackColor = true;
             this.btnPrintBill.Click += new System.EventHandler(this.btnPrintBill_Click);
-            // 
-            // btnPay
-            // 
-            this.btnPay.Location = new System.Drawing.Point(63, 154);
-            this.btnPay.Name = "btnPay";
-            this.btnPay.Size = new System.Drawing.Size(117, 75);
-            this.btnPay.TabIndex = 3;
-            this.btnPay.Text = "Thanh toán";
-            this.btnPay.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -282,8 +263,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btnPrintBill);
-            this.panel3.Controls.Add(this.btnCheckBill);
-            this.panel3.Controls.Add(this.btnPay);
             this.panel3.Location = new System.Drawing.Point(1034, 147);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 398);
@@ -346,22 +325,26 @@
             this.panel6.Controls.Add(this.label3);
             this.panel6.Location = new System.Drawing.Point(486, 560);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(444, 77);
+            this.panel6.Size = new System.Drawing.Size(536, 77);
             this.panel6.TabIndex = 10;
             // 
             // txtTotal_money
             // 
-            this.txtTotal_money.Location = new System.Drawing.Point(146, 14);
+            this.txtTotal_money.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal_money.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.txtTotal_money.Location = new System.Drawing.Point(180, 20);
+            this.txtTotal_money.Multiline = true;
             this.txtTotal_money.Name = "txtTotal_money";
-            this.txtTotal_money.Size = new System.Drawing.Size(267, 22);
+            this.txtTotal_money.Size = new System.Drawing.Size(267, 39);
             this.txtTotal_money.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 18);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(77, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 17);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Tổng tiền";
             // 
@@ -431,20 +414,20 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.txtSearch);
+            this.panel9.Controls.Add(this.txtKeyword);
             this.panel9.Controls.Add(this.label6);
             this.panel9.Location = new System.Drawing.Point(3, 7);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(474, 64);
             this.panel9.TabIndex = 13;
             // 
-            // txtSearch
+            // txtKeyword
             // 
-            this.txtSearch.Location = new System.Drawing.Point(149, 19);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(191, 22);
-            this.txtSearch.TabIndex = 6;
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtKeyword.Location = new System.Drawing.Point(149, 19);
+            this.txtKeyword.Name = "txtKeyword";
+            this.txtKeyword.Size = new System.Drawing.Size(191, 22);
+            this.txtKeyword.TabIndex = 6;
+            this.txtKeyword.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label6
             // 
@@ -496,9 +479,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dtgPatient;
-        private System.Windows.Forms.Button btnCheckBill;
         private System.Windows.Forms.Button btnPrintBill;
-        private System.Windows.Forms.Button btnPay;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtID;
@@ -534,7 +515,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cost_medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_money_medicine;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtKeyword;
         private System.Windows.Forms.Label label6;
     }
 }

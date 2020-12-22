@@ -31,6 +31,8 @@
             this.pAccountant = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.thanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lịchSửThanhToánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,9 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.thanhToánToolStripMenuItem});
+            this.thanhToánToolStripMenuItem,
+            this.lịchSửThanhToánToolStripMenuItem,
+            this.tàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
@@ -58,6 +62,19 @@
             this.thanhToánToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
             this.thanhToánToolStripMenuItem.Text = "Thanh toán";
             this.thanhToánToolStripMenuItem.Click += new System.EventHandler(this.thanhToánToolStripMenuItem_Click);
+            // 
+            // lịchSửThanhToánToolStripMenuItem
+            // 
+            this.lịchSửThanhToánToolStripMenuItem.Name = "lịchSửThanhToánToolStripMenuItem";
+            this.lịchSửThanhToánToolStripMenuItem.Size = new System.Drawing.Size(143, 24);
+            this.lịchSửThanhToánToolStripMenuItem.Text = "Lịch sử thanh toán";
+            this.lịchSửThanhToánToolStripMenuItem.Click += new System.EventHandler(this.lịchSửThanhToánToolStripMenuItem_Click);
+            // 
+            // tàiKhoảnToolStripMenuItem
+            // 
+            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // fAccountant
             // 
@@ -81,5 +98,7 @@
         private System.Windows.Forms.Panel pAccountant;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem thanhToánToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lịchSửThanhToánToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
     }
 }

@@ -43,5 +43,15 @@ namespace HMS.Doctor
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTime_Of_Day_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
