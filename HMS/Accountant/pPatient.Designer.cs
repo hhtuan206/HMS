@@ -38,16 +38,7 @@
             this.btnPrintBill = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgTest = new System.Windows.Forms.DataGridView();
-            this.id_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_money_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgMedicine = new System.Windows.Forms.DataGridView();
-            this.id_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_money_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,6 +60,14 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_money_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_money_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
             this.panel2.SuspendLayout();
@@ -169,8 +168,8 @@
             this.dtgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_test,
             this.test,
+            this.Column1,
             this.cost_test,
             this.total_money_test});
             this.dtgTest.Location = new System.Drawing.Point(3, 233);
@@ -183,38 +182,12 @@
             this.dtgTest.TabIndex = 3;
             this.dtgTest.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgTest_DataError);
             // 
-            // id_test
-            // 
-            this.id_test.HeaderText = "Mã Xét Nghiệm";
-            this.id_test.MinimumWidth = 6;
-            this.id_test.Name = "id_test";
-            this.id_test.Visible = false;
-            // 
-            // test
-            // 
-            this.test.HeaderText = "Tên xét nghiệm";
-            this.test.MinimumWidth = 6;
-            this.test.Name = "test";
-            // 
-            // cost_test
-            // 
-            this.cost_test.HeaderText = "Giá tiền";
-            this.cost_test.MinimumWidth = 6;
-            this.cost_test.Name = "cost_test";
-            // 
-            // total_money_test
-            // 
-            this.total_money_test.HeaderText = "Thành tiền";
-            this.total_money_test.MinimumWidth = 6;
-            this.total_money_test.Name = "total_money_test";
-            // 
             // dtgMedicine
             // 
             this.dtgMedicine.AllowUserToAddRows = false;
             this.dtgMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgMedicine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_medicine,
             this.medicine,
             this.quantity,
             this.cost_medicine,
@@ -228,37 +201,6 @@
             this.dtgMedicine.Size = new System.Drawing.Size(536, 189);
             this.dtgMedicine.TabIndex = 2;
             this.dtgMedicine.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgMedicine_DataError);
-            // 
-            // id_medicine
-            // 
-            this.id_medicine.HeaderText = "ID thuốc";
-            this.id_medicine.MinimumWidth = 6;
-            this.id_medicine.Name = "id_medicine";
-            this.id_medicine.Visible = false;
-            // 
-            // medicine
-            // 
-            this.medicine.HeaderText = "Tên thuốc";
-            this.medicine.MinimumWidth = 6;
-            this.medicine.Name = "medicine";
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            // 
-            // cost_medicine
-            // 
-            this.cost_medicine.HeaderText = "Giá tiền";
-            this.cost_medicine.MinimumWidth = 6;
-            this.cost_medicine.Name = "cost_medicine";
-            // 
-            // total_money_medicine
-            // 
-            this.total_money_medicine.HeaderText = "Thành tiền";
-            this.total_money_medicine.MinimumWidth = 6;
-            this.total_money_medicine.Name = "total_money_medicine";
             // 
             // panel3
             // 
@@ -438,6 +380,54 @@
             this.label6.TabIndex = 7;
             this.label6.Text = "TÌm kiếm";
             // 
+            // medicine
+            // 
+            this.medicine.HeaderText = "Tên thuốc";
+            this.medicine.MinimumWidth = 6;
+            this.medicine.Name = "medicine";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            // 
+            // cost_medicine
+            // 
+            this.cost_medicine.HeaderText = "Giá tiền";
+            this.cost_medicine.MinimumWidth = 6;
+            this.cost_medicine.Name = "cost_medicine";
+            // 
+            // total_money_medicine
+            // 
+            this.total_money_medicine.HeaderText = "Thành tiền";
+            this.total_money_medicine.MinimumWidth = 6;
+            this.total_money_medicine.Name = "total_money_medicine";
+            // 
+            // test
+            // 
+            this.test.HeaderText = "Tên xét nghiệm";
+            this.test.MinimumWidth = 6;
+            this.test.Name = "test";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Số lượng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // cost_test
+            // 
+            this.cost_test.HeaderText = "Giá tiền";
+            this.cost_test.MinimumWidth = 6;
+            this.cost_test.Name = "cost_test";
+            // 
+            // total_money_test
+            // 
+            this.total_money_test.HeaderText = "Thành tiền";
+            this.total_money_test.MinimumWidth = 6;
+            this.total_money_test.Name = "total_money_test";
+            // 
             // pPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -505,17 +495,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn address;
         private System.Windows.Forms.DataGridView dtgMedicine;
         private System.Windows.Forms.DataGridView dtgTest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cost_test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total_money_test;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_medicine;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtKeyword;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn cost_medicine;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_money_medicine;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txtKeyword;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost_test;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total_money_test;
     }
 }

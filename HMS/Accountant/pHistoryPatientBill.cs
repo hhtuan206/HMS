@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HMS.DAO;
+﻿using HMS.DAO;
 using HMS.Properties;
+using System;
+using System.Data;
+using System.Drawing;
 using System.Globalization;
+using System.Windows.Forms;
 
 namespace HMS.Accountant
 {
     public partial class pHistoryPatientBill : UserControl
     {
         BindingSource bindingSource1 = new BindingSource();
-        
+
         public pHistoryPatientBill()
         {
             InitializeComponent();
@@ -36,13 +31,13 @@ namespace HMS.Accountant
             bindingSource1.DataSource = PatientDAO.Instance.getPatientCheckOut();
             dtgHistory.DataSource = bindingSource1;
         }
-        
+
         private void txtKeyWord_TextChanged(object sender, EventArgs e)
         {
-            
+
             try
             {
-                
+
                 bindingSource1.DataSource = PatientDAO.Instance.searchPatientCheckOut(txtKeyWord.Text);
                 dtgHistory.DataSource = bindingSource1;
             }
@@ -60,14 +55,15 @@ namespace HMS.Accountant
                 e.Graphics.DrawString("Hoá đơn dịch vụ bệnh viện", new Font("TimeNewRoman", 25, FontStyle.Bold), Brushes.Black, new Point(200, 75));
 
                 e.Graphics.DrawString("Date: " + DateTime.Now, new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(600, 200));
-                foreach (DataGridViewRow row in dtgHistory.SelectedRows) {
+                foreach (DataGridViewRow row in dtgHistory.SelectedRows)
+                {
                     id = row.Cells["id"].Value.ToString();
                     e.Graphics.DrawString("Tên khách hàng: " + row.Cells["fName"].Value.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 260));
                     e.Graphics.DrawString("Số điện thoại: " + row.Cells["phoneno"].Value.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 290));
                     e.Graphics.DrawString("Địa chỉ: " + row.Cells["address"].Value.ToString(), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 320));
                 }
-                DataTable medicine = MedicineDAO.Instance.getMe(id);
-                DataTable test = TestDAO.Instance.getTe(id);
+                DataTable medicine = MedicineDAO.Instance.getAllMedicineByIdDetailPatient(id);
+                DataTable test = TestDAO.Instance.getAllTestByIdDetailPatient(id);
                 e.Graphics.DrawString("-----------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, 350));
                 e.Graphics.DrawString("Tên dịch vụ ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(45, 370));
                 e.Graphics.DrawString("Số lượng ", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(350, 370));
@@ -98,7 +94,7 @@ namespace HMS.Accountant
                     total_money += total_money_test;
                 }
                 CultureInfo culture = new CultureInfo("vi-VN");
-               
+
                 e.Graphics.DrawString("------------------------------------------------------------------------------------------------------------------------------------------", new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(25, yPos + 20));
 
                 e.Graphics.DrawString("Tổng tiền : " + total_money.ToString("c", culture), new Font("Arial", 12, FontStyle.Regular), Brushes.Black, new Point(625, yPos + 60));

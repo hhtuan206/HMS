@@ -25,12 +25,7 @@ namespace HMS.DAO
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable getAllTestByIdDetailPatient(string id_detail_patient)
-        {
-            string query = "SELECT * FROM dbo.test WHERE id_detail_patient =" + id_detail_patient + "";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            return data;
-        }
+
 
         public DataTable getTestByID(string id)
         {
@@ -57,7 +52,7 @@ namespace HMS.DAO
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable getTe(string id)
+        public DataTable getAllTestByIdDetailPatient(string id)
         {
             string query = "SELECT dbo.test_product.test_name,dbo.test_product.cost FROM dbo.test INNER JOIN dbo.test_product ON test_product.id = test.id_test WHERE id_detail_patient = " + id + "";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);

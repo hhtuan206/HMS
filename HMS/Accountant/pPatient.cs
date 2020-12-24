@@ -57,37 +57,21 @@ namespace HMS.Accountant
                     DataTable medicine = MedicineDAO.Instance.getAllMedicineByIdDetailPatient(id);
                     foreach (DataRow row in medicine.Rows)
                     {
-                        int total_medicine = 0;
-                        int cost = 0;
-                        int quanntity = 0;
-                        string medicine_name = "";
-                        string id_medicine = row["id_medicine"].ToString();
-                        DataTable medicine_detail = MedicineDAO.Instance.getMedicineByID(id_medicine);
-                        quanntity = int.Parse(row["quantity"].ToString());
-                        foreach (DataRow item in medicine_detail.Rows)
-                        {
-                            medicine_name = item["medicine_name"].ToString();
-                            cost = int.Parse(item["cost"].ToString());
-                        }
-                        total_medicine = multiData(cost, quanntity);
+
+                        string medicine_name = row["medicine_name"].ToString();
+                        int quanntity = int.Parse(row["quantity"].ToString());
+                        int cost = int.Parse(row["cost"].ToString());
+                        int total_medicine = multiData(cost, quanntity);
                         total += total_medicine;
-                        loadMedicine(id_medicine, medicine_name, quanntity.ToString(), cost.ToString(), total_medicine.ToString());
+                        loadService(dtgMedicine, medicine_name, quanntity.ToString(), cost.ToString(), total_medicine.ToString());
                     }
                     DataTable test = TestDAO.Instance.getAllTestByIdDetailPatient(id);
                     foreach (DataRow row in test.Rows)
                     {
-
-                        string cost = "";
-                        string test_name = "";
-                        string id_test = row["id_test"].ToString();
-                        DataTable test_detail = TestDAO.Instance.getTestByID(id_test);
-                        foreach (DataRow item in test_detail.Rows)
-                        {
-                            test_name = item["test_name"].ToString();
-                            cost = item["cost"].ToString();
-                        }
-                        total += int.Parse(cost);
-                        loadTest(id_test, test_name, cost, cost);
+                        string test_name = row["test_name"].ToString();
+                        int cost = int.Parse(row["cost"].ToString());
+                        total += cost;
+                        loadService(dtgTest, test_name, "1", cost.ToString(), cost.ToString());
                     }
                     CultureInfo culture = new CultureInfo("vi-VN");
                     txtTotal_money.Text = total.ToString("c", culture);
@@ -107,27 +91,17 @@ namespace HMS.Accountant
             return a * b;
         }
 
-        public void loadMedicine(string id_medicine, string medicine, string quantity, string cost, string total)
+        public void loadService(DataGridView dtg, string medicine, string quantity, string cost, string total)
         {
             try
             {
-                string[] row = { id_medicine, medicine, quantity, cost, total };
-                dtgMedicine.Rows.Add(row);
+                string[] row = { medicine, quantity, cost, total };
+                dtg.Rows.Add(row);
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
 
         }
 
-        public void loadTest(string id_test, string test, string cost, string total_money)
-        {
-            try
-            {
-                string[] row = { id_test, test, cost, total_money };
-                dtgTest.Rows.Add(row);
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-
-        }
 
         #endregion
         #region events
@@ -152,9 +126,13 @@ namespace HMS.Accountant
         {
             try
             {
+
+                string id_bed = BedDAO.Instance.getIdBedByIdDetailPatient(txtID.Text);
+                BedDAO.Instance.changeStatusBed(id_bed,"0");
                 BillDAO.Instance.changePatientBill(txtID.Text, "1");
                 printPreviewDialog1.Document = printDocument1;
                 printPreviewDialog1.ShowDialog();
+
                 loadBillUnpaid();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }

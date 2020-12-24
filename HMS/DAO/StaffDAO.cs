@@ -40,16 +40,23 @@ namespace HMS.DAO
             return data;
         }
 
-        public int getIdByUsername(string username)
+        public string getIdByUsername(string username)
         {
-            int id = 0;
+            string id = "";
             string query = "SELECT id FROM dbo.Staff WHERE Email = N'" + username + "'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in result.Rows)
+            foreach (DataRow row in result.Rows)
             {
-                id = int.Parse(item["id"].ToString());
+                id = row["id"].ToString();
             }
             return id;
+        }
+
+        public DataTable getInfoStaffByIdStaff(string id)
+        {
+            string query = "SELECT * FROM dbo.staff WHERE id = " + id + "";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
         }
 
         public void updateStaff(int id, string email, string full_name, string password, DateTime birth, string address, string sex, int phone_no, string time_for_work, string department)

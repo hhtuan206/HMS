@@ -7,11 +7,13 @@ namespace HMS
 {
     public partial class pAdmitPatient : UserControl
     {
+        BindingSource bindingSource = new BindingSource();
         public pAdmitPatient()
         {
             InitializeComponent();
             initData();
             initDoc();
+            bind();
         }
 
         private static pAdmitPatient instance;
@@ -26,7 +28,8 @@ namespace HMS
 
         void initData()
         {
-            dtgPatient.DataSource = PatientDAO.Instance.getListPatient(1);
+            bindingSource.DataSource = PatientDAO.Instance.getListPatient();
+            dtgPatient.DataSource = bindingSource;
         }
 
         void initDoc()
@@ -45,23 +48,39 @@ namespace HMS
 
         }
 
+        void bind()
+        {
+            txtID.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "id"));
+            txtFname.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "full_name"));
+            /*txtAddress.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "address"));
+            txtHIN.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "health_insurance_number"));
+            txtPhoneno.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "phone_number"));*/
+
+        }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string fname = txtFname.Text;
-            string address = txtAddress.Text;
-            int phoneno = int.Parse(txtPhoneno.Text);
-            DateTime birthday = dtBirth.Value;
-            string sex = cbSex.SelectedItem.ToString();
-            string hin = txtHIN.Text;
-            int id_bed = int.Parse(cbBed.SelectedValue.ToString());
-            int id_staff = int.Parse(cbDoc.SelectedValue.ToString());
-            int id_patient = PatientDAO.Instance.createPatient(fname, birthday, address, phoneno, sex, hin);
-            int id_bill = BillDAO.Instance.createBill();
-            BedDAO.Instance.changeStatusBed(id_bed);
-            DetailPatientDAO.Instance.createDetailPatient(id_patient, id_bill, id_staff, id_bed);
-            MessageBox.Show("Thành công");
-            initData();
+            try
+            {
+                string fname = txtFname.Text;
+                string address = txtAddress.Text;
+                string phoneno = txtPhoneno.Text;
+                DateTime birthday = dtBirth.Value;
+                string sex = cbSex.SelectedItem.ToString();
+                string hin = txtHIN.Text;
+                string pathological = txtPa.Text;
+                string id_bed = cbBed.SelectedValue.ToString();
+                int id_staff = int.Parse(cbDoc.SelectedValue.ToString());
+                string id_patient = PatientDAO.Instance.createPatient(fname, birthday, address, phoneno, sex, hin);
+                int id_bill = BillDAO.Instance.createBill();
+                BedDAO.Instance.changeStatusBed(id_bed,"1");
+                DetailPatientDAO.Instance.createDetailPatient(id_patient, id_bill, id_staff, id_bed,pathological);
+                MessageBox.Show("Thành công");
+                initData();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
         }
 
 
@@ -91,11 +110,19 @@ namespace HMS
             cbWard.Enabled = true;
             fillCbWard();
         }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtID.Text;
+                PatientDAO.Instance.deletePatientByID(id);
+                MessageBox.Show("Thành công");
+                initData();
+            } catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
+        }
     }
 
-    public class foo
-    {
-        public int id { get; set; }
-        private string name_ward { get; set; }
-    }
+   
 }

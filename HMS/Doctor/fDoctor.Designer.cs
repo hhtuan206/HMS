@@ -32,6 +32,7 @@
             this.bệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDoctor = new System.Windows.Forms.Panel();
+            this.txtNameStaff = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,11 +69,21 @@
             this.pDoctor.Size = new System.Drawing.Size(1238, 643);
             this.pDoctor.TabIndex = 1;
             // 
+            // txtNameStaff
+            // 
+            this.txtNameStaff.Enabled = false;
+            this.txtNameStaff.Location = new System.Drawing.Point(1095, 5);
+            this.txtNameStaff.Name = "txtNameStaff";
+            this.txtNameStaff.Size = new System.Drawing.Size(155, 22);
+            this.txtNameStaff.TabIndex = 3;
+            this.txtNameStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // fDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.txtNameStaff);
             this.Controls.Add(this.pDoctor);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -91,5 +102,6 @@
         private System.Windows.Forms.ToolStripMenuItem bệnhNhânToolStripMenuItem;
         private System.Windows.Forms.Panel pDoctor;
         private System.Windows.Forms.ToolStripMenuItem TàiKhoảnToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtNameStaff;
     }
 }

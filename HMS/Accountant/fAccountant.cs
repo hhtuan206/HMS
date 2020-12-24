@@ -1,15 +1,26 @@
-﻿using System;
+﻿using HMS.DAO;
+using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HMS.Accountant
 {
     public partial class fAccountant : Form
     {
-        public fAccountant()
+        public fAccountant(string id = null)
         {
             InitializeComponent();
+            loadFullName(id);
         }
 
+        public void loadFullName(string id)
+        {
+            DataTable data = StaffDAO.Instance.getInfoStaffByIdStaff(id);
+            foreach (DataRow row in data.Rows)
+            {
+                txtNameStaff.Text = row["full_name"].ToString();
+            }
+        }
         private void thanhToánToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!pAccountant.Controls.Contains(pPatient.Instance))

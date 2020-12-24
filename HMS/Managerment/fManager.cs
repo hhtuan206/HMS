@@ -1,16 +1,26 @@
-﻿using HMS.Managerment;
+﻿using HMS.DAO;
+using HMS.Managerment;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HMS
 {
     public partial class fManager : Form
     {
-        public fManager()
+        public fManager(string id = null)
         {
             InitializeComponent();
+            loadFullName(id);
+        }
 
-
+        public void loadFullName(string id)
+        {
+            DataTable data = StaffDAO.Instance.getInfoStaffByIdStaff(id);
+            foreach (DataRow row in data.Rows)
+            {
+                txtNameStaff.Text = row["full_name"].ToString();
+            }
         }
 
         #region events

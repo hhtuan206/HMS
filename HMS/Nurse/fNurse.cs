@@ -1,23 +1,24 @@
-﻿using System;
+﻿using HMS.DAO;
+using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HMS
 {
     public partial class fNurse : Form
     {
-        public fNurse()
+        public fNurse(string id = null)
         {
             InitializeComponent();
-            if (!pNurse.Controls.Contains(pAdmitPatient.Instance))
-            {
+            loadFullName(id);
+        }
 
-                pNurse.Controls.Add(pAdmitPatient.Instance);
-                pAdmitPatient.Instance.Dock = DockStyle.Fill;
-                pAdmitPatient.Instance.BringToFront();
-            }
-            else
+        public void loadFullName(string id)
+        {
+            DataTable data = StaffDAO.Instance.getInfoStaffByIdStaff(id);
+            foreach (DataRow row in data.Rows)
             {
-                pAdmitPatient.Instance.BringToFront();
+                txtNameStaff.Text = row["full_name"].ToString();
             }
         }
 

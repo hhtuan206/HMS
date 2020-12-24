@@ -8,9 +8,9 @@ namespace HMS
     public partial class pPatients : UserControl
     {
 
-        private int id_staff;
+        private string id_staff;
 
-        public int Id_staff { get => id_staff; set => id_staff = value; }
+
         public pPatients()
         {
             InitializeComponent();
@@ -27,9 +27,11 @@ namespace HMS
             }
         }
 
-        public void getAllPatient(int id)
+        public string Id_staff { get => id_staff; set => id_staff = value; }
+
+        public void getAllPatient(string id)
         {
-            DataTable data = PatientDAO.Instance.getListPatient(id);
+            DataTable data = PatientDAO.Instance.getListPatientByIdStaff(id);
             dtgAmitPatient.DataSource = data;
         }
 
@@ -45,10 +47,7 @@ namespace HMS
 
         }
 
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-            /* loadServiceByID(txtID.Text);*/
-        }
+
 
 
 
@@ -90,7 +89,7 @@ namespace HMS
                     string id_test = row.Cells["id_test"].Value.ToString();
                     TestDAO.Instance.createTest(id_detail_patient, id_test);
                 }
-                PatientDAO.Instance.changeStatusPatient(int.Parse(txtID.Text), 0);
+                DetailPatientDAO.Instance.changeStatusPatient(int.Parse(txtID.Text), 0);
                 MessageBox.Show("OK");
 
             }

@@ -26,21 +26,9 @@ namespace HMS.DAO
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable getAllMedicineByIdDetailPatient(string id_detail_patient)
-        {
-            string query = "SELECT * FROM dbo.medicine WHERE id_detail_patient =" + id_detail_patient + "";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            return data;
-        }
 
-        public DataTable getMedicineByID(string id)
-        {
 
-            string query = "SELECT * FROM dbo.medicine_product WHERE id =" + id + "";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            return data;
-        }
 
         public void createMedicineProduct(string name, float cost)
         {
@@ -60,13 +48,13 @@ namespace HMS.DAO
             DataProvider.Instance.ExecuteQuery(query);
         }
 
-        public DataTable getMe(string id)
+        public DataTable getAllMedicineByIdDetailPatient(string id)
         {
-            string query = "SELECT dbo.medicine_product.medicine_name, dbo.medicine.quantity,dbo.medicine_product.cost FROM dbo.medicine INNER JOIN dbo.medicine_product ON medicine_product.id = medicine.id_medicine WHERE id_detail_patient = "+id+"";
+            string query = "SELECT dbo.medicine_product.medicine_name, dbo.medicine.quantity,dbo.medicine_product.cost FROM dbo.medicine INNER JOIN dbo.medicine_product ON medicine_product.id = medicine.id_medicine WHERE id_detail_patient = " + id + "";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
-        
+
 
     }
 }

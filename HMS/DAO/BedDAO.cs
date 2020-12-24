@@ -31,10 +31,22 @@ namespace HMS.DAO
             return data;
         }
 
-        public void changeStatusBed(int id_bed)
+        public void changeStatusBed(string id_bed,string status)
         {
-            string query = "UPDATE dbo.bed SET status = 0 WHERE id = " + id_bed + "";
+            string query = "UPDATE dbo.bed SET status = "+status+" WHERE id = " + id_bed + "";
             DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+        public string getIdBedByIdDetailPatient(string id_detail_patient)
+        {
+            string id = "";
+            string query = "SELECT bed.id FROM dbo.bed INNER JOIN dbo.detail_patient ON detail_patient.id_bed = bed.id WHERE dbo.detail_patient.id = " + id_detail_patient + "";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow row in data.Rows)
+            {
+                id = row["id"].ToString();
+            }
+            return id;
         }
 
         public void createBed(int id_ward, int number_bed)

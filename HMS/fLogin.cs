@@ -17,10 +17,10 @@ namespace HMS
             string userName = txtUsername.Text;
             string passWord = txtPassword.Text;
             string role = StaffDAO.Instance.Login(userName, passWord);
-            int id = StaffDAO.Instance.getIdByUsername(userName);
+            string id = StaffDAO.Instance.getIdByUsername(userName);
             if (role.Equals("Quản lý"))
             {
-                fManager manager = new fManager();
+                fManager manager = new fManager(id);
                 this.Hide();
                 manager.ShowDialog();
                 this.Show();
@@ -34,14 +34,16 @@ namespace HMS
             }
             else if (role.Equals("Y tá"))
             {
-                fNurse nurse = new fNurse();
+
+                fNurse nurse = new fNurse(id);
                 this.Hide();
                 nurse.ShowDialog();
                 this.Show();
             }
             else if (role.Equals("Kế toán"))
             {
-                fAccountant accountant = new fAccountant();
+
+                fAccountant accountant = new fAccountant(id);
                 this.Hide();
                 accountant.ShowDialog();
                 this.Show();

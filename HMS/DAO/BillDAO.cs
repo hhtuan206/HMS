@@ -36,10 +36,10 @@ namespace HMS.DAO
 
         }
 
-        public void updateServiceList(string service, int id)
+        /*public void updateServiceList(string service, int id)
         {
             DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.bill SET service_list = N'" + service + "' FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE dbo.detail_patient.id_patient =" + id + " AND dbo.bill.status = 0");
-        }
+        }*/
 
         public int createBill()
         {
