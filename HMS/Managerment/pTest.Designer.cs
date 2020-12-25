@@ -39,12 +39,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtCost = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameTest = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTest)).BeginInit();
             this.panel2.SuspendLayout();
@@ -161,6 +161,23 @@
             this.panel4.Size = new System.Drawing.Size(554, 512);
             this.panel4.TabIndex = 4;
             // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(227, 90);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(272, 22);
+            this.txtID.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(81, 90);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(21, 17);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "ID";
+            // 
             // txtCost
             // 
             this.txtCost.Location = new System.Drawing.Point(227, 287);
@@ -192,22 +209,6 @@
             this.label1.Size = new System.Drawing.Size(105, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên xét nghiệm";
-            // 
-            // txtID
-            // 
-            this.txtID.Location = new System.Drawing.Point(227, 90);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(272, 22);
-            this.txtID.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "ID";
             // 
             // pTest
             // 

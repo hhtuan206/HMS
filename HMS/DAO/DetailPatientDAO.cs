@@ -13,7 +13,7 @@ namespace HMS.DAO
 
         public void createDetailPatient(string id_patient, int id_bill, int id_staff, string id_bed, string pathological)
         {
-            string query = "INSERT INTO dbo.detail_patient(id_patient,id_staff,id_bill,id_bed,start_time,end_time,check_out,pathological,status,create_at,update_at)VALUES(" + id_patient + "," + id_staff + "," + id_bill + "," + id_bed + ",GETDATE(),NULL,'"+pathological+"',1,GETDATE(),GETDATE() )";
+            string query = "INSERT INTO dbo.detail_patient(id_patient,id_staff,id_bill,id_bed,start_time,end_time,pathological,status,create_at,update_at) VALUES("+id_patient+","+id_staff+","+id_bill+","+id_bed+",GETDATE(),NULL,'"+pathological+"', 1, GETDATE(),GETDATE())";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 

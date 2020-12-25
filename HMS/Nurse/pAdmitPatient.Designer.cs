@@ -32,6 +32,12 @@
             this.txtFname = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel13 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtPa = new System.Windows.Forms.TextBox();
             this.panel11 = new System.Windows.Forms.Panel();
             this.cbDoc = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,19 +62,16 @@
             this.dtBirth = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.btnAgain = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dtgPatient = new System.Windows.Forms.DataGridView();
-            this.panel13 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtPa = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -79,8 +82,6 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
-            this.panel13.SuspendLayout();
-            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -123,7 +124,60 @@
             this.panel2.Location = new System.Drawing.Point(729, 18);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(506, 619);
-            this.panel2.TabIndex = 3;
+            this.panel2.TabIndex = 1;
+            // 
+            // panel13
+            // 
+            this.panel13.Controls.Add(this.label10);
+            this.panel13.Controls.Add(this.txtID);
+            this.panel13.Location = new System.Drawing.Point(6, 3);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(387, 65);
+            this.panel13.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(45, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(21, 17);
+            this.label10.TabIndex = 3;
+            this.label10.Text = "ID";
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(186, 16);
+            this.txtID.Multiline = true;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(176, 20);
+            this.txtID.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.label9);
+            this.panel12.Controls.Add(this.txtPa);
+            this.panel12.Location = new System.Drawing.Point(6, 437);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(500, 64);
+            this.panel12.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(39, 17);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(84, 17);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Triệu chứng";
+            // 
+            // txtPa
+            // 
+            this.txtPa.Location = new System.Drawing.Point(184, 3);
+            this.txtPa.Multiline = true;
+            this.txtPa.Name = "txtPa";
+            this.txtPa.Size = new System.Drawing.Size(274, 58);
+            this.txtPa.TabIndex = 7;
             // 
             // panel11
             // 
@@ -132,7 +186,7 @@
             this.panel11.Location = new System.Drawing.Point(6, 507);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(500, 55);
-            this.panel11.TabIndex = 8;
+            this.panel11.TabIndex = 9;
             // 
             // cbDoc
             // 
@@ -143,7 +197,7 @@
             this.cbDoc.Location = new System.Drawing.Point(184, 17);
             this.cbDoc.Name = "cbDoc";
             this.cbDoc.Size = new System.Drawing.Size(274, 24);
-            this.cbDoc.TabIndex = 1;
+            this.cbDoc.TabIndex = 8;
             // 
             // label8
             // 
@@ -163,7 +217,7 @@
             this.panel10.Location = new System.Drawing.Point(6, 569);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(500, 55);
-            this.panel10.TabIndex = 7;
+            this.panel10.TabIndex = 10;
             // 
             // btnLoadWard
             // 
@@ -177,18 +231,24 @@
             // 
             // cbBed
             // 
+            this.cbBed.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbBed.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbBed.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBed.FormattingEnabled = true;
             this.cbBed.Location = new System.Drawing.Point(267, 17);
             this.cbBed.Name = "cbBed";
             this.cbBed.Size = new System.Drawing.Size(117, 24);
-            this.cbBed.TabIndex = 2;
+            this.cbBed.TabIndex = 10;
             // 
             // cbWard
             // 
+            this.cbWard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbWard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbWard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWard.Location = new System.Drawing.Point(115, 17);
             this.cbWard.Name = "cbWard";
             this.cbWard.Size = new System.Drawing.Size(121, 24);
-            this.cbWard.TabIndex = 10;
+            this.cbWard.TabIndex = 9;
             this.cbWard.SelectedIndexChanged += new System.EventHandler(this.cbWard_SelectedIndexChanged);
             // 
             // label7
@@ -207,7 +267,7 @@
             this.panel7.Location = new System.Drawing.Point(6, 376);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(500, 55);
-            this.panel7.TabIndex = 6;
+            this.panel7.TabIndex = 7;
             // 
             // label6
             // 
@@ -223,7 +283,7 @@
             this.txtHIN.Location = new System.Drawing.Point(184, 14);
             this.txtHIN.Name = "txtHIN";
             this.txtHIN.Size = new System.Drawing.Size(274, 22);
-            this.txtHIN.TabIndex = 1;
+            this.txtHIN.TabIndex = 6;
             // 
             // panel6
             // 
@@ -248,7 +308,7 @@
             this.txtPhoneno.Location = new System.Drawing.Point(184, 14);
             this.txtPhoneno.Name = "txtPhoneno";
             this.txtPhoneno.Size = new System.Drawing.Size(274, 22);
-            this.txtPhoneno.TabIndex = 1;
+            this.txtPhoneno.TabIndex = 5;
             // 
             // panel5
             // 
@@ -261,6 +321,9 @@
             // 
             // cbSex
             // 
+            this.cbSex.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbSex.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSex.FormattingEnabled = true;
             this.cbSex.Items.AddRange(new object[] {
             "Nam",
@@ -269,7 +332,7 @@
             this.cbSex.Location = new System.Drawing.Point(184, 14);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(274, 24);
-            this.cbSex.TabIndex = 1;
+            this.cbSex.TabIndex = 4;
             // 
             // label4
             // 
@@ -304,7 +367,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(274, 49);
-            this.txtAddress.TabIndex = 1;
+            this.txtAddress.TabIndex = 3;
             // 
             // panel3
             // 
@@ -321,7 +384,7 @@
             this.dtBirth.Location = new System.Drawing.Point(184, 17);
             this.dtBirth.Name = "dtBirth";
             this.dtBirth.Size = new System.Drawing.Size(274, 22);
-            this.dtBirth.TabIndex = 1;
+            this.dtBirth.TabIndex = 2;
             // 
             // label2
             // 
@@ -334,17 +397,28 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.btnAgain);
             this.panel8.Controls.Add(this.btnDel);
             this.panel8.Controls.Add(this.btnEdit);
             this.panel8.Controls.Add(this.btnAdd);
             this.panel8.Location = new System.Drawing.Point(6, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(310, 83);
+            this.panel8.Size = new System.Drawing.Size(515, 83);
             this.panel8.TabIndex = 4;
+            // 
+            // btnAgain
+            // 
+            this.btnAgain.Location = new System.Drawing.Point(317, 15);
+            this.btnAgain.Name = "btnAgain";
+            this.btnAgain.Size = new System.Drawing.Size(75, 55);
+            this.btnAgain.TabIndex = 3;
+            this.btnAgain.Text = "Khám lại";
+            this.btnAgain.UseVisualStyleBackColor = true;
+            this.btnAgain.Click += new System.EventHandler(this.btnAgain_Click);
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(202, 15);
+            this.btnDel.Location = new System.Drawing.Point(215, 15);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 55);
             this.btnDel.TabIndex = 2;
@@ -354,12 +428,13 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(104, 15);
+            this.btnEdit.Location = new System.Drawing.Point(113, 15);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 55);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Text = "Cập nhật";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnAdd
             // 
@@ -393,59 +468,6 @@
             this.dtgPatient.Size = new System.Drawing.Size(717, 505);
             this.dtgPatient.TabIndex = 0;
             // 
-            // panel13
-            // 
-            this.panel13.Controls.Add(this.label10);
-            this.panel13.Controls.Add(this.txtID);
-            this.panel13.Location = new System.Drawing.Point(6, 3);
-            this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(387, 65);
-            this.panel13.TabIndex = 7;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(45, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(21, 17);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "ID";
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(186, 16);
-            this.txtID.Multiline = true;
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(176, 20);
-            this.txtID.TabIndex = 2;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.label9);
-            this.panel12.Controls.Add(this.txtPa);
-            this.panel12.Location = new System.Drawing.Point(6, 437);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(500, 64);
-            this.panel12.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(39, 17);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(84, 17);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Triệu chứng";
-            // 
-            // txtPa
-            // 
-            this.txtPa.Location = new System.Drawing.Point(184, 3);
-            this.txtPa.Multiline = true;
-            this.txtPa.Name = "txtPa";
-            this.txtPa.Size = new System.Drawing.Size(274, 58);
-            this.txtPa.TabIndex = 1;
-            // 
             // pAdmitPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -458,6 +480,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -475,10 +501,6 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).EndInit();
-            this.panel13.ResumeLayout(false);
-            this.panel13.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -524,5 +546,6 @@
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPa;
+        private System.Windows.Forms.Button btnAgain;
     }
 }

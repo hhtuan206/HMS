@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,10 +53,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -61,7 +62,6 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +79,33 @@
             this.panel1.Size = new System.Drawing.Size(1353, 637);
             this.panel1.TabIndex = 0;
             // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.button2);
+            this.panel9.Controls.Add(this.button1);
+            this.panel9.Location = new System.Drawing.Point(1023, 201);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(200, 205);
+            this.panel9.TabIndex = 7;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(64, 137);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 68);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Lưu";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(64, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 68);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Cài lại";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txtID);
@@ -90,6 +117,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(196, 26);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(210, 22);
@@ -264,33 +292,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.button2);
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Location = new System.Drawing.Point(1023, 201);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(200, 205);
-            this.panel9.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(64, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 68);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cài lại";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(64, 137);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 68);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Lưu";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // pManagementInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -299,6 +300,7 @@
             this.Name = "pManagementInfo";
             this.Size = new System.Drawing.Size(1238, 643);
             this.panel1.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -313,7 +315,6 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

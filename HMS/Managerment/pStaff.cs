@@ -36,7 +36,7 @@ namespace HMS
                 string pwd = txtPwd.Text;
                 string fname = txtFname.Text;
                 string address = txtAddress.Text;
-                int phoneno = int.Parse(txtPhoneno.Text);
+                string phoneno = txtPhoneno.Text;
                 DateTime birthday = dtBirth.Value;
                 string timeforwork = txtTW.Text;
                 string department = cbDepartment.SelectedItem.ToString();

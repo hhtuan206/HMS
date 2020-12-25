@@ -206,6 +206,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(189, 139);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(238, 22);

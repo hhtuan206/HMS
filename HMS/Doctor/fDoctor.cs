@@ -42,5 +42,10 @@ namespace HMS
         {
 
         }
+
+        private void lịchSửKhámBệnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

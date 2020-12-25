@@ -38,7 +38,15 @@
             this.btnPrintBill = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgTest = new System.Windows.Forms.DataGridView();
+            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_money_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtgMedicine = new System.Windows.Forms.DataGridView();
+            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_money_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,14 +68,6 @@
             this.panel9 = new System.Windows.Forms.Panel();
             this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_money_medicine = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_money_test = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
             this.panel2.SuspendLayout();
@@ -182,6 +182,30 @@
             this.dtgTest.TabIndex = 3;
             this.dtgTest.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgTest_DataError);
             // 
+            // test
+            // 
+            this.test.HeaderText = "Tên xét nghiệm";
+            this.test.MinimumWidth = 6;
+            this.test.Name = "test";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Số lượng";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // cost_test
+            // 
+            this.cost_test.HeaderText = "Giá tiền";
+            this.cost_test.MinimumWidth = 6;
+            this.cost_test.Name = "cost_test";
+            // 
+            // total_money_test
+            // 
+            this.total_money_test.HeaderText = "Thành tiền";
+            this.total_money_test.MinimumWidth = 6;
+            this.total_money_test.Name = "total_money_test";
+            // 
             // dtgMedicine
             // 
             this.dtgMedicine.AllowUserToAddRows = false;
@@ -202,6 +226,30 @@
             this.dtgMedicine.TabIndex = 2;
             this.dtgMedicine.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgMedicine_DataError);
             // 
+            // medicine
+            // 
+            this.medicine.HeaderText = "Tên thuốc";
+            this.medicine.MinimumWidth = 6;
+            this.medicine.Name = "medicine";
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Số lượng";
+            this.quantity.MinimumWidth = 6;
+            this.quantity.Name = "quantity";
+            // 
+            // cost_medicine
+            // 
+            this.cost_medicine.HeaderText = "Giá tiền";
+            this.cost_medicine.MinimumWidth = 6;
+            this.cost_medicine.Name = "cost_medicine";
+            // 
+            // total_money_medicine
+            // 
+            this.total_money_medicine.HeaderText = "Thành tiền";
+            this.total_money_medicine.MinimumWidth = 6;
+            this.total_money_medicine.Name = "total_money_medicine";
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.btnPrintBill);
@@ -212,6 +260,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(149, 19);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(191, 22);
@@ -379,54 +428,6 @@
             this.label6.Size = new System.Drawing.Size(64, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "TÌm kiếm";
-            // 
-            // medicine
-            // 
-            this.medicine.HeaderText = "Tên thuốc";
-            this.medicine.MinimumWidth = 6;
-            this.medicine.Name = "medicine";
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Số lượng";
-            this.quantity.MinimumWidth = 6;
-            this.quantity.Name = "quantity";
-            // 
-            // cost_medicine
-            // 
-            this.cost_medicine.HeaderText = "Giá tiền";
-            this.cost_medicine.MinimumWidth = 6;
-            this.cost_medicine.Name = "cost_medicine";
-            // 
-            // total_money_medicine
-            // 
-            this.total_money_medicine.HeaderText = "Thành tiền";
-            this.total_money_medicine.MinimumWidth = 6;
-            this.total_money_medicine.Name = "total_money_medicine";
-            // 
-            // test
-            // 
-            this.test.HeaderText = "Tên xét nghiệm";
-            this.test.MinimumWidth = 6;
-            this.test.Name = "test";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Số lượng";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            // 
-            // cost_test
-            // 
-            this.cost_test.HeaderText = "Giá tiền";
-            this.cost_test.MinimumWidth = 6;
-            this.cost_test.Name = "cost_test";
-            // 
-            // total_money_test
-            // 
-            this.total_money_test.HeaderText = "Thành tiền";
-            this.total_money_test.MinimumWidth = 6;
-            this.total_money_test.Name = "total_money_test";
             // 
             // pPatient
             // 

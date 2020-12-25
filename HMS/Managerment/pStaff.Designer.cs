@@ -204,7 +204,7 @@
             this.cbDepartment.Location = new System.Drawing.Point(141, 441);
             this.cbDepartment.Name = "cbDepartment";
             this.cbDepartment.Size = new System.Drawing.Size(189, 24);
-            this.cbDepartment.TabIndex = 19;
+            this.cbDepartment.TabIndex = 9;
             // 
             // label2
             // 
@@ -228,7 +228,7 @@
             this.cbSex.Location = new System.Drawing.Point(141, 349);
             this.cbSex.Name = "cbSex";
             this.cbSex.Size = new System.Drawing.Size(121, 24);
-            this.cbSex.TabIndex = 17;
+            this.cbSex.TabIndex = 7;
             // 
             // label1
             // 
@@ -246,7 +246,7 @@
             this.txtPwd.Location = new System.Drawing.Point(141, 101);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(358, 28);
-            this.txtPwd.TabIndex = 15;
+            this.txtPwd.TabIndex = 3;
             // 
             // label15
             // 
@@ -264,7 +264,7 @@
             this.txtTW.Location = new System.Drawing.Point(141, 485);
             this.txtTW.Name = "txtTW";
             this.txtTW.Size = new System.Drawing.Size(359, 28);
-            this.txtTW.TabIndex = 13;
+            this.txtTW.TabIndex = 10;
             // 
             // label8
             // 
@@ -283,7 +283,7 @@
             this.dtBirth.Location = new System.Drawing.Point(141, 393);
             this.dtBirth.Name = "dtBirth";
             this.dtBirth.Size = new System.Drawing.Size(352, 28);
-            this.dtBirth.TabIndex = 11;
+            this.dtBirth.TabIndex = 8;
             // 
             // label9
             // 
@@ -301,7 +301,7 @@
             this.txtPhoneno.Location = new System.Drawing.Point(141, 301);
             this.txtPhoneno.Name = "txtPhoneno";
             this.txtPhoneno.Size = new System.Drawing.Size(350, 28);
-            this.txtPhoneno.TabIndex = 9;
+            this.txtPhoneno.TabIndex = 6;
             // 
             // label10
             // 
@@ -320,7 +320,7 @@
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(359, 84);
-            this.txtAddress.TabIndex = 7;
+            this.txtAddress.TabIndex = 5;
             // 
             // label11
             // 
@@ -338,7 +338,7 @@
             this.txtFname.Location = new System.Drawing.Point(141, 149);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(358, 28);
-            this.txtFname.TabIndex = 5;
+            this.txtFname.TabIndex = 4;
             // 
             // label12
             // 
@@ -356,7 +356,7 @@
             this.txtEmail.Location = new System.Drawing.Point(141, 53);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(358, 28);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 2;
             // 
             // label13
             // 
@@ -370,6 +370,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(141, 5);
             this.txtID.Name = "txtID";

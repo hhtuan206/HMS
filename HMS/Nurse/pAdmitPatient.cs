@@ -52,9 +52,9 @@ namespace HMS
         {
             txtID.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "id"));
             txtFname.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "full_name"));
-            /*txtAddress.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "address"));
+            txtAddress.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "address"));
             txtHIN.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "health_insurance_number"));
-            txtPhoneno.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "phone_number"));*/
+            txtPhoneno.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "phone_number"));
 
         }
 
@@ -101,8 +101,6 @@ namespace HMS
             {
                 fillCbBed(int.Parse(i));
             }
-
-
         }
 
         private void btnLoadWard_Click(object sender, EventArgs e)
@@ -122,7 +120,45 @@ namespace HMS
             } catch (Exception ex) { MessageBox.Show(ex.Message); }
             
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtID.Text;
+                string fname = txtFname.Text;
+                string address = txtAddress.Text;
+                string phoneno = txtPhoneno.Text;
+                DateTime birthday = dtBirth.Value;
+                string sex = cbSex.SelectedItem.ToString();
+                string hin = txtHIN.Text;
+                PatientDAO.Instance.updatePatientByID(id, birthday, fname,address,phoneno,sex,hin);
+                MessageBox.Show("Thành công");
+                initData();
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+
+        }
+
+        private void btnAgain_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = txtID.Text;
+                string pathological = txtPa.Text;
+                string id_bed = cbBed.SelectedValue.ToString();
+                int id_staff = int.Parse(cbDoc.SelectedValue.ToString());
+                int id_bill = BillDAO.Instance.createBill();
+                BedDAO.Instance.changeStatusBed(id_bed, "1");
+                DetailPatientDAO.Instance.createDetailPatient(id, id_bill, id_staff, id_bed, pathological);
+                MessageBox.Show("Thành công");
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+       
+        
     }
 
-   
+
 }

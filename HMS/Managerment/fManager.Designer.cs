@@ -52,7 +52,7 @@
             this.thốngKêToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +65,7 @@
             this.thuốcToolStripMenuItem,
             this.xétNghiệmToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
             this.adminToolStripMenuItem.Text = "Quản lý";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -107,7 +107,7 @@
             // TàiKhoảnToolStripMenuItem
             // 
             this.TàiKhoảnToolStripMenuItem.Name = "TàiKhoảnToolStripMenuItem";
-            this.TàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.TàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
             this.TàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             this.TàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.TàiKhoảnToolStripMenuItem_Click);
             // 
@@ -116,7 +116,7 @@
             this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bệnhNhânToolStripMenuItem});
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             // 
             // bệnhNhânToolStripMenuItem
@@ -128,6 +128,9 @@
             // 
             // pManager
             // 
+            this.pManager.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pManager.Location = new System.Drawing.Point(12, 31);
             this.pManager.Name = "pManager";
             this.pManager.Size = new System.Drawing.Size(1238, 643);

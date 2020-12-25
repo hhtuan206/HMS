@@ -28,7 +28,7 @@ namespace HMS.DAO
             return role;
         }
 
-        public void createStaff(string email, string pwd, string fname, string address, int phoneno, DateTime birthday, string timeforwork, string department, string sex)
+        public void createStaff(string email, string pwd, string fname, string address, string phoneno, DateTime birthday, string timeforwork, string department, string sex)
         {
             DataProvider.Instance.ExecuteNonQuery("USP_InsertStaff @email , @pwd , @fname , @address , @phoneno , @birthday , @timeforwork , @department , @sex", new object[] { email, pwd, fname, address, phoneno, birthday, timeforwork, department, sex });
         }

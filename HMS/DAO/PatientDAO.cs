@@ -79,8 +79,13 @@ namespace HMS.DAO
         public void deletePatientByID(string id = null)
         {
             string query = "DELETE patient WHERE id = "+id+"";
-            DataProvider.Instance.ExecuteNonQuery(query);
-            
+            DataProvider.Instance.ExecuteNonQuery(query); 
+        }
+
+        public void updatePatientByID(string id, DateTime birthday, string fname = null, string address = null, string phoneno = null, string sex = null, string hin = null)
+        {
+            string query = "UPDATE [dbo].[patient] SET [full_name] = N'"+fname+"',[address] = N'"+address+"',[health_insurance_number] = '"+hin+"',[update_at] = GETDATE(),[sex] = N'"+sex+"',[phone_number] = '"+phoneno+"',[birthday] = '"+birthday+"' WHERE id = "+id+"";
+            DataProvider.Instance.ExecuteQuery(query);
         }
     }
 }
