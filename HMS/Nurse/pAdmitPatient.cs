@@ -76,7 +76,7 @@ namespace HMS
                 int id_bill = BillDAO.Instance.createBill();
                 BedDAO.Instance.changeStatusBed(id_bed,"1");
                 DetailPatientDAO.Instance.createDetailPatient(id_patient, id_bill, id_staff, id_bed,pathological);
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Thêm mới thành công");
                 initData();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -115,7 +115,7 @@ namespace HMS
             {
                 string id = txtID.Text;
                 PatientDAO.Instance.deletePatientByID(id);
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Xoá thành công");
                 initData();
             } catch (Exception ex) { MessageBox.Show(ex.Message); }
             
@@ -133,7 +133,7 @@ namespace HMS
                 string sex = cbSex.SelectedItem.ToString();
                 string hin = txtHIN.Text;
                 PatientDAO.Instance.updatePatientByID(id, birthday, fname,address,phoneno,sex,hin);
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Cập nhật thành công");
                 initData();
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
@@ -151,13 +151,19 @@ namespace HMS
                 int id_bill = BillDAO.Instance.createBill();
                 BedDAO.Instance.changeStatusBed(id_bed, "1");
                 DetailPatientDAO.Instance.createDetailPatient(id, id_bill, id_staff, id_bed, pathological);
-                MessageBox.Show("Thành công");
+                MessageBox.Show("Lên lịch khám thành công");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-       
-        
+        private void txtPhoneno_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPhoneno.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Chỉ nhập số.");
+                txtPhoneno.Text = txtPhoneno.Text.Remove(txtPhoneno.Text.Length - 1);
+            }
+        }
     }
 
 

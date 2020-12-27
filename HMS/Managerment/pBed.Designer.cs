@@ -57,7 +57,7 @@
             this.btnView.Location = new System.Drawing.Point(555, 3);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(105, 77);
-            this.btnView.TabIndex = 3;
+            this.btnView.TabIndex = 4;
             this.btnView.Text = "Xem";
             this.btnView.UseVisualStyleBackColor = true;
             // 
@@ -66,7 +66,7 @@
             this.btnDel.Location = new System.Drawing.Point(378, 3);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(105, 77);
-            this.btnDel.TabIndex = 2;
+            this.btnDel.TabIndex = 3;
             this.btnDel.Text = "Xoá";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -76,7 +76,7 @@
             this.btnEdit.Location = new System.Drawing.Point(201, 3);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(105, 77);
-            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Sửa";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -86,7 +86,7 @@
             this.btnAdd.Location = new System.Drawing.Point(24, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(105, 77);
-            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -128,7 +128,7 @@
             this.cbSearch.Location = new System.Drawing.Point(189, 33);
             this.cbSearch.Name = "cbSearch";
             this.cbSearch.Size = new System.Drawing.Size(238, 24);
-            this.cbSearch.TabIndex = 7;
+            this.cbSearch.TabIndex = 3;
             // 
             // panel2
             // 
@@ -164,11 +164,14 @@
             // 
             // cbWard
             // 
+            this.cbWard.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbWard.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbWard.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWard.FormattingEnabled = true;
             this.cbWard.Location = new System.Drawing.Point(189, 259);
             this.cbWard.Name = "cbWard";
             this.cbWard.Size = new System.Drawing.Size(238, 24);
-            this.cbWard.TabIndex = 6;
+            this.cbWard.TabIndex = 2;
             // 
             // label3
             // 
@@ -193,7 +196,7 @@
             this.txtNumber_Bed.Location = new System.Drawing.Point(189, 194);
             this.txtNumber_Bed.Name = "txtNumber_Bed";
             this.txtNumber_Bed.Size = new System.Drawing.Size(238, 22);
-            this.txtNumber_Bed.TabIndex = 2;
+            this.txtNumber_Bed.TabIndex = 1;
             // 
             // label1
             // 

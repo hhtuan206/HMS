@@ -1,4 +1,5 @@
 ﻿using HMS.DAO;
+using HMS.Nurse;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -11,6 +12,7 @@ namespace HMS
         {
             InitializeComponent();
             loadFullName(id);
+            pNurrseInfo.Instance.getID(id);
         }
 
         public void loadFullName(string id)
@@ -41,7 +43,17 @@ namespace HMS
 
         private void TàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!pNurse.Controls.Contains(pNurrseInfo.Instance))
+            {
 
+                pNurse.Controls.Add(pNurrseInfo.Instance);
+                pNurrseInfo.Instance.Dock = DockStyle.Fill;
+                pNurrseInfo.Instance.BringToFront();
+            }
+            else
+            {
+                pNurrseInfo.Instance.BringToFront();
+            }
         }
     }
 }

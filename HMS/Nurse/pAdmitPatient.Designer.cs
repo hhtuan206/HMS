@@ -68,6 +68,9 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.dtgPatient = new System.Windows.Forms.DataGridView();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtKeyWord = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel13.SuspendLayout();
@@ -82,6 +85,7 @@
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).BeginInit();
+            this.panel14.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -309,6 +313,7 @@
             this.txtPhoneno.Name = "txtPhoneno";
             this.txtPhoneno.Size = new System.Drawing.Size(274, 22);
             this.txtPhoneno.TabIndex = 5;
+            this.txtPhoneno.TextChanged += new System.EventHandler(this.txtPhoneno_TextChanged);
             // 
             // panel5
             // 
@@ -403,12 +408,12 @@
             this.panel8.Controls.Add(this.btnAdd);
             this.panel8.Location = new System.Drawing.Point(6, 3);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(515, 83);
+            this.panel8.Size = new System.Drawing.Size(236, 120);
             this.panel8.TabIndex = 4;
             // 
             // btnAgain
             // 
-            this.btnAgain.Location = new System.Drawing.Point(317, 15);
+            this.btnAgain.Location = new System.Drawing.Point(139, 65);
             this.btnAgain.Name = "btnAgain";
             this.btnAgain.Size = new System.Drawing.Size(75, 55);
             this.btnAgain.TabIndex = 3;
@@ -418,7 +423,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(215, 15);
+            this.btnDel.Location = new System.Drawing.Point(139, 3);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 55);
             this.btnDel.TabIndex = 2;
@@ -428,7 +433,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(113, 15);
+            this.btnEdit.Location = new System.Drawing.Point(21, 62);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 55);
             this.btnEdit.TabIndex = 1;
@@ -438,7 +443,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(11, 15);
+            this.btnAdd.Location = new System.Drawing.Point(21, 3);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 55);
             this.btnAdd.TabIndex = 0;
@@ -468,10 +473,38 @@
             this.dtgPatient.Size = new System.Drawing.Size(717, 505);
             this.dtgPatient.TabIndex = 0;
             // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.label11);
+            this.panel14.Controls.Add(this.txtKeyWord);
+            this.panel14.Location = new System.Drawing.Point(293, 37);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(387, 65);
+            this.panel14.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(44, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 17);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Tìm kiếm";
+            // 
+            // txtKeyWord
+            // 
+            this.txtKeyWord.Enabled = false;
+            this.txtKeyWord.Location = new System.Drawing.Point(132, 17);
+            this.txtKeyWord.Multiline = true;
+            this.txtKeyWord.Name = "txtKeyWord";
+            this.txtKeyWord.Size = new System.Drawing.Size(229, 32);
+            this.txtKeyWord.TabIndex = 0;
+            // 
             // pAdmitPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel14);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel2);
@@ -501,6 +534,8 @@
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgPatient)).EndInit();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -547,5 +582,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtPa;
         private System.Windows.Forms.Button btnAgain;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtKeyWord;
     }
 }

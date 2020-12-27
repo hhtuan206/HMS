@@ -90,7 +90,8 @@
             this.Controls.Add(this.pNurse);
             this.Controls.Add(this.menuStrip1);
             this.Name = "fNurse";
-            this.Text = "fNurse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Y tá";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

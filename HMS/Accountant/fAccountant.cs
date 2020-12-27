@@ -11,6 +11,7 @@ namespace HMS.Accountant
         {
             InitializeComponent();
             loadFullName(id);
+            pAcconutantInfo.Instance.getID(id);
         }
 
         public void loadFullName(string id)
@@ -55,5 +56,20 @@ namespace HMS.Accountant
                 pHistoryPatientBill.Instance.BringToFront();
             }
         }
+
+        private void tàiKhoảnToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (!pAccountant.Controls.Contains(pAcconutantInfo.Instance))
+            {
+                pAccountant.Controls.Add(pAcconutantInfo.Instance);
+                pAcconutantInfo.Instance.Dock = DockStyle.Fill;
+                pAcconutantInfo.Instance.BringToFront();
+            }
+            else
+            {
+                pAcconutantInfo.Instance.BringToFront();
+            }
+        }
     }
+    
 }

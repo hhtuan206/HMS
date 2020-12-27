@@ -17,41 +17,37 @@ namespace HMS.Doctor
             cbMedicine.DisplayMember = "medicine_name";
             cbMedicine.ValueMember = "id";
             cbMedicine.DataSource = MedicineDAO.Instance.getAllMedicine();
+            cbTime_Of_Day.SelectedIndex = 1;
         }
 
         private void btnAddMore_Click(object sender, EventArgs e)
         {
-            string medicine = cbMedicine.Text;
-            string id_medicine = cbMedicine.SelectedValue.ToString();
-            string quantity = txtQuantity.Text;
-            string time_of_day = cbTime_Of_Day.SelectedItem.ToString();
-
-            pPatients.Instance.loadMedicine(id_medicine, medicine, quantity, time_of_day);
+            try
+            {
+                string medicine = cbMedicine.Text;
+                string id_medicine = cbMedicine.SelectedValue.ToString();
+                string quantity = txtQuantity.Text;
+                string time_of_day = cbTime_Of_Day.SelectedItem.ToString();
+                pPatients.Instance.loadMedicine(id_medicine, medicine, quantity, time_of_day);
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void bntAddOne_Click(object sender, EventArgs e)
         {
-            string id_medicine = cbMedicine.SelectedValue.ToString();
-            string medicine = cbMedicine.Text;
-            string quantity = txtQuantity.Text;
-            string time_of_day = cbTime_Of_Day.SelectedItem.ToString();
-            pPatients.Instance.loadMedicine(id_medicine, medicine, quantity, time_of_day);
-            this.Dispose();
+            try {
+                string id_medicine = cbMedicine.SelectedValue.ToString();
+                string medicine = cbMedicine.Text;
+                string quantity = txtQuantity.Text;
+                string time_of_day = cbTime_Of_Day.SelectedItem.ToString();
+                pPatients.Instance.loadMedicine(id_medicine, medicine, quantity, time_of_day);
+                this.Dispose();
+            } catch (Exception ex) { MessageBox.Show(ex.Message); }
+            
         }
 
-        private void fAddMedicine_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbTime_Of_Day_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using HMS.DAO;
+using HMS.Doctor;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -13,6 +14,7 @@ namespace HMS
             pPatients.Instance.Id_staff = id;
             pPatients.Instance.getAllPatient(id);
             loadFullName(id);
+            pDoctorInfo.Instance.getID(id);
         }
 
 
@@ -47,5 +49,20 @@ namespace HMS
         {
 
         }
+
+        private void tàiKhoảnToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (!pDoctor.Controls.Contains(pDoctorInfo.Instance))
+            {
+                pDoctor.Controls.Add(pDoctorInfo.Instance);
+                pDoctorInfo.Instance.Dock = DockStyle.Fill;
+                pDoctorInfo.Instance.BringToFront();
+            }
+            else
+            {
+                pDoctorInfo.Instance.BringToFront();
+            }
+        }
     }
+    
 }

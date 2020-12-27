@@ -48,10 +48,11 @@ namespace HMS.Managerment
         #region event
         private void btnAdd_Click(object sender, System.EventArgs e)
         {
-            int number_bed = int.Parse(txtNumber_Bed.Text);
-            int id_ward = int.Parse(cbWard.SelectedValue.ToString());
+           
             try
             {
+                int number_bed = int.Parse(txtNumber_Bed.Text);
+                int id_ward = int.Parse(cbWard.SelectedValue.ToString());
                 BedDAO.Instance.createBed(id_ward, number_bed);
                 MessageBox.Show("Thêm thành công");
             }

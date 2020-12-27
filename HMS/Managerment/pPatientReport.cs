@@ -21,13 +21,11 @@ namespace HMS.Managerment
                 return instance;
             }
         }
-        private void btnReport_Click(object sender, EventArgs e)
+
+        private void btnView_Click(object sender, EventArgs e)
         {
-            ReportParameter[] param = new ReportParameter[1];
-            param[0] = new ReportParameter("param1", dtStart.Text);
-            param[0] = new ReportParameter("param2", dtEnd.Text);
-            this.rp.LocalReport.SetParameters(param);
-            this.rp.RefreshReport();
+            USP_ReportPatientTableAdapter.Fill(HMSDataSet.USP_ReportPatient, int.Parse(txtDay.Text));
+            this.reportViewer1.RefreshReport();
         }
     }
 }

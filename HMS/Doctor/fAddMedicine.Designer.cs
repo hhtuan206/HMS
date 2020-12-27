@@ -33,9 +33,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbTime_Of_Day = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnAddMore = new System.Windows.Forms.Button();
             this.bntAddOne = new System.Windows.Forms.Button();
+            this.txtQuantity = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantity)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -56,7 +57,7 @@
             this.cbMedicine.Location = new System.Drawing.Point(311, 227);
             this.cbMedicine.Name = "cbMedicine";
             this.cbMedicine.Size = new System.Drawing.Size(121, 24);
-            this.cbMedicine.TabIndex = 3;
+            this.cbMedicine.TabIndex = 1;
             // 
             // label3
             // 
@@ -84,8 +85,7 @@
             this.cbTime_Of_Day.Location = new System.Drawing.Point(311, 401);
             this.cbTime_Of_Day.Name = "cbTime_Of_Day";
             this.cbTime_Of_Day.Size = new System.Drawing.Size(121, 24);
-            this.cbTime_Of_Day.TabIndex = 7;
-            this.cbTime_Of_Day.SelectedIndexChanged += new System.EventHandler(this.cbTime_Of_Day_SelectedIndexChanged);
+            this.cbTime_Of_Day.TabIndex = 3;
             // 
             // label4
             // 
@@ -95,14 +95,6 @@
             this.label4.Size = new System.Drawing.Size(82, 17);
             this.label4.TabIndex = 6;
             this.label4.Text = "Time of day";
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Location = new System.Drawing.Point(311, 314);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(100, 22);
-            this.txtQuantity.TabIndex = 8;
-            this.txtQuantity.Text = "1";
             // 
             // btnAddMore
             // 
@@ -124,14 +116,21 @@
             this.bntAddOne.UseVisualStyleBackColor = true;
             this.bntAddOne.Click += new System.EventHandler(this.bntAddOne_Click);
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Location = new System.Drawing.Point(312, 309);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(120, 22);
+            this.txtQuantity.TabIndex = 2;
+            // 
             // fAddMedicine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(680, 682);
+            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.bntAddOne);
             this.Controls.Add(this.btnAddMore);
-            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.cbTime_Of_Day);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -139,7 +138,7 @@
             this.Controls.Add(this.label2);
             this.Name = "fAddMedicine";
             this.Text = "fAddMedicine";
-            this.Load += new System.EventHandler(this.fAddMedicine_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,8 +150,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbTime_Of_Day;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Button btnAddMore;
         private System.Windows.Forms.Button bntAddOne;
+        private System.Windows.Forms.NumericUpDown txtQuantity;
     }
 }

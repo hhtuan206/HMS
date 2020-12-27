@@ -67,7 +67,7 @@ namespace HMS
 
             try
             {
-                int id = int.Parse(txtID.Text);
+                string id = txtID.Text;
                 string email = txtEmail.Text;
                 string fullName = txtFname.Text;
                 string passWord = txtPwd.Text;
@@ -76,7 +76,7 @@ namespace HMS
                 string timeForWord = txtTW.Text;
                 string sex = cbSex.SelectedItem.ToString();
                 string departMent = cbDepartment.SelectedItem.ToString();
-                int phoneno = int.Parse(txtPhoneno.Text);
+                string phoneno =txtPhoneno.Text;
                 StaffDAO.Instance.updateStaff(id, email, fullName, passWord, birth, addRess, sex, phoneno, timeForWord, departMent);
                 MessageBox.Show("Cập nhật thành công");
             }
@@ -103,10 +103,22 @@ namespace HMS
             loadStaff();
         }
 
-        private void textBox8_TextChanged(object sender, EventArgs e)
+        private void txtPhoneno_TextChanged(object sender, EventArgs e)
         {
-            string word = txtSearch.Text;
-            dtgStaff.DataSource = StaffDAO.Instance.searchStaff(word, word, word);
+            if (System.Text.RegularExpressions.Regex.IsMatch(txtPhoneno.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Chỉ nhập số.");
+                txtPhoneno.Text = txtPhoneno.Text.Remove(txtPhoneno.Text.Length - 1);
+            }
+        }
+
+        private void txtKeyWord_TextChanged(object sender, EventArgs e)
+        {
+            try {
+                string keyword = txtKeyWord.Text;
+                dtgStaff.DataSource = StaffDAO.Instance.searchStaff(keyword);
+            } catch(Exception ex) { MessageBox.Show(ex.Message); }
+            
         }
     }
 }

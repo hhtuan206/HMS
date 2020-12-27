@@ -6,7 +6,7 @@ namespace HMS.DAO
 {
     public class DataProvider
     {
-        private string connectionSTR = "Data Source=DESKTOP-46G16IO;Initial Catalog=HMS;Integrated Security=True";
+        private string connectionSTR = "Data Source=.;Initial Catalog=HMS;Integrated Security=True";
 
         private static DataProvider instance; // Ctrl + R + E
 

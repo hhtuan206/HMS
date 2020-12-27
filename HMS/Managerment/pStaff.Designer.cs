@@ -36,8 +36,7 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtKeyWord = new System.Windows.Forms.TextBox();
             this.btnDel = new System.Windows.Forms.Panel();
             this.cbDepartment = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgStaff)).BeginInit();
             this.panel5.SuspendLayout();
@@ -139,30 +139,21 @@
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.button10);
-            this.panel6.Controls.Add(this.txtSearch);
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.txtKeyWord);
             this.panel6.Location = new System.Drawing.Point(719, 11);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(519, 75);
             this.panel6.TabIndex = 7;
             // 
-            // button10
+            // txtKeyWord
             // 
-            this.button10.Location = new System.Drawing.Point(379, 0);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(137, 69);
-            this.button10.TabIndex = 4;
-            this.button10.Text = "Xem";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(3, 23);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(370, 28);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.txtKeyWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKeyWord.Location = new System.Drawing.Point(129, 18);
+            this.txtKeyWord.Name = "txtKeyWord";
+            this.txtKeyWord.Size = new System.Drawing.Size(370, 28);
+            this.txtKeyWord.TabIndex = 0;
+            this.txtKeyWord.TextChanged += new System.EventHandler(this.txtKeyWord_TextChanged);
             // 
             // btnDel
             // 
@@ -302,6 +293,7 @@
             this.txtPhoneno.Name = "txtPhoneno";
             this.txtPhoneno.Size = new System.Drawing.Size(350, 28);
             this.txtPhoneno.TabIndex = 6;
+            this.txtPhoneno.TextChanged += new System.EventHandler(this.txtPhoneno_TextChanged);
             // 
             // label10
             // 
@@ -387,6 +379,16 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "ID";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Tìm kiếm";
+            // 
             // pStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -418,8 +420,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtKeyWord;
         private System.Windows.Forms.Panel btnDel;
         private System.Windows.Forms.TextBox txtPwd;
         private System.Windows.Forms.Label label15;
@@ -441,5 +442,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbSex;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }

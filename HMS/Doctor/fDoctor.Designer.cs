@@ -46,29 +46,30 @@
             this.tàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // bệnhNhânToolStripMenuItem
             // 
             this.bệnhNhânToolStripMenuItem.Name = "bệnhNhânToolStripMenuItem";
-            this.bệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
+            this.bệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.bệnhNhânToolStripMenuItem.Text = "Bệnh nhân";
             this.bệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.bệnhNhânToolStripMenuItem_Click);
             // 
             // lịchSửKhámBệnhToolStripMenuItem
             // 
             this.lịchSửKhámBệnhToolStripMenuItem.Name = "lịchSửKhámBệnhToolStripMenuItem";
-            this.lịchSửKhámBệnhToolStripMenuItem.Size = new System.Drawing.Size(145, 26);
+            this.lịchSửKhámBệnhToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
             this.lịchSửKhámBệnhToolStripMenuItem.Text = "Lịch sử khám bệnh";
             this.lịchSửKhámBệnhToolStripMenuItem.Click += new System.EventHandler(this.lịchSửKhámBệnhToolStripMenuItem_Click);
             // 
             // tàiKhoảnToolStripMenuItem
             // 
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            this.tàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.tàiKhoảnToolStripMenuItem_Click_1);
             // 
             // pDoctor
             // 
@@ -99,7 +100,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fDoctor";
-            this.Text = "fDoctor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bác sĩ";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -36,7 +36,7 @@
             this.txtNameTest = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtKeyWord = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnView = new System.Windows.Forms.Button();
@@ -78,13 +78,13 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(81, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 17);
+            this.label4.Size = new System.Drawing.Size(27, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "ID";
+            this.label4.Text = "Mã";
             // 
             // txtCost
             // 
-            this.txtCost.Location = new System.Drawing.Point(227, 287);
+            this.txtCost.Location = new System.Drawing.Point(227, 277);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(272, 22);
             this.txtCost.TabIndex = 3;
@@ -92,7 +92,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 287);
+            this.label2.Location = new System.Drawing.Point(81, 277);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 2;
@@ -116,28 +116,28 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.txtKeyWord);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(681, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(554, 100);
             this.panel3.TabIndex = 7;
             // 
-            // textBox3
+            // txtKeyWord
             // 
-            this.textBox3.Location = new System.Drawing.Point(239, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(285, 22);
-            this.textBox3.TabIndex = 5;
+            this.txtKeyWord.Location = new System.Drawing.Point(239, 39);
+            this.txtKeyWord.Name = "txtKeyWord";
+            this.txtKeyWord.Size = new System.Drawing.Size(285, 22);
+            this.txtKeyWord.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(85, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 17);
+            this.label3.Size = new System.Drawing.Size(64, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Ưhat do you want?";
+            this.label3.Text = "Tìm kiếm";
             // 
             // panel2
             // 
@@ -239,7 +239,7 @@
         private System.Windows.Forms.TextBox txtNameTest;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtKeyWord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnView;

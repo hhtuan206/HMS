@@ -38,6 +38,7 @@
             this.TàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thốngKêToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nhânViênToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pManager = new System.Windows.Forms.Panel();
             this.txtNameStaff = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
@@ -52,7 +53,7 @@
             this.thốngKêToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,7 +66,7 @@
             this.thuốcToolStripMenuItem,
             this.xétNghiệmToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(73, 26);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
             this.adminToolStripMenuItem.Text = "Quản lý";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -107,16 +108,17 @@
             // TàiKhoảnToolStripMenuItem
             // 
             this.TàiKhoảnToolStripMenuItem.Name = "TàiKhoảnToolStripMenuItem";
-            this.TàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.TàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.TàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             this.TàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.TàiKhoảnToolStripMenuItem_Click);
             // 
             // thốngKêToolStripMenuItem
             // 
             this.thốngKêToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bệnhNhânToolStripMenuItem});
+            this.bệnhNhânToolStripMenuItem,
+            this.nhânViênToolStripMenuItem1});
             this.thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
-            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.thốngKêToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.thốngKêToolStripMenuItem.Text = "Thống kê";
             // 
             // bệnhNhânToolStripMenuItem
@@ -125,6 +127,12 @@
             this.bệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.bệnhNhânToolStripMenuItem.Text = "Bệnh nhân";
             this.bệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.bệnhNhânToolStripMenuItem_Click);
+            // 
+            // nhânViênToolStripMenuItem1
+            // 
+            this.nhânViênToolStripMenuItem1.Name = "nhânViênToolStripMenuItem1";
+            this.nhânViênToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
+            this.nhânViênToolStripMenuItem1.Text = "Nhân viên";
             // 
             // pManager
             // 
@@ -155,7 +163,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "fManager";
-            this.Text = "fManager";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -177,5 +186,6 @@
         private System.Windows.Forms.ToolStripMenuItem thốngKêToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bệnhNhânToolStripMenuItem;
         private System.Windows.Forms.TextBox txtNameStaff;
+        private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem1;
     }
 }

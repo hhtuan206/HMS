@@ -39,28 +39,32 @@
             this.bntAddOne.Location = new System.Drawing.Point(384, 515);
             this.bntAddOne.Name = "bntAddOne";
             this.bntAddOne.Size = new System.Drawing.Size(128, 53);
-            this.bntAddOne.TabIndex = 20;
+            this.bntAddOne.TabIndex = 3;
             this.bntAddOne.Text = "Lưu và thoát";
             this.bntAddOne.UseVisualStyleBackColor = true;
             this.bntAddOne.Click += new System.EventHandler(this.bntAddOne_Click);
+            this.bntAddOne.Enter += new System.EventHandler(this.bntAddOne_Click);
             // 
             // btnAddMore
             // 
             this.btnAddMore.Location = new System.Drawing.Point(93, 515);
             this.btnAddMore.Name = "btnAddMore";
             this.btnAddMore.Size = new System.Drawing.Size(132, 53);
-            this.btnAddMore.TabIndex = 19;
+            this.btnAddMore.TabIndex = 2;
             this.btnAddMore.Text = "Lưu và thêm nữa";
             this.btnAddMore.UseVisualStyleBackColor = true;
             this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
             // 
             // cbTest
             // 
+            this.cbTest.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbTest.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbTest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTest.FormattingEnabled = true;
             this.cbTest.Location = new System.Drawing.Point(270, 310);
             this.cbTest.Name = "cbTest";
             this.cbTest.Size = new System.Drawing.Size(121, 24);
-            this.cbTest.TabIndex = 14;
+            this.cbTest.TabIndex = 1;
             // 
             // label2
             // 

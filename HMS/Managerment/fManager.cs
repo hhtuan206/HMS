@@ -12,6 +12,8 @@ namespace HMS
         {
             InitializeComponent();
             loadFullName(id);
+            pManagementInfo.Instance.getID(id);
+
         }
 
         public void loadFullName(string id)
@@ -127,6 +129,7 @@ namespace HMS
 
         private void TàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
             if (!pManager.Controls.Contains(pManagementInfo.Instance))
             {
 

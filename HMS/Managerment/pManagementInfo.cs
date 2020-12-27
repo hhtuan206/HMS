@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HMS.DAO;
+using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace HMS.Managerment
@@ -8,6 +10,21 @@ namespace HMS.Managerment
         public pManagementInfo()
         {
             InitializeComponent();
+            
+           
+        }
+        public void getID(string id = null)
+        {
+            txtID.Text = id;
+            DataTable data = StaffDAO.Instance.getInfoStaffByIdStaff(txtID.Text);
+            foreach (DataRow row in data.Rows)
+            {
+                txtFName.Text = row["full_name"].ToString();
+                txtEmail.Text = row["email"].ToString();
+                txtPhoneNo.Text = row["phone_number"].ToString();
+                txtAddress.Text = row["address"].ToString();
+
+            }
         }
 
         private static pManagementInfo instance;
@@ -34,6 +51,20 @@ namespace HMS.Managerment
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StaffDAO.Instance.updateStaffInfo(txtID.Text, txtEmail.Text, txtFName.Text, txtPwd.Text, dtpBirth.Value, txtAddress.Text, cbSex.SelectedItem.ToString(), txtPhoneNo.Text);
+                MessageBox.Show("Cập nhật thành công");
 
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            getID(txtID.Text);
+        }
     }
 }
