@@ -129,7 +129,8 @@ namespace HMS.Accountant
 
                 string id_bed = BedDAO.Instance.getIdBedByIdDetailPatient(txtID.Text);
                 BedDAO.Instance.changeStatusBed(id_bed,"0");
-                BillDAO.Instance.changePatientBill(txtID.Text, "1");
+                BillDAO.Instance.changePatientBill(txtID.Text, "1",txtTotal_money.Text);
+
                 printPreviewDialog1.Document = printDocument1;
                 printPreviewDialog1.ShowDialog();
 

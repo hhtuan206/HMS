@@ -156,6 +156,12 @@
     <Compile Include="Managerment\pMedicine.Designer.cs">
       <DependentUpon>pMedicine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Managerment\pPatientByTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Managerment\pPatientByTime.Designer.cs">
+      <DependentUpon>pPatientByTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="Managerment\pPatientReport.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     <EmbeddedResource Include="Managerment\fManager.resx">
       <DependentUpon>fManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\fManager.vi-VN.resx">
+      <DependentUpon>fManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Managerment\pBed.resx">
       <DependentUpon>pBed.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +254,9 @@
     <EmbeddedResource Include="Managerment\pMedicine.resx">
       <DependentUpon>pMedicine.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Managerment\pPatientByTime.resx">
+      <DependentUpon>pPatientByTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Managerment\pPatientReport.resx">
       <DependentUpon>pPatientReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +264,7 @@
       <DependentUpon>pTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Managerment\Report1.rdlc" />
+    <EmbeddedResource Include="Managerment\Report2.rdlc" />
     <EmbeddedResource Include="Nurse\fNurse.resx">
       <DependentUpon>fNurse.cs</DependentUpon>
     </EmbeddedResource>

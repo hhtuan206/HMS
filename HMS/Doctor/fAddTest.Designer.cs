@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAddTest));
             this.bntAddOne = new System.Windows.Forms.Button();
             this.btnAddMore = new System.Windows.Forms.Button();
             this.cbTest = new System.Windows.Forms.ComboBox();
@@ -72,7 +73,7 @@
             this.label2.Location = new System.Drawing.Point(149, 310);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 17);
-            this.label2.TabIndex = 12;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Test";
             // 
             // fAddTest
@@ -84,8 +85,10 @@
             this.Controls.Add(this.btnAddMore);
             this.Controls.Add(this.cbTest);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "fAddTest";
-            this.Text = "fAddTest";
+            this.Text = "Thêm xét nghiệm";
             this.ResumeLayout(false);
             this.PerformLayout();
 

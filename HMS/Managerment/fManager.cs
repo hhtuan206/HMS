@@ -33,6 +33,7 @@ namespace HMS
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pStaff.Instance.loadStaff();
             if (!pManager.Controls.Contains(pStaff.Instance))
             {
 
@@ -48,6 +49,7 @@ namespace HMS
 
         private void khuVựcToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pWard.Instance.loadWard();
             if (!pManager.Controls.Contains(pWard.Instance))
             {
 
@@ -63,6 +65,7 @@ namespace HMS
 
         private void giườngBệnhToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pBed.Instance.fillCbWard();
             if (!pManager.Controls.Contains(pBed.Instance))
             {
 
@@ -78,6 +81,7 @@ namespace HMS
 
         private void thuốcToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pMedicine.Instance.loadMedicine();
             if (!pManager.Controls.Contains(pMedicine.Instance))
             {
 
@@ -93,6 +97,7 @@ namespace HMS
 
         private void xétNghiệmToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pTest.Instance.loadTest();
             if (!pManager.Controls.Contains(pTest.Instance))
             {
 
@@ -107,10 +112,6 @@ namespace HMS
         }
         #endregion
 
-        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void bệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -140,6 +141,22 @@ namespace HMS
             else
             {
                 pManagementInfo.Instance.BringToFront();
+            }
+            
+        }
+
+        private void bệnhNhânTheoNgàythángnămToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!pManager.Controls.Contains(pPatientByTime.Instance))
+            {
+
+                pManager.Controls.Add(pPatientByTime.Instance);
+                pPatientByTime.Instance.Dock = DockStyle.Fill;
+                pPatientByTime.Instance.BringToFront();
+            }
+            else
+            {
+                pPatientByTime.Instance.BringToFront();
             }
         }
     }

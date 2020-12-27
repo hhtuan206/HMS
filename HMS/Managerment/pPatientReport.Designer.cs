@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.USP_ReportPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.HMSDataSet = new HMS.Managerment.HMSDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -71,7 +71,7 @@
             this.label1.Location = new System.Drawing.Point(129, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 17);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Số ngày";
             // 
             // txtDay
@@ -79,14 +79,14 @@
             this.txtDay.Location = new System.Drawing.Point(229, 29);
             this.txtDay.Name = "txtDay";
             this.txtDay.Size = new System.Drawing.Size(212, 22);
-            this.txtDay.TabIndex = 6;
+            this.txtDay.TabIndex = 1;
             // 
             // btnView
             // 
             this.btnView.Location = new System.Drawing.Point(614, 3);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(75, 69);
-            this.btnView.TabIndex = 5;
+            this.btnView.TabIndex = 2;
             this.btnView.Text = "Xem";
             this.btnView.UseVisualStyleBackColor = true;
             this.btnView.Click += new System.EventHandler(this.btnView_Click);
@@ -104,15 +104,16 @@
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "HMSDS";
-            reportDataSource2.Value = this.USP_ReportPatientBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "HMSDS";
+            reportDataSource1.Value = this.USP_ReportPatientBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "HMS.Managerment.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1226, 511);
             this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
             // USP_ReportPatientTableAdapter
             // 

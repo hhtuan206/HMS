@@ -76,9 +76,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgAmitPatient);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(3, 6);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 637);
+            this.panel1.Size = new System.Drawing.Size(505, 634);
             this.panel1.TabIndex = 0;
             // 
             // dtgAmitPatient
@@ -91,14 +91,13 @@
             this.fName,
             this.Po,
             this.Column6});
-            this.dtgAmitPatient.Dock = System.Windows.Forms.DockStyle.Left;
-            this.dtgAmitPatient.Location = new System.Drawing.Point(0, 0);
+            this.dtgAmitPatient.Location = new System.Drawing.Point(0, 3);
             this.dtgAmitPatient.Name = "dtgAmitPatient";
             this.dtgAmitPatient.RowHeadersVisible = false;
             this.dtgAmitPatient.RowHeadersWidth = 51;
             this.dtgAmitPatient.RowTemplate.Height = 24;
             this.dtgAmitPatient.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgAmitPatient.Size = new System.Drawing.Size(499, 637);
+            this.dtgAmitPatient.Size = new System.Drawing.Size(502, 628);
             this.dtgAmitPatient.TabIndex = 0;
             this.dtgAmitPatient.SelectionChanged += new System.EventHandler(this.dtgAmitPatient_SelectionChanged);
             // 
@@ -141,7 +140,7 @@
             this.panel2.Location = new System.Drawing.Point(514, 6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(721, 637);
-            this.panel2.TabIndex = 1;
+            this.panel2.TabIndex = 0;
             // 
             // panel9
             // 
@@ -150,7 +149,7 @@
             this.panel9.Location = new System.Drawing.Point(6, 82);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(318, 122);
-            this.panel9.TabIndex = 10;
+            this.panel9.TabIndex = 2;
             // 
             // label5
             // 
@@ -172,10 +171,10 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(587, 553);
+            this.btnSave.Location = new System.Drawing.Point(299, 553);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(134, 81);
-            this.btnSave.TabIndex = 12;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -191,15 +190,15 @@
             this.panel4.Location = new System.Drawing.Point(6, 210);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(712, 333);
-            this.panel4.TabIndex = 11;
+            this.panel4.TabIndex = 3;
             // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(552, 9);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 81);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Xoá";
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Xoá xét nghiệm";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -208,8 +207,8 @@
             this.button4.Location = new System.Drawing.Point(431, 6);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 81);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Thêm";
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Thêm xét nghiệm";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -218,8 +217,8 @@
             this.btnDeleteMedicine.Location = new System.Drawing.Point(174, 3);
             this.btnDeleteMedicine.Name = "btnDeleteMedicine";
             this.btnDeleteMedicine.Size = new System.Drawing.Size(75, 81);
-            this.btnDeleteMedicine.TabIndex = 13;
-            this.btnDeleteMedicine.Text = "Xoá";
+            this.btnDeleteMedicine.TabIndex = 1;
+            this.btnDeleteMedicine.Text = "Xoá thuốc";
             this.btnDeleteMedicine.UseVisualStyleBackColor = true;
             this.btnDeleteMedicine.Click += new System.EventHandler(this.btnDeleteMedicine_Click);
             // 
@@ -228,8 +227,8 @@
             this.btnAddMedicine.Location = new System.Drawing.Point(51, 0);
             this.btnAddMedicine.Name = "btnAddMedicine";
             this.btnAddMedicine.Size = new System.Drawing.Size(75, 81);
-            this.btnAddMedicine.TabIndex = 12;
-            this.btnAddMedicine.Text = "Thêm";
+            this.btnAddMedicine.TabIndex = 0;
+            this.btnAddMedicine.Text = "Thêm thuốc";
             this.btnAddMedicine.UseVisualStyleBackColor = true;
             this.btnAddMedicine.Click += new System.EventHandler(this.btnAddMedicine_Click);
             // 
@@ -239,7 +238,7 @@
             this.panel5.Location = new System.Drawing.Point(369, 90);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(340, 240);
-            this.panel5.TabIndex = 11;
+            this.panel5.TabIndex = 5;
             // 
             // dtgTest
             // 
@@ -250,12 +249,14 @@
             this.id_test,
             this.test});
             this.dtgTest.Location = new System.Drawing.Point(3, 3);
+            this.dtgTest.MultiSelect = false;
             this.dtgTest.Name = "dtgTest";
+            this.dtgTest.ReadOnly = true;
             this.dtgTest.RowHeadersVisible = false;
             this.dtgTest.RowHeadersWidth = 51;
             this.dtgTest.RowTemplate.Height = 24;
             this.dtgTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgTest.Size = new System.Drawing.Size(334, 234);
+            this.dtgTest.Size = new System.Drawing.Size(354, 240);
             this.dtgTest.TabIndex = 0;
             // 
             // id_test
@@ -263,6 +264,7 @@
             this.id_test.HeaderText = "Mã Xét Nghiệm";
             this.id_test.MinimumWidth = 6;
             this.id_test.Name = "id_test";
+            this.id_test.ReadOnly = true;
             this.id_test.Visible = false;
             // 
             // test
@@ -270,6 +272,7 @@
             this.test.HeaderText = "Tên xét nghiệm";
             this.test.MinimumWidth = 6;
             this.test.Name = "test";
+            this.test.ReadOnly = true;
             // 
             // panel3
             // 
@@ -277,7 +280,7 @@
             this.panel3.Location = new System.Drawing.Point(3, 90);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(360, 240);
-            this.panel3.TabIndex = 10;
+            this.panel3.TabIndex = 4;
             // 
             // dtgMedicine
             // 
@@ -290,12 +293,14 @@
             this.quantity,
             this.time_of_day});
             this.dtgMedicine.Location = new System.Drawing.Point(3, 3);
+            this.dtgMedicine.MultiSelect = false;
             this.dtgMedicine.Name = "dtgMedicine";
+            this.dtgMedicine.ReadOnly = true;
             this.dtgMedicine.RowHeadersVisible = false;
             this.dtgMedicine.RowHeadersWidth = 51;
             this.dtgMedicine.RowTemplate.Height = 24;
             this.dtgMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgMedicine.Size = new System.Drawing.Size(354, 234);
+            this.dtgMedicine.Size = new System.Drawing.Size(354, 240);
             this.dtgMedicine.TabIndex = 0;
             // 
             // id_medicine
@@ -303,6 +308,7 @@
             this.id_medicine.HeaderText = "ID thuốc";
             this.id_medicine.MinimumWidth = 6;
             this.id_medicine.Name = "id_medicine";
+            this.id_medicine.ReadOnly = true;
             this.id_medicine.Visible = false;
             // 
             // medicine
@@ -310,18 +316,21 @@
             this.medicine.HeaderText = "Tên thuốc";
             this.medicine.MinimumWidth = 6;
             this.medicine.Name = "medicine";
+            this.medicine.ReadOnly = true;
             // 
             // quantity
             // 
             this.quantity.HeaderText = "Số lượng";
             this.quantity.MinimumWidth = 6;
             this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
             // 
             // time_of_day
             // 
             this.time_of_day.HeaderText = "Thờii gian sử dụng";
             this.time_of_day.MinimumWidth = 6;
             this.time_of_day.Name = "time_of_day";
+            this.time_of_day.ReadOnly = true;
             // 
             // panel7
             // 
@@ -330,7 +339,7 @@
             this.panel7.Location = new System.Drawing.Point(6, -5);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(318, 81);
-            this.panel7.TabIndex = 9;
+            this.panel7.TabIndex = 0;
             // 
             // label2
             // 
@@ -356,7 +365,7 @@
             this.panel8.Location = new System.Drawing.Point(330, 0);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(306, 76);
-            this.panel8.TabIndex = 8;
+            this.panel8.TabIndex = 1;
             // 
             // label1
             // 

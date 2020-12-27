@@ -39,12 +39,16 @@
             this.txtKeyWord = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnView = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgMedicine = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicine_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,7 +67,7 @@
             this.panel4.Location = new System.Drawing.Point(681, 109);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(554, 512);
-            this.panel4.TabIndex = 8;
+            this.panel4.TabIndex = 0;
             // 
             // txtID
             // 
@@ -71,7 +75,7 @@
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(272, 22);
-            this.txtID.TabIndex = 5;
+            this.txtID.TabIndex = 3;
             // 
             // label4
             // 
@@ -79,7 +83,7 @@
             this.label4.Location = new System.Drawing.Point(81, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 17);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Mã";
             // 
             // txtCost
@@ -87,7 +91,7 @@
             this.txtCost.Location = new System.Drawing.Point(227, 277);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(272, 22);
-            this.txtCost.TabIndex = 3;
+            this.txtCost.TabIndex = 5;
             // 
             // label2
             // 
@@ -103,7 +107,7 @@
             this.txtNameTest.Location = new System.Drawing.Point(227, 183);
             this.txtNameTest.Name = "txtNameTest";
             this.txtNameTest.Size = new System.Drawing.Size(272, 22);
-            this.txtNameTest.TabIndex = 1;
+            this.txtNameTest.TabIndex = 4;
             // 
             // label1
             // 
@@ -111,7 +115,7 @@
             this.label1.Location = new System.Drawing.Point(81, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Tên thuốc";
             // 
             // panel3
@@ -121,14 +125,15 @@
             this.panel3.Location = new System.Drawing.Point(681, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(554, 100);
-            this.panel3.TabIndex = 7;
+            this.panel3.TabIndex = 1;
             // 
             // txtKeyWord
             // 
             this.txtKeyWord.Location = new System.Drawing.Point(239, 39);
             this.txtKeyWord.Name = "txtKeyWord";
             this.txtKeyWord.Size = new System.Drawing.Size(285, 22);
-            this.txtKeyWord.TabIndex = 5;
+            this.txtKeyWord.TabIndex = 1;
+            this.txtKeyWord.TextChanged += new System.EventHandler(this.txtKeyWord_TextChanged);
             // 
             // label3
             // 
@@ -136,28 +141,18 @@
             this.label3.Location = new System.Drawing.Point(85, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Tìm kiếm";
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnView);
             this.panel2.Controls.Add(this.btnDel);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(672, 100);
-            this.panel2.TabIndex = 6;
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(544, 3);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(75, 94);
-            this.btnView.TabIndex = 3;
-            this.btnView.Text = "Xem";
-            this.btnView.UseVisualStyleBackColor = true;
+            this.panel2.TabIndex = 2;
             // 
             // btnDel
             // 
@@ -175,7 +170,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 94);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Text = "Cập nhật";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -195,20 +190,70 @@
             this.panel1.Location = new System.Drawing.Point(3, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(672, 518);
-            this.panel1.TabIndex = 5;
+            this.panel1.TabIndex = 3;
             // 
             // dtgMedicine
             // 
             this.dtgMedicine.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgMedicine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgMedicine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.medicine_name,
+            this.cost,
+            this.Column1,
+            this.Column2});
             this.dtgMedicine.Location = new System.Drawing.Point(3, 3);
             this.dtgMedicine.Name = "dtgMedicine";
+            this.dtgMedicine.ReadOnly = true;
             this.dtgMedicine.RowHeadersVisible = false;
             this.dtgMedicine.RowHeadersWidth = 51;
             this.dtgMedicine.RowTemplate.Height = 24;
             this.dtgMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgMedicine.Size = new System.Drawing.Size(666, 509);
             this.dtgMedicine.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // medicine_name
+            // 
+            this.medicine_name.DataPropertyName = "medicine_name";
+            this.medicine_name.HeaderText = "Tên thuốc";
+            this.medicine_name.MinimumWidth = 6;
+            this.medicine_name.Name = "medicine_name";
+            this.medicine_name.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "cost";
+            this.cost.HeaderText = "Giá tiền";
+            this.cost.MinimumWidth = 6;
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "update_at";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "create_at";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
             // 
             // pMedicine
             // 
@@ -242,7 +287,6 @@
         private System.Windows.Forms.TextBox txtKeyWord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
@@ -250,5 +294,10 @@
         private System.Windows.Forms.DataGridView dtgMedicine;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn medicine_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

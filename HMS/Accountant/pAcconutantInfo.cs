@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HMS.DAO;
+using System.Globalization;
 
 namespace HMS.Accountant
 {
@@ -44,10 +45,11 @@ namespace HMS.Accountant
                 txtEmail.Text = row["email"].ToString();
                 txtPhoneNo.Text = row["phone_number"].ToString();
                 txtAddress.Text = row["address"].ToString();
-
             }
+            cbSex.SelectedIndex = 0;
         }
-        void updateAccountant()
+       
+        private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
@@ -63,12 +65,13 @@ namespace HMS.Accountant
                 MessageBox.Show("Cập nhật thành công");
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
-
+            
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnResset_Click(object sender, EventArgs e)
         {
-            updateAccountant();
+            getID(txtID.Text);
+            txtPwd.Text = "";
         }
     }
 }

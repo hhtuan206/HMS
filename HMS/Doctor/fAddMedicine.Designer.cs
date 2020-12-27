@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fAddMedicine));
             this.label2 = new System.Windows.Forms.Label();
             this.cbMedicine = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,7 +46,7 @@
             this.label2.Location = new System.Drawing.Point(190, 227);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 17);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Medicine";
             // 
             // cbMedicine
@@ -57,7 +58,7 @@
             this.cbMedicine.Location = new System.Drawing.Point(311, 227);
             this.cbMedicine.Name = "cbMedicine";
             this.cbMedicine.Size = new System.Drawing.Size(121, 24);
-            this.cbMedicine.TabIndex = 1;
+            this.cbMedicine.TabIndex = 3;
             // 
             // label3
             // 
@@ -65,7 +66,7 @@
             this.label3.Location = new System.Drawing.Point(190, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 17);
-            this.label3.TabIndex = 4;
+            this.label3.TabIndex = 1;
             this.label3.Text = "Số lượng";
             // 
             // cbTime_Of_Day
@@ -85,7 +86,7 @@
             this.cbTime_Of_Day.Location = new System.Drawing.Point(311, 401);
             this.cbTime_Of_Day.Name = "cbTime_Of_Day";
             this.cbTime_Of_Day.Size = new System.Drawing.Size(121, 24);
-            this.cbTime_Of_Day.TabIndex = 3;
+            this.cbTime_Of_Day.TabIndex = 5;
             // 
             // label4
             // 
@@ -93,7 +94,7 @@
             this.label4.Location = new System.Drawing.Point(190, 401);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(82, 17);
-            this.label4.TabIndex = 6;
+            this.label4.TabIndex = 2;
             this.label4.Text = "Time of day";
             // 
             // btnAddMore
@@ -101,7 +102,7 @@
             this.btnAddMore.Location = new System.Drawing.Point(122, 585);
             this.btnAddMore.Name = "btnAddMore";
             this.btnAddMore.Size = new System.Drawing.Size(132, 53);
-            this.btnAddMore.TabIndex = 9;
+            this.btnAddMore.TabIndex = 6;
             this.btnAddMore.Text = "Lưu và thêm nữa";
             this.btnAddMore.UseVisualStyleBackColor = true;
             this.btnAddMore.Click += new System.EventHandler(this.btnAddMore_Click);
@@ -111,7 +112,7 @@
             this.bntAddOne.Location = new System.Drawing.Point(413, 585);
             this.bntAddOne.Name = "bntAddOne";
             this.bntAddOne.Size = new System.Drawing.Size(128, 53);
-            this.bntAddOne.TabIndex = 10;
+            this.bntAddOne.TabIndex = 7;
             this.bntAddOne.Text = "Lưu và thoát";
             this.bntAddOne.UseVisualStyleBackColor = true;
             this.bntAddOne.Click += new System.EventHandler(this.bntAddOne_Click);
@@ -121,7 +122,7 @@
             this.txtQuantity.Location = new System.Drawing.Point(312, 309);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(120, 22);
-            this.txtQuantity.TabIndex = 2;
+            this.txtQuantity.TabIndex = 4;
             // 
             // fAddMedicine
             // 
@@ -136,8 +137,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbMedicine);
             this.Controls.Add(this.label2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "fAddMedicine";
-            this.Text = "fAddMedicine";
+            this.Text = "Thêm thuốc";
             ((System.ComponentModel.ISupportInitialize)(this.txtQuantity)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -27,6 +27,11 @@ namespace HMS.Managerment
             USP_ReportPatientTableAdapter.Fill(HMSDataSet.USP_ReportPatient, int.Parse(txtDay.Text));
             this.reportViewer1.RefreshReport();
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

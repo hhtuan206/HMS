@@ -93,7 +93,7 @@
             this.panel10.Location = new System.Drawing.Point(591, 178);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(452, 71);
-            this.panel10.TabIndex = 8;
+            this.panel10.TabIndex = 6;
             // 
             // dtpBirth
             // 
@@ -119,7 +119,7 @@
             this.panel9.Location = new System.Drawing.Point(1088, 204);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 205);
-            this.panel9.TabIndex = 7;
+            this.panel9.TabIndex = 9;
             // 
             // btnSave
             // 
@@ -148,7 +148,7 @@
             this.panel8.Location = new System.Drawing.Point(133, 98);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(452, 71);
-            this.panel8.TabIndex = 6;
+            this.panel8.TabIndex = 1;
             // 
             // txtID
             // 
@@ -174,7 +174,7 @@
             this.panel7.Location = new System.Drawing.Point(591, 358);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(452, 71);
-            this.panel7.TabIndex = 5;
+            this.panel7.TabIndex = 8;
             // 
             // cbSex
             // 
@@ -207,7 +207,7 @@
             this.panel6.Location = new System.Drawing.Point(133, 252);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(452, 71);
-            this.panel6.TabIndex = 4;
+            this.panel6.TabIndex = 3;
             // 
             // txtPwd
             // 
@@ -232,7 +232,7 @@
             this.panel5.Location = new System.Drawing.Point(133, 332);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(452, 122);
-            this.panel5.TabIndex = 3;
+            this.panel5.TabIndex = 4;
             // 
             // txtAddress
             // 
@@ -258,7 +258,7 @@
             this.panel4.Location = new System.Drawing.Point(591, 255);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(452, 71);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 7;
             // 
             // txtPhoneNo
             // 
@@ -284,7 +284,7 @@
             this.panel3.Location = new System.Drawing.Point(591, 101);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(452, 71);
-            this.panel3.TabIndex = 1;
+            this.panel3.TabIndex = 5;
             // 
             // txtFName
             // 
@@ -309,7 +309,7 @@
             this.panel2.Location = new System.Drawing.Point(133, 175);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(452, 71);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 2;
             // 
             // txtEmail
             // 
@@ -332,7 +332,7 @@
             this.panel11.Location = new System.Drawing.Point(121, 48);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(935, 480);
-            this.panel11.TabIndex = 9;
+            this.panel11.TabIndex = 0;
             // 
             // pManagementInfo
             // 
@@ -340,7 +340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Name = "pManagementInfo";
-            this.Size = new System.Drawing.Size(1238, 643);
+            this.Size = new System.Drawing.Size(1241, 643);
             this.panel1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();

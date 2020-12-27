@@ -61,7 +61,7 @@ namespace HMS.DAO
 
         public void updateStaff(string id, string email, string full_name, string password, DateTime birth, string address, string sex, string phone_no, string time_for_work,string department = null)
         {
-            string query = "UPDATE dbo.staff SET email = N'" + email + "', full_name = N'" + full_name + "', password = N'" + password + "', birthday = '" + birth + "', address = N'" + address + "', sex = '" + sex + "',phone_number = '" + phone_no + "',time_for_work =N'" + time_for_work + "',deparment = N'"+department+"', update_at = getDate() WHERE id = " + id + "";
+            string query = "UPDATE dbo.staff SET email = N'" + email + "', full_name = N'" + full_name + "', password = N'" + password + "', birthday = '" + birth + "', address = N'" + address + "', sex = '" + sex + "',phone_number = '" + phone_no + "',time_for_work =N'" + time_for_work + "',department = N'"+department+"', update_at = getDate() WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
@@ -73,20 +73,20 @@ namespace HMS.DAO
 
         public void deleteStaff(int id)
         {
-            string query = "DELETE dbo.staff WHERE id = =" + id + "";
+            string query = "DELETE dbo.staff WHERE id =" + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
 
         public DataTable getAllStaff()
         {
-            string query = "SELECT * FROM dbo.staff";
+            string query = "SELECT dbo.staff.id,dbo.staff.email,dbo.staff.full_name,dbo.staff.address,dbo.staff.sex,dbo.staff.phone_number, dbo.staff.department,dbo.staff.time_for_work,dbo.staff.birthday FROM dbo.staff WHERE department = N'Bác sĩ' or department = N'Y tá' or department = N'Kế toán'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
 
         public DataTable searchStaff(string word)
         {
-            string query = "SELECT* FROM dbo.staff WHERE email LIKE N'%" + word + "%' OR address LIKE N'%" + word + "%' OR full_name LIKE N'%" + word + "%' ";
+            string query = "SELECT dbo.staff.id,dbo.staff.email,dbo.staff.full_name,dbo.staff.address,dbo.staff.sex,dbo.staff.phone_number, dbo.staff.department,dbo.staff.time_for_work,dbo.staff.birthday FROM dbo.staff WHERE (email LIKE N'%" + word + "%' OR address LIKE N'%" + word + "%' OR full_name LIKE N'%" + word + "%' ) and department = N'Bác sĩ' or department = N'Y tá' or department = N'Kế toán'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }

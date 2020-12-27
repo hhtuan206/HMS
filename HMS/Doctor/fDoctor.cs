@@ -8,13 +8,13 @@ namespace HMS
 {
     public partial class fDoctor : Form
     {
+        string iddoc = null;
         public fDoctor(string id = null)
         {
             InitializeComponent();
-            pPatients.Instance.Id_staff = id;
             pPatients.Instance.getAllPatient(id);
             loadFullName(id);
-            pDoctorInfo.Instance.getID(id);
+            iddoc = id;
         }
 
 
@@ -28,6 +28,7 @@ namespace HMS
         }
         private void bệnhNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            pDoctorInfo.Instance.getID(iddoc);
             if (!pDoctor.Controls.Contains(pPatients.Instance))
             {
                 pDoctor.Controls.Add(pPatients.Instance);
@@ -40,18 +41,9 @@ namespace HMS
             }
         }
 
-        private void TàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lịchSửKhámBệnhToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void tàiKhoảnToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            
             if (!pDoctor.Controls.Contains(pDoctorInfo.Instance))
             {
                 pDoctor.Controls.Add(pDoctorInfo.Instance);

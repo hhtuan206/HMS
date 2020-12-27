@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fDoctor));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.bệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lịchSửKhámBệnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pDoctor = new System.Windows.Forms.Panel();
             this.txtNameStaff = new System.Windows.Forms.TextBox();
@@ -42,7 +42,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bệnhNhânToolStripMenuItem,
-            this.lịchSửKhámBệnhToolStripMenuItem,
             this.tàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -56,13 +55,6 @@
             this.bệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(92, 24);
             this.bệnhNhânToolStripMenuItem.Text = "Bệnh nhân";
             this.bệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.bệnhNhânToolStripMenuItem_Click);
-            // 
-            // lịchSửKhámBệnhToolStripMenuItem
-            // 
-            this.lịchSửKhámBệnhToolStripMenuItem.Name = "lịchSửKhámBệnhToolStripMenuItem";
-            this.lịchSửKhámBệnhToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
-            this.lịchSửKhámBệnhToolStripMenuItem.Text = "Lịch sử khám bệnh";
-            this.lịchSửKhámBệnhToolStripMenuItem.Click += new System.EventHandler(this.lịchSửKhámBệnhToolStripMenuItem_Click);
             // 
             // tàiKhoảnToolStripMenuItem
             // 
@@ -87,7 +79,7 @@
             this.txtNameStaff.Location = new System.Drawing.Point(1095, 5);
             this.txtNameStaff.Name = "txtNameStaff";
             this.txtNameStaff.Size = new System.Drawing.Size(155, 22);
-            this.txtNameStaff.TabIndex = 3;
+            this.txtNameStaff.TabIndex = 2;
             this.txtNameStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fDoctor
@@ -98,7 +90,9 @@
             this.Controls.Add(this.txtNameStaff);
             this.Controls.Add(this.pDoctor);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "fDoctor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bác sĩ";
@@ -115,7 +109,6 @@
         private System.Windows.Forms.ToolStripMenuItem bệnhNhânToolStripMenuItem;
         private System.Windows.Forms.Panel pDoctor;
         private System.Windows.Forms.TextBox txtNameStaff;
-        private System.Windows.Forms.ToolStripMenuItem lịchSửKhámBệnhToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
     }
 }

@@ -26,7 +26,7 @@ namespace HMS.Managerment
             }
         }
 
-        void loadTest()
+       public void loadTest()
         {
             bindingSource.DataSource = TestDAO.Instance.getAllTest();
             dtgTest.DataSource = bindingSource;
@@ -89,6 +89,18 @@ namespace HMS.Managerment
                 MessageBox.Show(ex.Message);
             }
         }
+
         #endregion
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = txtKeyword.Text;
+                bindingSource.DataSource = TestDAO.Instance.searchTestProduct(keyword);
+                dtgTest.DataSource = bindingSource;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
     }
 }

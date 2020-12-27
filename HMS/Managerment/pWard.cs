@@ -25,7 +25,7 @@ namespace HMS
             }
         }
 
-        void loadWard()
+        public void loadWard()
         {
             bindingSource.DataSource = WardDAO.Instance.getAllWard();
             dtgWard.DataSource = bindingSource;
@@ -83,6 +83,17 @@ namespace HMS
                 MessageBox.Show(ex.ToString());
             }
             loadWard();
+        }
+
+        private void txtKeyword_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = txtKeyword.Text;
+                bindingSource.DataSource = WardDAO.Instance.searchWard(keyword);
+                dtgWard.DataSource = bindingSource;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 

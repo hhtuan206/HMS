@@ -19,7 +19,7 @@ namespace HMS.DAO
 
         public DataTable LoadBedList()
         {
-            string query = "select * from bed ";
+            string query = "SELECT  dbo.bed.id,dbo.bed.number_bed,dbo.bed.status, dbo.ward.name_ward FROM dbo.ward INNER JOIN dbo.bed ON bed.id_ward = ward.id ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }

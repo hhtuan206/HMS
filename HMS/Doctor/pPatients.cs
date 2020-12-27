@@ -8,7 +8,6 @@ namespace HMS
     public partial class pPatients : UserControl
     {
 
-        private string id_staff;
 
 
         public pPatients()
@@ -26,11 +25,12 @@ namespace HMS
                 return instance;
             }
         }
-
-        public string Id_staff { get => id_staff; set => id_staff = value; }
+        string iddoc = null;
+        
 
         public void getAllPatient(string id)
         {
+            iddoc = id;
             DataTable data = PatientDAO.Instance.getListPatientByIdStaff(id);
             dtgAmitPatient.DataSource = data;
         }
@@ -46,9 +46,6 @@ namespace HMS
             }
 
         }
-
-
-
 
 
         public void loadMedicine(string id_medicine, string medicine, string quantity, string time_of_day)
@@ -90,8 +87,10 @@ namespace HMS
                     TestDAO.Instance.createTest(id_detail_patient, id_test);
                 }
                 DetailPatientDAO.Instance.changeStatusPatient(int.Parse(txtID.Text), 0);
-                MessageBox.Show("OK");
-
+                MessageBox.Show("Thành công");
+                getAllPatient(iddoc);
+                dtgMedicine.Rows.Clear();
+                dtgTest.Rows.Clear();
             }
             catch (Exception ex)
             {
@@ -121,5 +120,7 @@ namespace HMS
             fAddTest addTest = new fAddTest();
             addTest.ShowDialog();
         }
+
+       
     }
 }

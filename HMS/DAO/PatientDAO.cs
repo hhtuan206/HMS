@@ -35,7 +35,7 @@ namespace HMS.DAO
 
         public DataTable getListPatient()
         {
-            string query = "SELECT * FROM dbo.patient";
+            string query = "SELECT dbo.patient.id,dbo.patient.full_name,dbo.patient.address,dbo.patient.phone_number,dbo.patient.health_insurance_number,dbo.patient.sex FROM dbo.patient";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
@@ -86,6 +86,13 @@ namespace HMS.DAO
         {
             string query = "UPDATE [dbo].[patient] SET [full_name] = N'"+fname+"',[address] = N'"+address+"',[health_insurance_number] = '"+hin+"',[update_at] = GETDATE(),[sex] = N'"+sex+"',[phone_number] = '"+phoneno+"',[birthday] = '"+birthday+"' WHERE id = "+id+"";
             DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public DataTable searchPatient(string keyword)
+        {
+            string query = "SELECT dbo.patient.id,dbo.patient.full_name,dbo.patient.address,dbo.patient.phone_number,dbo.patient.health_insurance_number,dbo.patient.sex FROM dbo.patient WHERE sex LIKE N'%" + keyword + "%' OR health_insurance_number LIKE N'%" + keyword+ "%' OR phone_number LIKE N'%" + keyword + "%' OR address LIKE N'%" + keyword + "%' OR full_name LIKE N'%" + keyword + "%'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
         }
     }
 }

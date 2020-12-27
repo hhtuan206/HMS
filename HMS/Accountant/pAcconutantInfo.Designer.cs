@@ -33,7 +33,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnResset = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReset = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -66,7 +66,7 @@
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.btnReset.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel10
@@ -76,7 +76,7 @@
             this.panel10.Location = new System.Drawing.Point(504, 183);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(452, 71);
-            this.panel10.TabIndex = 8;
+            this.panel10.TabIndex = 6;
             // 
             // dtpBirth
             // 
@@ -98,11 +98,11 @@
             // panel9
             // 
             this.panel9.Controls.Add(this.btnSave);
-            this.panel9.Controls.Add(this.button1);
+            this.panel9.Controls.Add(this.btnResset);
             this.panel9.Location = new System.Drawing.Point(1064, 207);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(200, 205);
-            this.panel9.TabIndex = 7;
+            this.panel9.TabIndex = 9;
             // 
             // btnSave
             // 
@@ -114,14 +114,15 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // button1
+            // btnResset
             // 
-            this.button1.Location = new System.Drawing.Point(64, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 68);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Cài lại";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnResset.Location = new System.Drawing.Point(64, 3);
+            this.btnResset.Name = "btnResset";
+            this.btnResset.Size = new System.Drawing.Size(75, 68);
+            this.btnResset.TabIndex = 0;
+            this.btnResset.Text = "Cài lại";
+            this.btnResset.UseVisualStyleBackColor = true;
+            this.btnResset.Click += new System.EventHandler(this.btnResset_Click);
             // 
             // panel8
             // 
@@ -130,7 +131,7 @@
             this.panel8.Location = new System.Drawing.Point(46, 106);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(452, 71);
-            this.panel8.TabIndex = 6;
+            this.panel8.TabIndex = 1;
             // 
             // txtID
             // 
@@ -156,7 +157,7 @@
             this.panel7.Location = new System.Drawing.Point(504, 370);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(452, 71);
-            this.panel7.TabIndex = 5;
+            this.panel7.TabIndex = 8;
             // 
             // cbSex
             // 
@@ -189,7 +190,7 @@
             this.panel6.Location = new System.Drawing.Point(46, 263);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(452, 71);
-            this.panel6.TabIndex = 4;
+            this.panel6.TabIndex = 3;
             // 
             // txtPwd
             // 
@@ -214,7 +215,7 @@
             this.panel5.Location = new System.Drawing.Point(46, 344);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(452, 122);
-            this.panel5.TabIndex = 3;
+            this.panel5.TabIndex = 4;
             // 
             // txtAddress
             // 
@@ -240,7 +241,7 @@
             this.panel4.Location = new System.Drawing.Point(504, 260);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(452, 71);
-            this.panel4.TabIndex = 2;
+            this.panel4.TabIndex = 7;
             // 
             // txtPhoneNo
             // 
@@ -265,7 +266,7 @@
             this.panel3.Location = new System.Drawing.Point(504, 106);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(452, 71);
-            this.panel3.TabIndex = 1;
+            this.panel3.TabIndex = 5;
             // 
             // txtFName
             // 
@@ -297,7 +298,7 @@
             this.panel2.Location = new System.Drawing.Point(46, 186);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(452, 71);
-            this.panel2.TabIndex = 0;
+            this.panel2.TabIndex = 2;
             // 
             // label1
             // 
@@ -308,35 +309,35 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Email";
             // 
-            // panel1
+            // btnReset
             // 
-            this.panel1.Controls.Add(this.panel10);
-            this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.panel7);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel11);
-            this.panel1.Location = new System.Drawing.Point(5, 5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1342, 626);
-            this.panel1.TabIndex = 2;
+            this.btnReset.Controls.Add(this.panel10);
+            this.btnReset.Controls.Add(this.panel9);
+            this.btnReset.Controls.Add(this.panel8);
+            this.btnReset.Controls.Add(this.panel7);
+            this.btnReset.Controls.Add(this.panel6);
+            this.btnReset.Controls.Add(this.panel5);
+            this.btnReset.Controls.Add(this.panel4);
+            this.btnReset.Controls.Add(this.panel3);
+            this.btnReset.Controls.Add(this.panel2);
+            this.btnReset.Controls.Add(this.panel11);
+            this.btnReset.Location = new System.Drawing.Point(5, 5);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(1342, 626);
+            this.btnReset.TabIndex = 0;
             // 
             // panel11
             // 
             this.panel11.Location = new System.Drawing.Point(46, 88);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(930, 401);
-            this.panel11.TabIndex = 9;
+            this.panel11.TabIndex = 0;
             // 
             // pAcconutantInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnReset);
             this.Name = "pAcconutantInfo";
             this.Size = new System.Drawing.Size(1353, 637);
             this.panel10.ResumeLayout(false);
@@ -356,7 +357,7 @@
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.btnReset.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,7 +368,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnResset;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label7;
@@ -389,7 +390,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel btnReset;
         private System.Windows.Forms.Panel panel11;
     }
 }

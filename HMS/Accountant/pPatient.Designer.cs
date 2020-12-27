@@ -88,7 +88,7 @@
             this.panel1.Location = new System.Drawing.Point(3, 77);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(474, 563);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 6;
             // 
             // dtgPatient
             // 
@@ -148,7 +148,7 @@
             this.btnPrintBill.Location = new System.Drawing.Point(60, 144);
             this.btnPrintBill.Name = "btnPrintBill";
             this.btnPrintBill.Size = new System.Drawing.Size(117, 75);
-            this.btnPrintBill.TabIndex = 2;
+            this.btnPrintBill.TabIndex = 0;
             this.btnPrintBill.Text = "Thanh toán";
             this.btnPrintBill.UseVisualStyleBackColor = true;
             this.btnPrintBill.Click += new System.EventHandler(this.btnPrintBill_Click);
@@ -160,7 +160,7 @@
             this.panel2.Location = new System.Drawing.Point(483, 147);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(542, 401);
-            this.panel2.TabIndex = 4;
+            this.panel2.TabIndex = 5;
             // 
             // dtgTest
             // 
@@ -179,7 +179,7 @@
             this.dtgTest.RowTemplate.Height = 24;
             this.dtgTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgTest.Size = new System.Drawing.Size(536, 155);
-            this.dtgTest.TabIndex = 3;
+            this.dtgTest.TabIndex = 1;
             this.dtgTest.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgTest_DataError);
             // 
             // test
@@ -223,7 +223,7 @@
             this.dtgMedicine.RowTemplate.Height = 24;
             this.dtgMedicine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgMedicine.Size = new System.Drawing.Size(536, 189);
-            this.dtgMedicine.TabIndex = 2;
+            this.dtgMedicine.TabIndex = 0;
             this.dtgMedicine.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgMedicine_DataError);
             // 
             // medicine
@@ -256,7 +256,7 @@
             this.panel3.Location = new System.Drawing.Point(1034, 147);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(204, 398);
-            this.panel3.TabIndex = 5;
+            this.panel3.TabIndex = 8;
             // 
             // txtID
             // 
@@ -264,7 +264,7 @@
             this.txtID.Location = new System.Drawing.Point(149, 19);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(191, 22);
-            this.txtID.TabIndex = 6;
+            this.txtID.TabIndex = 1;
             this.txtID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // label1
@@ -273,7 +273,7 @@
             this.label1.Location = new System.Drawing.Point(46, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 17);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Text = "ID";
             // 
             // panel4
@@ -283,7 +283,7 @@
             this.panel4.Location = new System.Drawing.Point(483, 7);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(363, 64);
-            this.panel4.TabIndex = 8;
+            this.panel4.TabIndex = 0;
             // 
             // panel5
             // 
@@ -292,14 +292,14 @@
             this.panel5.Location = new System.Drawing.Point(483, 77);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(363, 64);
-            this.panel5.TabIndex = 9;
+            this.panel5.TabIndex = 1;
             // 
             // txtFname
             // 
             this.txtFname.Location = new System.Drawing.Point(149, 19);
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(191, 22);
-            this.txtFname.TabIndex = 6;
+            this.txtFname.TabIndex = 1;
             // 
             // label2
             // 
@@ -307,7 +307,7 @@
             this.label2.Location = new System.Drawing.Point(46, 23);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
-            this.label2.TabIndex = 7;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Họ Tên";
             // 
             // panel6
@@ -317,7 +317,7 @@
             this.panel6.Location = new System.Drawing.Point(486, 560);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(536, 77);
-            this.panel6.TabIndex = 10;
+            this.panel6.TabIndex = 7;
             // 
             // txtTotal_money
             // 
@@ -327,7 +327,7 @@
             this.txtTotal_money.Multiline = true;
             this.txtTotal_money.Name = "txtTotal_money";
             this.txtTotal_money.Size = new System.Drawing.Size(267, 39);
-            this.txtTotal_money.TabIndex = 6;
+            this.txtTotal_money.TabIndex = 1;
             // 
             // label3
             // 
@@ -336,7 +336,7 @@
             this.label3.Location = new System.Drawing.Point(77, 32);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 20);
-            this.label3.TabIndex = 7;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Tổng tiền";
             // 
             // printDocument1
@@ -360,14 +360,14 @@
             this.panel7.Location = new System.Drawing.Point(852, 7);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(383, 64);
-            this.panel7.TabIndex = 11;
+            this.panel7.TabIndex = 2;
             // 
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(149, 19);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(210, 22);
-            this.txtAddress.TabIndex = 6;
+            this.txtAddress.TabIndex = 1;
             // 
             // label4
             // 
@@ -375,7 +375,7 @@
             this.label4.Location = new System.Drawing.Point(30, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 17);
-            this.label4.TabIndex = 7;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Địa chỉ";
             // 
             // panel8
@@ -385,14 +385,14 @@
             this.panel8.Location = new System.Drawing.Point(852, 77);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(383, 64);
-            this.panel8.TabIndex = 12;
+            this.panel8.TabIndex = 3;
             // 
             // txtPhoneno
             // 
             this.txtPhoneno.Location = new System.Drawing.Point(149, 19);
             this.txtPhoneno.Name = "txtPhoneno";
             this.txtPhoneno.Size = new System.Drawing.Size(210, 22);
-            this.txtPhoneno.TabIndex = 6;
+            this.txtPhoneno.TabIndex = 1;
             // 
             // label5
             // 
@@ -400,7 +400,7 @@
             this.label5.Location = new System.Drawing.Point(27, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 17);
-            this.label5.TabIndex = 7;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Số điện thoại";
             // 
             // panel9
@@ -410,14 +410,14 @@
             this.panel9.Location = new System.Drawing.Point(3, 7);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(474, 64);
-            this.panel9.TabIndex = 13;
+            this.panel9.TabIndex = 4;
             // 
             // txtKeyword
             // 
             this.txtKeyword.Location = new System.Drawing.Point(149, 19);
             this.txtKeyword.Name = "txtKeyword";
             this.txtKeyword.Size = new System.Drawing.Size(191, 22);
-            this.txtKeyword.TabIndex = 6;
+            this.txtKeyword.TabIndex = 1;
             this.txtKeyword.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label6
@@ -426,7 +426,7 @@
             this.label6.Location = new System.Drawing.Point(46, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 17);
-            this.label6.TabIndex = 7;
+            this.label6.TabIndex = 0;
             this.label6.Text = "TÌm kiếm";
             // 
             // pPatient

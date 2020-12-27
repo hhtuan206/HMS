@@ -36,10 +36,7 @@ namespace HMS.DAO
 
         }
 
-        /*public void updateServiceList(string service, int id)
-        {
-            DataProvider.Instance.ExecuteNonQuery("UPDATE dbo.bill SET service_list = N'" + service + "' FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE dbo.detail_patient.id_patient =" + id + " AND dbo.bill.status = 0");
-        }*/
+        
 
         public int createBill()
         {
@@ -53,9 +50,9 @@ namespace HMS.DAO
         }
 
 
-        public void changePatientBill(string id, string status)
+        public void changePatientBill(string id, string status,string total_money)
         {
-            string query = "UPDATE dbo.bill SET status = " + status + " FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE dbo.detail_patient.id = " + id + "";
+            string query = "UPDATE dbo.bill SET status = " + status + ",dbo.bill.total_money = "+total_money+" FROM dbo.bill INNER JOIN dbo.detail_patient ON detail_patient.id_bill = bill.id WHERE dbo.detail_patient.id = " + id + "";
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 

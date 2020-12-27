@@ -26,7 +26,7 @@ namespace HMS.Accountant
                 return instance;
             }
         }
-        void loadHistoryPatientBill()
+        public void loadHistoryPatientBill()
         {
             bindingSource1.DataSource = PatientDAO.Instance.getPatientCheckOut();
             dtgHistory.DataSource = bindingSource1;
@@ -34,10 +34,8 @@ namespace HMS.Accountant
 
         private void txtKeyWord_TextChanged(object sender, EventArgs e)
         {
-
             try
             {
-
                 bindingSource1.DataSource = PatientDAO.Instance.searchPatientCheckOut(txtKeyWord.Text);
                 dtgHistory.DataSource = bindingSource1;
             }

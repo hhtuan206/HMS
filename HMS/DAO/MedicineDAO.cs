@@ -27,9 +27,6 @@ namespace HMS.DAO
         }
 
 
-
-
-
         public void createMedicineProduct(string name, float cost)
         {
             string query = "INSERT INTO dbo.medicine_product(medicine_name,cost,create_at,update_at) VALUES(N'" + name + "'," + cost + ",GETDATE(), GETDATE())";
@@ -51,6 +48,12 @@ namespace HMS.DAO
         public DataTable getAllMedicineByIdDetailPatient(string id)
         {
             string query = "SELECT dbo.medicine_product.medicine_name, dbo.medicine.quantity,dbo.medicine_product.cost FROM dbo.medicine INNER JOIN dbo.medicine_product ON medicine_product.id = medicine.id_medicine WHERE id_detail_patient = " + id + "";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
+        public DataTable searchMedicineProduct(string keyword) {
+            string query = "SELECT * FROM dbo.medicine_product WHERE medicine_name LIKE N'%"+keyword+"%'";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }

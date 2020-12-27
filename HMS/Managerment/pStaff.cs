@@ -6,12 +6,15 @@ namespace HMS
 {
     public partial class pStaff : UserControl
     {
-
+        BindingSource bindingSource = new BindingSource();
         private static pStaff instance;
         public pStaff()
         {
             InitializeComponent();
             loadStaff();
+            bind();
+            cbSex.SelectedIndex = 0;
+            cbDepartment.SelectedIndex = 0;
         }
 
         public static pStaff Instance
@@ -23,9 +26,23 @@ namespace HMS
             }
         }
 
+        void bind()
+        {
+            txtID.DataBindings.Add(new Binding("Text",dtgStaff.DataSource,"id"));
+            txtAddress.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "address"));
+            txtEmail.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "email"));
+            txtFname.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "full_name"));
+            txtPhoneno.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "phone_number"));
+            cbSex.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "sex"));
+            cbDepartment.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "department"));
+            txtTW.DataBindings.Add(new Binding("Text", dtgStaff.DataSource, "time_for_work"));
+        }
+
         public void loadStaff()
         {
-            dtgStaff.DataSource = StaffDAO.Instance.getAllStaff();
+            bindingSource.DataSource = StaffDAO.Instance.getAllStaff();
+            dtgStaff.DataSource = bindingSource;
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -116,7 +133,8 @@ namespace HMS
         {
             try {
                 string keyword = txtKeyWord.Text;
-                dtgStaff.DataSource = StaffDAO.Instance.searchStaff(keyword);
+                bindingSource.DataSource = StaffDAO.Instance.searchStaff(keyword);
+                dtgStaff.DataSource = bindingSource;
             } catch(Exception ex) { MessageBox.Show(ex.Message); }
             
         }

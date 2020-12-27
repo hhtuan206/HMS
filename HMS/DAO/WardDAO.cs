@@ -39,5 +39,12 @@ namespace HMS.DAO
             string query = "DELETE dbo.ward WHERE id = " + id + "";
             DataProvider.Instance.ExecuteQuery(query);
         }
+
+        public DataTable searchWard(string keyword)
+        {
+            string query = "SELECT * FROM dbo.ward WHERE name_ward LIKE N'%" + keyword + "%'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
     }
 }

@@ -55,7 +55,7 @@ namespace HMS
             txtAddress.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "address"));
             txtHIN.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "health_insurance_number"));
             txtPhoneno.DataBindings.Add(new Binding("Text", dtgPatient.DataSource, "phone_number"));
-
+            cbSex.DataBindings.Add(new Binding("Text",dtgPatient.DataSource,"sex"));
         }
 
 
@@ -163,6 +163,17 @@ namespace HMS
                 MessageBox.Show("Chỉ nhập số.");
                 txtPhoneno.Text = txtPhoneno.Text.Remove(txtPhoneno.Text.Length - 1);
             }
+        }
+
+        private void txtKeyWord_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = txtKeyWord.Text;
+                bindingSource.DataSource = PatientDAO.Instance.searchPatient(keyword);
+                dtgPatient.DataSource = bindingSource;
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
     }
 

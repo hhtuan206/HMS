@@ -31,12 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtgTest = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnView = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtKeyword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtID = new System.Windows.Forms.TextBox();
@@ -45,6 +44,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNameTest = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.test_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTest)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,14 +62,21 @@
             this.panel1.Location = new System.Drawing.Point(3, 109);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(672, 518);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 3;
             // 
             // dtgTest
             // 
             this.dtgTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.test_name,
+            this.cost,
+            this.Column1,
+            this.Column2});
             this.dtgTest.Location = new System.Drawing.Point(3, 3);
             this.dtgTest.Name = "dtgTest";
+            this.dtgTest.ReadOnly = true;
             this.dtgTest.RowHeadersVisible = false;
             this.dtgTest.RowHeadersWidth = 51;
             this.dtgTest.RowTemplate.Height = 24;
@@ -75,7 +86,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnView);
             this.panel2.Controls.Add(this.btnDel);
             this.panel2.Controls.Add(this.btnEdit);
             this.panel2.Controls.Add(this.btnAdd);
@@ -83,15 +93,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(672, 100);
             this.panel2.TabIndex = 2;
-            // 
-            // btnView
-            // 
-            this.btnView.Location = new System.Drawing.Point(556, 3);
-            this.btnView.Name = "btnView";
-            this.btnView.Size = new System.Drawing.Size(75, 94);
-            this.btnView.TabIndex = 3;
-            this.btnView.Text = "Xem";
-            this.btnView.UseVisualStyleBackColor = true;
             // 
             // btnDel
             // 
@@ -109,7 +110,7 @@
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 94);
             this.btnEdit.TabIndex = 1;
-            this.btnEdit.Text = "Sửa";
+            this.btnEdit.Text = "Cập nhật";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -125,28 +126,29 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.txtKeyword);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(681, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(554, 100);
-            this.panel3.TabIndex = 3;
+            this.panel3.TabIndex = 1;
             // 
-            // textBox3
+            // txtKeyword
             // 
-            this.textBox3.Location = new System.Drawing.Point(239, 39);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(285, 22);
-            this.textBox3.TabIndex = 5;
+            this.txtKeyword.Location = new System.Drawing.Point(239, 39);
+            this.txtKeyword.Name = "txtKeyword";
+            this.txtKeyword.Size = new System.Drawing.Size(285, 22);
+            this.txtKeyword.TabIndex = 1;
+            this.txtKeyword.TextChanged += new System.EventHandler(this.txtKeyword_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(85, 39);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 17);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ưhat do you want?";
+            this.label3.Size = new System.Drawing.Size(64, 17);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tìm kiếm";
             // 
             // panel4
             // 
@@ -159,7 +161,7 @@
             this.panel4.Location = new System.Drawing.Point(681, 109);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(554, 512);
-            this.panel4.TabIndex = 4;
+            this.panel4.TabIndex = 0;
             // 
             // txtID
             // 
@@ -167,7 +169,7 @@
             this.txtID.Location = new System.Drawing.Point(227, 90);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(272, 22);
-            this.txtID.TabIndex = 5;
+            this.txtID.TabIndex = 3;
             // 
             // label4
             // 
@@ -175,7 +177,7 @@
             this.label4.Location = new System.Drawing.Point(81, 90);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(21, 17);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 0;
             this.label4.Text = "ID";
             // 
             // txtCost
@@ -183,7 +185,7 @@
             this.txtCost.Location = new System.Drawing.Point(227, 287);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(272, 22);
-            this.txtCost.TabIndex = 3;
+            this.txtCost.TabIndex = 5;
             // 
             // label2
             // 
@@ -199,7 +201,7 @@
             this.txtNameTest.Location = new System.Drawing.Point(227, 183);
             this.txtNameTest.Name = "txtNameTest";
             this.txtNameTest.Size = new System.Drawing.Size(272, 22);
-            this.txtNameTest.TabIndex = 1;
+            this.txtNameTest.TabIndex = 4;
             // 
             // label1
             // 
@@ -207,8 +209,51 @@
             this.label1.Location = new System.Drawing.Point(81, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 17);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1;
             this.label1.Text = "Tên xét nghiệm";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "Mã";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // test_name
+            // 
+            this.test_name.DataPropertyName = "test_name";
+            this.test_name.HeaderText = "Tên xét nghiệm";
+            this.test_name.MinimumWidth = 6;
+            this.test_name.Name = "test_name";
+            this.test_name.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "cost";
+            this.cost.HeaderText = "Giá tiền";
+            this.cost.MinimumWidth = 6;
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "update_at";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "create_at";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Visible = false;
             // 
             // pTest
             // 
@@ -237,11 +282,10 @@
         private System.Windows.Forms.DataGridView dtgTest;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtKeyword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtCost;
@@ -250,5 +294,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn test_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

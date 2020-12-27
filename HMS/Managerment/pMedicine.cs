@@ -24,7 +24,7 @@ namespace HMS.Managerment
             }
         }
 
-        void loadMedicine()
+        public void loadMedicine()
         {
             bindingSource.DataSource = MedicineDAO.Instance.getAllMedicine();
             dtgMedicine.DataSource = bindingSource;
@@ -82,6 +82,16 @@ namespace HMS.Managerment
                 MessageBox.Show(ex.Message);
             }
             loadMedicine();
+        }
+
+        private void txtKeyWord_TextChanged(object sender, EventArgs e)
+        {
+            try {
+                string keyword = txtKeyWord.Text;
+                bindingSource.DataSource = MedicineDAO.Instance.searchMedicineProduct(keyword);
+                dtgMedicine.DataSource = bindingSource;
+            } catch (Exception ex) { MessageBox.Show(ex.Message); }
+           
         }
     }
 }

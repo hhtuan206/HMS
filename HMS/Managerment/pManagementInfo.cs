@@ -25,6 +25,7 @@ namespace HMS.Managerment
                 txtAddress.Text = row["address"].ToString();
 
             }
+            cbSex.SelectedIndex = 0;
         }
 
         private static pManagementInfo instance;
@@ -60,11 +61,13 @@ namespace HMS.Managerment
 
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
+           
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
             getID(txtID.Text);
+            txtPwd.Text ="";
         }
     }
 }

@@ -32,7 +32,7 @@ namespace HMS.Managerment
             dtgBed.DataSource = bindingSource;
         }
 
-        void fillCbWard()
+        public void fillCbWard()
         {
             cbWard.DataSource = WardDAO.Instance.getAllWard();
             cbWard.DisplayMember = "name_ward";

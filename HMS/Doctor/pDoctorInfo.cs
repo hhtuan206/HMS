@@ -72,6 +72,7 @@ namespace HMS.Doctor
         private void btnReset_Click(object sender, EventArgs e)
         {
             getID(txtID.Text);
+            txtPwd.Text = "";
         }
     }
 }

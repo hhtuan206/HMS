@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fNurse));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.thêmBệnhNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,21 +45,21 @@
             this.TàiKhoảnToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1262, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1262, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // thêmBệnhNhânToolStripMenuItem
             // 
             this.thêmBệnhNhânToolStripMenuItem.Name = "thêmBệnhNhânToolStripMenuItem";
-            this.thêmBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
+            this.thêmBệnhNhânToolStripMenuItem.Size = new System.Drawing.Size(161, 24);
             this.thêmBệnhNhânToolStripMenuItem.Text = "Tiếp nhận bệnh nhân";
             this.thêmBệnhNhânToolStripMenuItem.Click += new System.EventHandler(this.thêmBệnhNhânToolStripMenuItem_Click);
             // 
             // TàiKhoảnToolStripMenuItem
             // 
             this.TàiKhoảnToolStripMenuItem.Name = "TàiKhoảnToolStripMenuItem";
-            this.TàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.TàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
             this.TàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             this.TàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.TàiKhoảnToolStripMenuItem_Click);
             // 
@@ -78,7 +79,7 @@
             this.txtNameStaff.Location = new System.Drawing.Point(1095, 0);
             this.txtNameStaff.Name = "txtNameStaff";
             this.txtNameStaff.Size = new System.Drawing.Size(155, 22);
-            this.txtNameStaff.TabIndex = 3;
+            this.txtNameStaff.TabIndex = 2;
             this.txtNameStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // fNurse
@@ -89,6 +90,8 @@
             this.Controls.Add(this.txtNameStaff);
             this.Controls.Add(this.pNurse);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "fNurse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Y tá";

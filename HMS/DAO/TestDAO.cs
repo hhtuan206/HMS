@@ -58,5 +58,12 @@ namespace HMS.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
+
+        public DataTable searchTestProduct(string keyword)
+        {
+            string query = "SELECT * FROM dbo.test_product WHERE test_name LIKE N'%" + keyword + "%'";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
     }
 }
